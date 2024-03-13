@@ -189,44 +189,34 @@ export default function Navbar() {
                 )}
               </div>
               <Link
-                href='/contests'
+                href='/parties/register'
                 onClick={(e) => {
                   e.stopPropagation();
                   setRightPos('-right-full');
                 }}
                 className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full font-medium'
               >
-                대회
+                파티 만들기
               </Link>
               <Link
-                href='/exams'
+                href='/parties/find'
                 onClick={(e) => {
                   e.stopPropagation();
                   setRightPos('-right-full');
                 }}
                 className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full font-medium'
               >
-                시험
+                파티 찾기
               </Link>
               <Link
-                href='/practices'
+                href='/faq'
                 onClick={(e) => {
                   e.stopPropagation();
                   setRightPos('-right-full');
                 }}
                 className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full font-medium'
               >
-                연습문제
-              </Link>
-              <Link
-                href='/notice'
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setRightPos('-right-full');
-                }}
-                className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full font-medium'
-              >
-                공지사항
+                자주 묻는 질문
               </Link>
             </ul>
           </div>
