@@ -4,4 +4,4 @@
 ---
 
 > [!note]
-> Buddy [Server Repository](https://github.com/cbnu-buddy/buddy-server)
+> Buddy [Server Repository](https://github.com/cbnu-buddy/buddyServer)
