@@ -1,4 +1,4 @@
-# buddy-client
+# buddyClient
 [Client Repo]
 
 ---
