@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className='text-sm'>
         <Providers>
           <Navbar />
-          <main className='w-full mx-auto pt-20 mb-14'>{children}</main>
+          <main className='w-full mx-auto pt-[3.75rem] mb-14'>{children}</main>
           {/* <Footer /> */}
         </Providers>
       </body>
