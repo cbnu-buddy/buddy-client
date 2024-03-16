@@ -1,5 +1,9 @@
-import Developing from './components/Developing';
+import SwiperBanner from './components/SwiperBanner';
 
 export default function Home() {
-  return <Developing />;
+  return (
+    <div>
+      <SwiperBanner />
+    </div>
+  );
 }
