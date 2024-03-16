@@ -27,24 +27,24 @@ export default function SwiperBanner() {
   };
 
   const slideData = [
-    // {
-    //   id: 1,
-    //   component: () => (
-    //     <Slide1 handlePrev={handlePrev} handleNext={handleNext} />
-    //   ),
-    // },
+    {
+      id: 1,
+      component: () => (
+        <Slide1 handlePrev={handlePrev} handleNext={handleNext} />
+      ),
+    },
     {
       id: 2,
       component: () => (
         <Slide2 handlePrev={handlePrev} handleNext={handleNext} />
       ),
     },
-    // {
-    //   id: 3,
-    //   component: () => (
-    //     <Slide3 handlePrev={handlePrev} handleNext={handleNext} />
-    //   ),
-    // },
+    {
+      id: 3,
+      component: () => (
+        <Slide3 handlePrev={handlePrev} handleNext={handleNext} />
+      ),
+    },
   ];
 
   return (

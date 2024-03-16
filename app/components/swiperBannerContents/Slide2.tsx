@@ -31,8 +31,14 @@ const formatDate = (date: Date) => {
 
 export const Slide2: FC<Slide2Props> = ({ handlePrev, handleNext }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [randNum, setRandNum] = useState<number>(0);
 
   const currentTime = new Date();
+
+  useEffect(() => {
+    // 처음 렌더링될 때만 0부터 9까지의 임의의 값을 설정
+    setRandNum(Math.floor(Math.random() * 10));
+  }, []); // 빈 배열을 두어 한 번만 실행되도록 설정
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -110,7 +116,7 @@ export const Slide2: FC<Slide2Props> = ({ handlePrev, handleNext }) => {
           </div>
           <div className='relative w-28 h-[9.5rem] flex justify-center items-center bg-black rounded-lg'>
             <span className='text-5xl text-[6.5rem] pt-1 pb-5 font-semibold leading-[1.75] text-white'>
-              5
+              {randNum}
             </span>
             <hr className='w-full absolute top-[4.75rem] border-[1.5px] border-x-black border-y-black' />
             <div className='absolute border-b-red-500 border-b-8' />
