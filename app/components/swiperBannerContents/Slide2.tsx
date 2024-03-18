@@ -60,7 +60,7 @@ export const Slide2: FC<Slide2Props> = ({ handlePrev, handleNext }) => {
           </h1>
         </div>
         <p className='text-base text-white'>
-          사장, 회장, 반장보다 링키드 파티장이 백만 배 쉽다구요. <br />더 파티만
+          사장, 회장, 반장보다 버디 파티장이 백만 배 쉽다구요. <br />더 파티만
           만들면 귀찮은 건 버디가 다 하니까요.
         </p>
         <button className='mt-3 px-7 py-[0.9rem] bg-white rounded-xl text-lg font-semibold duration-300 hover:drop-shadow-lg'>
