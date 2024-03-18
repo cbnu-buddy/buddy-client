@@ -45,12 +45,11 @@ export default function PrivacyPolicyModal({
             2. 개인정보 파일 현황 버디는 개인정보 보호법 제32조에 따라
             등록․공개하는 개인정보파일의 처리목적은 다음과 같습니다. 1. 개인정보
             파일명 : 버디 홈페이지 회원 및 지원 관리 - 개인정보 항목 : 이메일,
-            휴대전화번호, 학번 - 수집방법 : 홈페이지 - 보유근거 : 정보주체의
-            동의 - 보유기간 : 3년 - 관련법령 : 소비자의 불만 또는 분쟁처리에
-            관한 기록 : 3년 ※ 기타의 개인정보파일 등록사항 공개는 행정안전부
-            개인정보보호 종합지원 포털(www.privacy.go.kr) → 개인정보민원 →
-            개인정보열람등 요구 → 개인정보파일 목록검색 메뉴를 활용해주시기
-            바랍니다.
+            휴대전화번호 - 수집방법 : 홈페이지 - 보유근거 : 정보주체의 동의 -
+            보유기간 : 3년 - 관련법령 : 소비자의 불만 또는 분쟁처리에 관한 기록
+            : 3년 ※ 기타의 개인정보파일 등록사항 공개는 행정안전부 개인정보보호
+            종합지원 포털(www.privacy.go.kr) → 개인정보민원 → 개인정보열람등
+            요구 → 개인정보파일 목록검색 메뉴를 활용해주시기 바랍니다.
           </p>
           <hr />
           <p className='text-xs leading-relaxed text-gray-500 dark:text-gray-400'>
@@ -86,7 +85,7 @@ export default function PrivacyPolicyModal({
           <p className='text-xs leading-relaxed text-gray-500 dark:text-gray-400'>
             5. 처리하는 개인정보의 항목 작성 ① 버디는 다음의 개인정보 항목을
             처리하고 있습니다. 1. 홈페이지 회원가입 및 관리 - 필수항목 : 이메일,
-            휴대전화번호, 이름, 학번
+            휴대전화번호, 이름
           </p>
           <hr />
           <p className='text-xs leading-relaxed text-gray-500 dark:text-gray-400'>

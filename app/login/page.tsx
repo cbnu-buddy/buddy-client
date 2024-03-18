@@ -119,7 +119,7 @@ export default function Login() {
   // const updateUserInfo = userInfoStore((state: any) => state.updateUserInfo);
 
   const [userAccountInfo, setUserAccountInfo] = useState({
-    id: '',
+    email: '',
     pwd: '',
   });
   const [idInputAnnounceMsg, setIdInputAnnouceMsg] = useState('');
@@ -155,9 +155,9 @@ export default function Login() {
     setPwdLabelElementStyle(STR_RIGHT_CASE_INPUT_ELEMENT_STYLE_CLASSNAME);
     setPwdLabelElementStyle(STR_RIGHT_CASE_LABEL_ELEMENT_STYLE_CLASSNAME);
 
-    if (!userAccountInfo.id) {
+    if (!userAccountInfo.email) {
       idInputRef.current?.focus();
-      setIdInputAnnouceMsg('학번 또는 교번을 입력하세요.');
+      setIdInputAnnouceMsg('이메일을 입력하세요.');
       setIdInputElementStyle(STR_WRONG_CASE_INPUT_ELEMENT_STYLE_CLASSNAME);
       setIdLabelElementStyle(STR_WRONG_CASE_LABEL_ELEMENT_STYLE_CLASSNAME);
       return;
@@ -201,12 +201,12 @@ export default function Login() {
                   type='text'
                   id='floating_outlined'
                   className={idInputElementStyle}
-                  value={userAccountInfo.id}
+                  value={userAccountInfo.email}
                   ref={idInputRef}
                   onChange={(e) =>
                     setUserAccountInfo({
                       ...userAccountInfo,
-                      id: e.target.value,
+                      email: e.target.value,
                     })
                   }
                   placeholder=' '
