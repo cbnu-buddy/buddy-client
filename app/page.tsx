@@ -104,7 +104,8 @@ export default function Home() {
             data-aos-duration='875'
           >
             <h1 className='text-[2.75rem] font-bold tracking-wide leading-[1.4] text-[#1a1f27]'>
-              지금 바로, 버디에서
+              지금 바로, 버디에서 <br />
+              새롭게 만나보세요
             </h1>
             <div className='grid grid-cols-2 gap-10 gap-y-24 mt-12'>
               <div className='flex flex-col gap-7'>

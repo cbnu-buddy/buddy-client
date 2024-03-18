@@ -1,5 +1,5 @@
-// import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import './globals.css';
 import Providers from './utils/Providers';
 
@@ -21,8 +21,8 @@ export default function RootLayout({
       <body className='text-sm'>
         <Providers>
           <Navbar />
-          <main className='w-full mx-auto pt-[3.75rem] mb-14'>{children}</main>
-          {/* <Footer /> */}
+          <main className='w-full mx-auto pt-[3.75rem]'>{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
