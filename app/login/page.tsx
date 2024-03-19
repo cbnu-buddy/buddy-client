@@ -297,7 +297,6 @@ export default function Login() {
               <div className='flex justify-between items-center'>
                 <Link
                   href='/register'
-                  target='_blank'
                   className='text-[#437ae1] translate-x-[-0.5rem] text-[0.8rem] font-normal px-2 py-1 hover:bg-[#f3f4f5] rounded-[0rem] focus:bg-[#f3f4f5]'
                 >
                   계정 만들기
