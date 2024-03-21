@@ -2,7 +2,6 @@
 
 import React, { FormEvent, useState } from 'react';
 import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
-import { useRouter } from 'next/navigation';
 import { Label } from 'flowbite-react';
 
 export default function Register() {
