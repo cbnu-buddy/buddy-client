@@ -18,3 +18,34 @@
 .go3489369143:hover {
   scale: 1.35;
 }
+
+/* FAQ Content */
+.faq-content {
+  font-weight: 300;
+}
+
+.faq-content p,
+strong,
+s,
+u,
+i strong {
+  color: #4a4a4a;
+}
+
+.faq-content strong {
+  font-weight: 600;
+}
+
+.faq-content ul,
+ol {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+}
+
+.faq-content blockquote {
+  margin: 0.25rem auto 1rem !important;
+  font-style: normal !important;
+  padding: 1rem 1.75rem !important;
+  border-left: 0.25rem solid #2fc27b !important;
+  background-color: #fafcfe;
+}
