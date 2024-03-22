@@ -49,3 +49,9 @@ ol {
   border-left: 0.25rem solid #2fc27b !important;
   background-color: #fafcfe;
 }
+
+.faq-content a {
+  font-weight: 400;
+  color: blue;
+  text-decoration: underline;
+}
