@@ -2,7 +2,6 @@
 
 import React, { FormEvent, useState } from 'react';
 import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
-import { useRouter } from 'next/navigation';
 import { Label } from 'flowbite-react';
 
 export default function Register() {
@@ -98,7 +97,7 @@ export default function Register() {
               type='text'
               value={email}
               onChange={handleEmailChange}
-              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-lg border-[1.5px] border-${
+              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-md border border-${
                 isEmailValidFail ? 'red-500' : '[#828283]'
               } w-full`}
             />
@@ -116,7 +115,7 @@ export default function Register() {
               type='password'
               value={password}
               onChange={handlePasswordChange}
-              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-lg border-[1.5px] border-${
+              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-md border border-${
                 isPasswordValidFail ? 'red-500' : '[#828283]'
               } w-full`}
             />
@@ -134,7 +133,7 @@ export default function Register() {
               type='password'
               value={repeatPassword}
               onChange={handleRepeatPasswordChange}
-              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-lg border-[1.5px] border-${
+              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-md border border-${
                 isRepeatPasswordValidFail ? 'red-500' : '[#828283]'
               } w-full`}
             />
@@ -152,7 +151,7 @@ export default function Register() {
               type='text'
               value={username}
               onChange={handleUsernameChange}
-              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-lg border-[1.5px] border-${
+              className={`placeholder-[#b6b7bf] bg-[#f9fafb rounded-md border border-${
                 isUsernameValidFail ? 'red-500' : '[#828283]'
               } w-full`}
             />
