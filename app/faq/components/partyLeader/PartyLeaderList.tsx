@@ -11,38 +11,31 @@ export default function PartyLeaderList() {
           className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
         >
           <span className='text-[#d3d3d3] text-base'>Q. </span>
-          <span>넷플릭스 추가공유 파티장을 위한 나의 파티 기능 소개</span>
+          <span>파티를 해산하고 싶어요.</span>
         </Link>
         <Link
           href='/faq/15'
           className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
         >
           <span className='text-[#d3d3d3] text-base'>Q. </span>
-          <span>파티를 해산하고 싶어요.</span>
+          <span>파티 시크릿 모드가 무엇인가요?</span>
         </Link>
         <Link
           href='/faq/16'
           className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
         >
           <span className='text-[#d3d3d3] text-base'>Q. </span>
-          <span>파티 시크릿 모드가 무엇인가요?</span>
+          <span>파티원이 중간에 탈퇴하면 어떻게 하나요?</span>
         </Link>
         <Link
           href='/faq/17'
           className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
         >
           <span className='text-[#d3d3d3] text-base'>Q. </span>
-          <span>파티원이 중간에 탈퇴하면 어떻게 하나요?</span>
-        </Link>
-        <Link
-          href='/faq/18'
-          className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
-        >
-          <span className='text-[#d3d3d3] text-base'>Q. </span>
           <span>공유 로그인 정보(아이디, 비밀번호)는 어떻게 변경하나요?</span>
         </Link>
         <Link
-          href='/faq/19'
+          href='/faq/18'
           className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
         >
           <span className='text-[#d3d3d3] text-base'>Q. </span>
@@ -52,14 +45,14 @@ export default function PartyLeaderList() {
           </span>
         </Link>
         <Link
-          href='/faq/20'
+          href='/faq/19'
           className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
         >
           <span className='text-[#d3d3d3] text-base'>Q. </span>
           <span>파티원을 초대하고 싶어요.</span>
         </Link>
         <Link
-          href='/faq/21'
+          href='/faq/20'
           className='flex items-center gap-x-3  hover:bg-[#f6f6f6] rounded-[0.625rem] px-4 py-[0.625rem]'
         >
           <span className='text-[#d3d3d3] text-base'>Q. </span>
