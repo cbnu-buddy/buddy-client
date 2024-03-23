@@ -30,7 +30,7 @@ export default function Faq({ children }: { children: React.ReactNode }) {
               className='absolute top-[1rem] left-4'
             />
           </div>
-          <div className='w-full mx-auto absolute bottom-[1.25rem] mt-3 flex justify-center items-center gap-x-1'>
+          <div className='w-full mx-auto absolute bottom-[1.25rem] mt-3 flex justify-center items-center gap-x-1 text-center'>
             <Link
               href='/faq'
               className={`${
