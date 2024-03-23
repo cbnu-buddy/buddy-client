@@ -22,14 +22,24 @@
 /* FAQ Content */
 .faq-content {
   font-weight: 300;
+  line-height: 1.25rem;
 }
 
 .faq-content p,
 strong,
 s,
 u,
-i strong {
+i,
+li {
   color: #4a4a4a;
+}
+
+.faq-content p,
+.faq-content strong,
+.faq-content s,
+.faq-content u,
+.faq-content i {
+  color: inherit;
 }
 
 .faq-content strong {
@@ -38,8 +48,19 @@ i strong {
 
 .faq-content ul,
 ol {
-  list-style-type: disc;
   margin-left: 1.25rem;
+}
+
+.faq-content ul {
+  list-style-type: disc;
+}
+
+.faq-content ol {
+  list-style-type: decimal;
+}
+
+.faq-content li {
+  margin-top: 0.25rem;
 }
 
 .faq-content blockquote {
@@ -52,6 +73,11 @@ ol {
 
 .faq-content a {
   font-weight: 400;
-  color: blue;
+  color: #007bff;
   text-decoration: underline;
+}
+
+.faq-content .ql-indent-1 {
+  margin-left: 1rem;
+  list-style-type: circle;
 }
