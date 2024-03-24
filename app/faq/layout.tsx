@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect } from 'react';
 
-export default function Faq({ children }: { children: React.ReactNode }) {
+export default function FaqLayout({ children }: { children: React.ReactNode }) {
   const faqTabName = faqTabNameStore((state: any) => state.tabName);
   const updateFaqTabName = faqTabNameStore((state: any) => state.updateTabName);
 
