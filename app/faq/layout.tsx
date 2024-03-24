@@ -5,10 +5,26 @@ import magnifierImg from '@/public/images/magnifier.png';
 import phoneCallImg from '@/public/images/phone_call.png';
 import { faqTabNameStore } from '../store/faq/FaqTabName';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Faq({ children }: { children: React.ReactNode }) {
   const faqTabName = faqTabNameStore((state: any) => state.tabName);
   const updateFaqTabName = faqTabNameStore((state: any) => state.updateTabName);
+
+  const params: any = useParams();
+  const faqId = parseInt(params.faqId);
+
+  useEffect(() => {
+    if (faqId >= 1 && faqId <= 7) updateFaqTabName('topQuestion');
+    else if (faqId >= 8 && faqId <= 13) updateFaqTabName('party');
+    else if (faqId >= 14 && faqId <= 20) updateFaqTabName('partyLeader');
+    else if (faqId >= 21 && faqId <= 27) updateFaqTabName('partyMember');
+    else if (faqId >= 28 && faqId <= 37)
+      updateFaqTabName('paymentAndAccumulation');
+    else if (faqId >= 38 && faqId <= 42) updateFaqTabName('couponAndPoint');
+    else if (faqId >= 43 && faqId <= 50) updateFaqTabName('useBuddy');
+  }, [faqId, updateFaqTabName]);
 
   return (
     <div>
