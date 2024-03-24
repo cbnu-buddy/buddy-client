@@ -174,7 +174,7 @@ export default function PrivacyPolicyModal({
       <Modal.Footer className='ml-auto border-none'>
         <button
           onClick={() => setOpenPrivacyPolicyModal(undefined)}
-          className='text-white bg-[#3870e0] px-4 py-[0.4rem] rounded-[0.2rem] font-light focus:bg-[#3464c2] hover:bg-[#3464c2] box-shadow'
+          className='text-white bg-[#3a8af9] px-4 py-[0.4rem] rounded-md font-light focus:bg-[#1c6cdb] hover:bg-[#1c6cdb] box-shadow'
         >
           닫기
         </button>
