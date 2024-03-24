@@ -9,7 +9,7 @@ interface Slide1Props {
 
 export const Slide1: FC<Slide1Props> = ({ handlePrev, handleNext }) => {
   return (
-    <div className='flex justify-center w-full h-[30rem] bg-[#5a9cf8]'>
+    <div className='flex justify-center w-full h-[32.5rem] bg-[#5a9cf8]'>
       <div className='flex flex-col items-start gap-8 mt-[5.75rem] w-[59.5rem]'>
         <div className='flex flex-col gap-4'>
           <h1 className='tracking-wide text-[2.75rem] leading-[1] text-white font-bold'>
@@ -22,10 +22,10 @@ export const Slide1: FC<Slide1Props> = ({ handlePrev, handleNext }) => {
         <p className='text-base text-white'>
           넷플릭스부터 애플 뮤직까지. <br />더 안전하게 버디로 이용하세요!
         </p>
-        <button className='mt-3 px-12 py-[0.9rem] bg-white rounded-xl text-lg font-semibold duration-300 hover:drop-shadow-lg'>
+        <button className='mt-8 px-12 py-[0.9rem] bg-white rounded-xl text-lg font-semibold duration-300 hover:drop-shadow-lg'>
           버디 시작하기
         </button>
-        <div className='absolute bottom-[2.3rem] flex items-center gap-4 mt-2'>
+        <div className='absolute bottom-[3.5rem] flex items-center gap-4 mt-2'>
           <div className='flex gap-[0.4rem] text-xs font-extralight'>
             <span className='font-medium text-white'>01</span>
             <span className='text-white'>|</span>

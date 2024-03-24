@@ -49,7 +49,7 @@ export const Slide2: FC<Slide2Props> = ({ handlePrev, handleNext }) => {
   }, []);
 
   return (
-    <div className='flex justify-center w-full h-[30rem] bg-[#262626]'>
+    <div className='flex justify-center w-full h-[32.5rem] bg-[#262626]'>
       <div className='flex flex-col items-start gap-8 mt-[5.75rem] w-[45rem]'>
         <div className='flex flex-col gap-4'>
           <h1 className='tracking-wide text-[2.75rem] leading-[1] text-white font-semibold'>
