@@ -179,8 +179,10 @@ export default function Login() {
                   email: e.target.value,
                 })
               }
-              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border border-${
-                idInputAnnounceMsg ? 'red-500' : '[#d4d5d7]'
+              // 240 82 82
+              // d4d5d7
+              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
+                idInputAnnounceMsg ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
                 userAccountInfo.email && 'pr-[2.5rem]'
               }`}
@@ -247,8 +249,8 @@ export default function Login() {
                   pwd: e.target.value,
                 });
               }}
-              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border border-${
-                pwdInputAnnounceMsg ? 'red-500' : '[#d4d5d7]'
+              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
+                pwdInputAnnounceMsg ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
                 userAccountInfo.pwd && 'pr-[2.5rem]'
               }`}
