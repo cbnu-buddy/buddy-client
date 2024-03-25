@@ -121,8 +121,8 @@ export default function Register() {
               type='text'
               value={email}
               onChange={handleEmailChange}
-              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border border-${
-                isEmailValidFail ? 'red-500' : '[#d4d5d7]'
+              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
+                isEmailValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
                 email && 'pr-[2.5rem]'
               }`}
@@ -160,8 +160,8 @@ export default function Register() {
               type={isPwdVisibility ? 'text' : 'password'}
               value={password}
               onChange={handlePasswordChange}
-              className={`rounded-[0.425rem] border border-${
-                isPasswordValidFail ? 'red-500' : '[#d4d5d7]'
+              className={`rounded-[0.425rem] border ${
+                isPasswordValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3`}
             />
             {password && (
@@ -201,8 +201,10 @@ export default function Register() {
               type={isRepeatPwdVisibility ? 'text' : 'password'}
               value={repeatPassword}
               onChange={handleRepeatPasswordChange}
-              className={`rounded-[0.425rem] border border-${
-                isRepeatPasswordValidFail ? 'red-500' : '[#d4d5d7]'
+              className={`rounded-[0.425rem] border ${
+                isRepeatPasswordValidFail
+                  ? 'border-red-500'
+                  : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3`}
             />
             {repeatPassword && (
@@ -242,8 +244,8 @@ export default function Register() {
               type='text'
               value={username}
               onChange={handleUsernameChange}
-              className={`rounded-[0.425rem] border border-${
-                isUsernameValidFail ? 'red-500' : '[#d4d5d7]'
+              className={`rounded-[0.425rem] border ${
+                isUsernameValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3`}
             />
             {username && (
