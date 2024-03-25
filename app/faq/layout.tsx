@@ -4,7 +4,7 @@ import Image from 'next/image';
 import magnifierImg from '@/public/images/magnifier.png';
 import phoneCallImg from '@/public/images/phone_call.png';
 import { faqTabNameStore } from '../store/faq/FaqTabName';
-import Link from 'next/link';
+import button from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect } from 'react';
 
@@ -47,8 +47,7 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
             />
           </div>
           <div className='w-full mx-auto absolute bottom-[1.25rem] mt-3 flex justify-center items-center gap-x-1 text-center'>
-            <Link
-              href='/faq'
+            <button
               className={`${
                 faqTabName === 'topQuestion'
                   ? 'text-blue-700 font-semibold'
@@ -57,9 +56,8 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
               onClick={() => updateFaqTabName('topQuestion')}
             >
               질문 TOP
-            </Link>
-            <Link
-              href='/faq'
+            </button>
+            <button
               className={`${
                 faqTabName === 'party'
                   ? 'text-blue-700 font-semibold'
@@ -68,9 +66,8 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
               onClick={() => updateFaqTabName('party')}
             >
               파티
-            </Link>
-            <Link
-              href='/faq'
+            </button>
+            <button
               className={`${
                 faqTabName === 'partyLeader'
                   ? 'text-blue-700 font-semibold'
@@ -79,9 +76,8 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
               onClick={() => updateFaqTabName('partyLeader')}
             >
               파티장
-            </Link>
-            <Link
-              href='/faq'
+            </button>
+            <button
               className={`${
                 faqTabName === 'partyMember'
                   ? 'text-blue-700 font-semibold'
@@ -90,9 +86,8 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
               onClick={() => updateFaqTabName('partyMember')}
             >
               파티원
-            </Link>
-            <Link
-              href='/faq'
+            </button>
+            <button
               className={`${
                 faqTabName === 'paymentAndAccumulation'
                   ? 'text-blue-700 font-semibold'
@@ -101,9 +96,8 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
               onClick={() => updateFaqTabName('paymentAndAccumulation')}
             >
               결제/적립
-            </Link>
-            <Link
-              href='/faq'
+            </button>
+            <button
               className={`${
                 faqTabName === 'couponAndPoint'
                   ? 'text-blue-700 font-semibold'
@@ -112,9 +106,8 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
               onClick={() => updateFaqTabName('couponAndPoint')}
             >
               쿠폰/포인트
-            </Link>
-            <Link
-              href='/faq'
+            </button>
+            <button
               className={`${
                 faqTabName === 'useBuddy'
                   ? 'text-blue-700 font-semibold'
@@ -123,7 +116,7 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
               onClick={() => updateFaqTabName('useBuddy')}
             >
               버디 이용
-            </Link>
+            </button>
           </div>
         </div>
       </div>
