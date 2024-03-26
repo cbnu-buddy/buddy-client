@@ -25,15 +25,6 @@ export default function Home() {
   return (
     <div className='relative flex flex-col items-center gap-7'>
       <SwiperBanner />
-      {/* <button
-        className='fixed bottom-6 z-10 px-[3.75rem] py-4 bg-[#f9dc4a] text-lg tracking-wide font-semibold rounded-xl'
-        data-aos='zoom-in'
-        data-aos-easing='ease-out'
-        data-aos-duration='325'
-      >
-        😆 버디 시작하기
-      </button> */}
-
       <button className='mt-4' onClick={handleButtonClick}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
