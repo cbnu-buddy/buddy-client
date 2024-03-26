@@ -68,13 +68,13 @@ export default function Navbar() {
         <div className='hidden 2md:flex'>
           <div className='flex gap-6 font-medium mx-auto'>
             <Link
-              href='/parties/register'
+              href='/add-party'
               className='px-4 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
             >
               파티 만들기
             </Link>
             <Link
-              href='/parties/find'
+              href='/join-party'
               className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
             >
               파티 찾기
@@ -195,7 +195,7 @@ export default function Navbar() {
                 )}
               </div>
               <Link
-                href='/parties/register'
+                href='/add-party'
                 onClick={(e) => {
                   e.stopPropagation();
                   setRightPos('-right-full');
@@ -205,7 +205,7 @@ export default function Navbar() {
                 파티 만들기
               </Link>
               <Link
-                href='/parties/find'
+                href='/join-party'
                 onClick={(e) => {
                   e.stopPropagation();
                   setRightPos('-right-full');
