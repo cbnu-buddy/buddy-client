@@ -341,12 +341,12 @@ export default function Login() {
               >
                 개인정보처리방침
               </button>
-              {openPrivacyPolicyModal ? (
+              {openPrivacyPolicyModal && (
                 <PrivacyPolicyModal
                   openPrivacyPolicyModal={openPrivacyPolicyModal}
                   setOpenPrivacyPolicyModal={setOpenPrivacyPolicyModal}
                 />
-              ) : null}
+              )}
             </div>
           </div>
         </form>
