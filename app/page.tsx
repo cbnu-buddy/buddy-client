@@ -124,7 +124,7 @@ export default function Home() {
             <div className='grid grid-cols-2 gap-10 gap-y-24 mt-12'>
               <div className='flex flex-col gap-7'>
                 <Link
-                  href='/parties/register'
+                  href='/add-party'
                   className='w-fit bg-[#f3f4f5] p-7 rounded-2xl hover:brightness-[96%]'
                 >
                   <svg
@@ -153,7 +153,7 @@ export default function Home() {
 
               <div className='flex flex-col gap-7'>
                 <Link
-                  href='/parties/find'
+                  href='/join-party'
                   className='w-fit bg-[#eaf3fe] p-[1.925rem] rounded-2xl hover:brightness-[96%]'
                 >
                   <svg
