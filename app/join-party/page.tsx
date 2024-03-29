@@ -1,7 +1,9 @@
 'use client';
 
 import Image, { StaticImageData } from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import netflixImg from '@/public/images/netflix.png';
 import waveImg from '@/public/images/wave.png';
 import watchaImg from '@/public/images/watcha.png';
@@ -152,6 +154,10 @@ export default function JoinParty() {
     },
   ];
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className='flex justify-center bg-[#f4f4f9] text-center'>
       <div className='w-[55rem] mt-10 mb-[7.5rem]'>
@@ -215,7 +221,12 @@ export default function JoinParty() {
           />
         </div>
 
-        <div className='grid grid-cols-6 gap-x-3 gap-y-3 mt-7'>
+        <div
+          className='grid grid-cols-6 gap-x-3 gap-y-3 mt-7'
+          data-aos='fade-up'
+          data-aos-easing='ease-out'
+          data-aos-duration='250'
+        >
           {dataSet.map(
             (data: DataSet, idx) =>
               (categoryTabName === data.category ||
