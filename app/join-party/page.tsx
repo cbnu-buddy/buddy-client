@@ -21,7 +21,7 @@ import hotImg from '@/public/images/hot.png';
 import eventImg from '@/public/images/event.png';
 import newImg from '@/public/images/new.png';
 import { JoinPartySelectedPlanInfo } from '../types/joinPartySelectedPlanInfo';
-import SelectMembershipPlanModal from './components/\bSelectMembershipPlanModal';
+import SelectMembershipPlanModal from './components/SelectMembershipPlanModal';
 import { joinPartySelectedPlanInfoStore } from '../store/join-party/JoinPartySelectedPlanInfo';
 
 export default function JoinParty() {

@@ -20,7 +20,7 @@ import appleMusicImg from '@/public/images/apple_music.png';
 import hotImg from '@/public/images/hot.png';
 import eventImg from '@/public/images/event.png';
 import newImg from '@/public/images/new.png';
-import SelectMembershipPlanModal from './components/\bSelectMembershipPlanModal';
+import SelectMembershipPlanModal from './components/SelectMembershipPlanModal';
 import { AddPartySelectedPlanInfo } from '../types/addPartySelectedPlanInfo';
 import { addPartySelectedPlanInfoStore } from '../store/add-party/AddPartySelectedPlanInfo';
 import PartyLeaderGuideModal from './components/PartyLeaderGuideModal';
