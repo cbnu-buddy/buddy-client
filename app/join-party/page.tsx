@@ -9,40 +9,44 @@ import waveImg from '@/public/images/wave.png';
 import watchaImg from '@/public/images/watcha.png';
 import laftelImg from '@/public/images/laftel.png';
 import tvingImg from '@/public/images/tving.png';
-import disneyPlusImg from '@/public/images/disney-plus.png';
-import youtubePremiumImg from '@/public/images/youtube-premium.png';
-import coupangPlayImg from '@/public/images/coupang-play.png';
-import ridiBooksImg from '@/public/images/ridi-books.png';
+import disneyPlusImg from '@/public/images/disney_plus.png';
+import youtubePremiumImg from '@/public/images/youtube_premium.png';
+import coupangPlayImg from '@/public/images/coupang_play.png';
+import ridiBooksImg from '@/public/images/ridi_books.png';
 import miliImg from '@/public/images/mili.png';
 import yes24Img from '@/public/images/yes24.png';
 import spotifyImg from '@/public/images/spotify.png';
-import appleMusicImg from '@/public/images/apple-music.png';
+import appleMusicImg from '@/public/images/apple_music.png';
 import hotImg from '@/public/images/hot.png';
 import eventImg from '@/public/images/event.png';
 import newImg from '@/public/images/new.png';
-
-interface DataSet {
-  iconImg: StaticImageData;
-  iconImgAlt: string;
-  name: string;
-  category: string;
-  originPrice: number;
-  discountedPrice: number;
-  tag: string;
-}
+import { JoinPartySelectedPlanInfo } from '../types/joinPartySelectedPlanInfo';
+import SelectMembershipPlanModal from './components/\bSelectMembershipPlanModal';
+import { joinPartySelectedPlanInfoStore } from '../store/join-party/JoinPartySelectedPlanInfo';
 
 export default function JoinParty() {
   const [categoryTabName, setCategoryTabName] = useState('all');
 
-  const dataSet: DataSet[] = [
+  const joinPartySelectedPlanInfos: JoinPartySelectedPlanInfo[] = [
     {
       iconImg: netflixImg,
       iconImgAlt: 'netflix image',
       name: '넷플릭스',
       category: 'media',
       originPrice: 17000,
-      discountedPrice: 9000,
+      discountedPrice: 7000,
       tag: 'hot',
+      planDetailInfos: [
+        {
+          name: '넷플릭스 추가공유',
+          price: 9000,
+        },
+        {
+          name: '넷플릭스 가구공유',
+          price: 7000,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: waveImg,
@@ -50,8 +54,15 @@ export default function JoinParty() {
       name: '웨이브',
       category: 'media',
       originPrice: 13900,
-      discountedPrice: 3475,
+      discountedPrice: 4475,
       tag: 'hot',
+      planDetailInfos: [
+        {
+          name: '웨이브 프리미엄',
+          price: 4475,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: watchaImg,
@@ -59,8 +70,15 @@ export default function JoinParty() {
       name: '왓챠',
       category: 'media',
       originPrice: 12900,
-      discountedPrice: 3225,
+      discountedPrice: 4225,
       tag: 'hot',
+      planDetailInfos: [
+        {
+          name: '왓챠 프리미엄',
+          price: 4225,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: laftelImg,
@@ -70,6 +88,13 @@ export default function JoinParty() {
       originPrice: 14900,
       discountedPrice: 3725,
       tag: '',
+      planDetailInfos: [
+        {
+          name: '라프텔 프리미엄',
+          price: 3725,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: tvingImg,
@@ -77,8 +102,15 @@ export default function JoinParty() {
       name: '티빙',
       category: 'media',
       originPrice: 17000,
-      discountedPrice: 4250,
+      discountedPrice: 5250,
       tag: 'hot',
+      planDetailInfos: [
+        {
+          name: '왓챠 프리미엄',
+          price: 5250,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: disneyPlusImg,
@@ -86,8 +118,15 @@ export default function JoinParty() {
       name: '디즈니+',
       category: 'media',
       originPrice: 13900,
-      discountedPrice: 3475,
+      discountedPrice: 4475,
       tag: '',
+      planDetailInfos: [
+        {
+          name: '디즈니플러스 프리미엄',
+          price: 4475,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: youtubePremiumImg,
@@ -95,8 +134,15 @@ export default function JoinParty() {
       name: '유튜브 프리미엄',
       category: 'media',
       originPrice: 14900,
-      discountedPrice: 3725,
+      discountedPrice: 4250,
       tag: 'hot',
+      planDetailInfos: [
+        {
+          name: '유튜브 프리미엄',
+          price: 4250,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: coupangPlayImg,
@@ -106,6 +152,13 @@ export default function JoinParty() {
       originPrice: 4900,
       discountedPrice: 1247,
       tag: 'new',
+      planDetailInfos: [
+        {
+          name: '쿠팡플레이 프리미엄',
+          price: 1247,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: ridiBooksImg,
@@ -115,6 +168,13 @@ export default function JoinParty() {
       originPrice: 9500,
       discountedPrice: 2375,
       tag: 'hot',
+      planDetailInfos: [
+        {
+          name: '리디북스 프리미엄',
+          price: 2375,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: miliImg,
@@ -124,15 +184,29 @@ export default function JoinParty() {
       originPrice: 6100,
       discountedPrice: 3050,
       tag: 'event',
+      planDetailInfos: [
+        {
+          name: '밀리 프리미엄',
+          price: 3050,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: yes24Img,
       iconImgAlt: 'yes24 image',
       name: '예스24 북클럽',
       category: 'book',
-      originPrice: 6100,
-      discountedPrice: 3050,
+      originPrice: 7900,
+      discountedPrice: 3950,
       tag: '',
+      planDetailInfos: [
+        {
+          name: '예스24 프리미엄',
+          price: 3950,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: spotifyImg,
@@ -142,6 +216,13 @@ export default function JoinParty() {
       originPrice: 9100,
       discountedPrice: 2275,
       tag: 'hot',
+      planDetailInfos: [
+        {
+          name: '스포티파이 프리미엄',
+          price: 2275,
+        },
+      ],
+      selectedPlan: '',
     },
     {
       iconImg: appleMusicImg,
@@ -151,8 +232,22 @@ export default function JoinParty() {
       originPrice: 8900,
       discountedPrice: 2225,
       tag: '',
+      planDetailInfos: [
+        {
+          name: '애플뮤직 프리미엄',
+          price: 2225,
+        },
+      ],
+      selectedPlan: '',
     },
   ];
+
+  const updateSelectedPlanInfo = joinPartySelectedPlanInfoStore(
+    (state: any) => state.updateSelectedPlanInfo
+  );
+
+  const [openSelectMembershipPlanModal, setOpenSelectMembershipPlanModal] =
+    useState<string | undefined>();
 
   useEffect(() => {
     AOS.init();
@@ -227,30 +322,36 @@ export default function JoinParty() {
           data-aos-easing='ease-out'
           data-aos-duration='250'
         >
-          {dataSet.map(
-            (data: DataSet, idx) =>
-              (categoryTabName === data.category ||
+          {joinPartySelectedPlanInfos.map(
+            (joinPartySelectedPlanInfo: JoinPartySelectedPlanInfo, idx) =>
+              (categoryTabName === joinPartySelectedPlanInfo.category ||
                 categoryTabName === 'all') && (
                 <button
                   key={idx}
                   className='flex flex-col items-center p-2 bg-white rounded-lg h-44 w-32 hover:scale-105 duration-300 ease-out'
+                  onClick={() => {
+                    setOpenSelectMembershipPlanModal('default');
+                    updateSelectedPlanInfo(joinPartySelectedPlanInfo);
+                  }}
                 >
                   <Image
-                    src={data.iconImg}
-                    alt={data.iconImgAlt}
+                    src={joinPartySelectedPlanInfo.iconImg}
+                    alt={joinPartySelectedPlanInfo.iconImgAlt}
                     width={85}
                     height={0}
                     quality={100}
                     className='
           mt-3'
                   />
-                  <p className='mt-3'>{data.name}</p>
+                  <p className='mt-3'>{joinPartySelectedPlanInfo.name}</p>
                   <p className='mt-[0.375rem] text-[#8b8b8b] text-[0.5rem] leading-[1] line-through font-extralight'>
-                    월 {data.originPrice.toLocaleString()}원
+                    월 {joinPartySelectedPlanInfo.originPrice.toLocaleString()}
+                    원
                   </p>
                   <p className='flex items-center gap-1 mt-1 text-[#656565] text-xs font-medium'>
-                    {data.discountedPrice.toLocaleString()}원{' '}
-                    {data.tag === 'hot' ? (
+                    {joinPartySelectedPlanInfo.discountedPrice.toLocaleString()}
+                    원{' '}
+                    {joinPartySelectedPlanInfo.tag === 'hot' ? (
                       <span>
                         <Image
                           src={hotImg}
@@ -261,7 +362,7 @@ export default function JoinParty() {
                           className=''
                         />
                       </span>
-                    ) : data.tag === 'event' ? (
+                    ) : joinPartySelectedPlanInfo.tag === 'event' ? (
                       <span>
                         <Image
                           src={eventImg}
@@ -276,6 +377,15 @@ export default function JoinParty() {
                   </p>
                 </button>
               )
+          )}
+
+          {openSelectMembershipPlanModal && (
+            <SelectMembershipPlanModal
+              openSelectMembershipPlanModal={openSelectMembershipPlanModal}
+              setOpenSelectMembershipPlanModal={
+                setOpenSelectMembershipPlanModal
+              }
+            />
           )}
         </div>
       </div>
