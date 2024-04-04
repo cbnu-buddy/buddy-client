@@ -283,12 +283,12 @@ export default function Register() {
               >
                 개인정보 수집 및 이용
               </span>
-              {openPrivacyPolicyModal ? (
+              {openPrivacyPolicyModal && (
                 <PrivacyPolicyModal
                   openPrivacyPolicyModal={openPrivacyPolicyModal}
                   setOpenPrivacyPolicyModal={setOpenPrivacyPolicyModal}
                 />
-              ) : null}
+              )}
             </button>
             <span className='text-[#6a6c73] text-[0.5rem] leading-[1]'>
               에 동의합니다

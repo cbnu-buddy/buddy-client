@@ -179,8 +179,6 @@ export default function Login() {
                   email: e.target.value,
                 })
               }
-              // 240 82 82
-              // d4d5d7
               className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
                 idInputAnnounceMsg ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
@@ -310,10 +308,10 @@ export default function Login() {
             disabled={
               userAccountInfo.email && userAccountInfo.pwd ? false : true
             }
-            className={`mt-12 px-4 py-[0.75rem] rounded-[0.425rem] box-shadow font-medium ${
+            className={`mt-12 px-4 py-[0.75rem] rounded-[0.425rem] box-shadow font-medium text-white ${
               userAccountInfo.email && userAccountInfo.pwd
-                ? 'text-white bg-[#3a8af9] hover:bg-[#1c6cdb]'
-                : 'text-white bg-[#bfc0c4]'
+                ? 'bg-[#3a8af9] hover:bg-[#1c6cdb]'
+                : 'bg-[#d3d3d3]'
             }`}
           >
             로그인 하기
@@ -341,12 +339,12 @@ export default function Login() {
               >
                 개인정보처리방침
               </button>
-              {openPrivacyPolicyModal ? (
+              {openPrivacyPolicyModal && (
                 <PrivacyPolicyModal
                   openPrivacyPolicyModal={openPrivacyPolicyModal}
                   setOpenPrivacyPolicyModal={setOpenPrivacyPolicyModal}
                 />
-              ) : null}
+              )}
             </div>
           </div>
         </form>

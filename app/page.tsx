@@ -25,15 +25,6 @@ export default function Home() {
   return (
     <div className='relative flex flex-col items-center gap-7'>
       <SwiperBanner />
-      {/* <button
-        className='fixed bottom-6 z-10 px-[3.75rem] py-4 bg-[#f9dc4a] text-lg tracking-wide font-semibold rounded-xl'
-        data-aos='zoom-in'
-        data-aos-easing='ease-out'
-        data-aos-duration='325'
-      >
-        😆 버디 시작하기
-      </button> */}
-
       <button className='mt-4' onClick={handleButtonClick}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -133,7 +124,7 @@ export default function Home() {
             <div className='grid grid-cols-2 gap-10 gap-y-24 mt-12'>
               <div className='flex flex-col gap-7'>
                 <Link
-                  href='/parties/register'
+                  href='/add-party'
                   className='w-fit bg-[#f3f4f5] p-7 rounded-2xl hover:brightness-[96%]'
                 >
                   <svg
@@ -162,7 +153,7 @@ export default function Home() {
 
               <div className='flex flex-col gap-7'>
                 <Link
-                  href='/parties/find'
+                  href='/join-party'
                   className='w-fit bg-[#eaf3fe] p-[1.925rem] rounded-2xl hover:brightness-[96%]'
                 >
                   <svg

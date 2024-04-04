@@ -1,9 +1,9 @@
 export default function Loading() {
   return (
-    <div className='w-10 h-10 mx-auto flex justify-center items-center text-3xl font-thin animate-spin'>
+    <div className='w-20 h-20 mx-auto flex justify-center items-center text-3xl font-thin animate-spin my-[15rem]'>
       <svg
         viewBox='0 0 32 32'
-        className='w-6 h-6 flex justify-center items-center text-3xl font-thin animate-spin'
+        className='w-7 h-7 flex justify-center items-center text-3xl font-thin animate-spin'
       >
         <circle
           cx='16'
