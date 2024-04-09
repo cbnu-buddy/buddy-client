@@ -2,8 +2,8 @@
 
 import { Modal } from 'flowbite-react';
 import React, { useState } from 'react';
-import { addPartySelectedPlanInfoStore } from '@/app/store/add-party/AddPartySelectedPlanInfo';
-import { AddPartySelectedPlanInfo } from '@/app/types/addPartySelectedPlanInfo';
+import { PartySelectedPlanInfoStore } from '@/app/store/party/PartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
 import uncheckedImg from '@/public/images/unchecked.png';
 import checkedImg from '@/public/images/checked.png';
 import Image from 'next/image';
@@ -19,10 +19,8 @@ export default function PartyLeaderGuideModal({
   openPartyLeaderGuideModal,
   setOpenPartyLeaderGuideModal,
 }: PartyLeaderGuideModalProps) {
-  const addPartySelectedPlanInfo: AddPartySelectedPlanInfo =
-    addPartySelectedPlanInfoStore(
-      (state: any) => state.addPartySelectedPlanInfo
-    );
+  const partySelectedPlanInfo: PartySelectedPlanInfo =
+    PartySelectedPlanInfoStore((state: any) => state.partySelectedPlanInfo);
 
   const [isCheckedPartyLeaderGuide, setIsCheckedPartyLeaderGuide] =
     useState(false);
@@ -49,9 +47,9 @@ export default function PartyLeaderGuideModal({
       <Modal.Body className='flex flex-col gap-y-3 max-h-[27.5rem] pt-0 spacing-y-28'>
         <h1 className='text-xl font-semibold'>파티장 가이드</h1>
         <span className='w-fit px-2 py-1 text-white bg-[#3a8af9] text-xs font-semibold rounded-[0.3rem]'>
-          {addPartySelectedPlanInfo.selectedPlan}
+          {partySelectedPlanInfo.selectedPlan}
         </span>
-        {addPartySelectedPlanInfo.partyLeaderGuides.map(
+        {partySelectedPlanInfo.partyLeaderGuides.map(
           (partyLeaderGuides, idx) => (
             <div key={idx} className='mt-3'>
               <p className='text-[#4a4a4a] font-medium'>
