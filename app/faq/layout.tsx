@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import magnifierImg from '@/public/images/magnifier.png';
 import phoneCallImg from '@/public/images/phone_call.png';
-import { faqTabNameStore } from '../store/faq/FaqTabName';
+import { FaqTabNameStore } from '../store/faq/FaqTabName';
 import button from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function FaqLayout({ children }: { children: React.ReactNode }) {
-  const faqTabName = faqTabNameStore((state: any) => state.tabName);
-  const updateFaqTabName = faqTabNameStore((state: any) => state.updateTabName);
+  const faqTabName = FaqTabNameStore((state: any) => state.tabName);
+  const updateFaqTabName = FaqTabNameStore((state: any) => state.updateTabName);
 
   const params: any = useParams();
   const faqId = parseInt(params.faqId);
