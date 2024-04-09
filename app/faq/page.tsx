@@ -7,10 +7,10 @@ import PartyMemberList from './components/partyMember/PartyMemberList';
 import PaymentAndAccumulationList from './components/paymentAndAccumulation/PaymentAndAccumulationList';
 import CouponAndPointList from './components/couponAndPoint/CouponAndPointList';
 import UseBuddyList from './components/useBuddy/UseBuddyList';
-import { faqTabNameStore } from '../store/faq/FaqTabName';
+import { FaqTabNameStore } from '../store/faq/FaqTabName';
 
 export default function Faq() {
-  const faqTabName = faqTabNameStore((state: any) => state.tabName);
+  const faqTabName = FaqTabNameStore((state: any) => state.tabName);
 
   return (
     <div>
