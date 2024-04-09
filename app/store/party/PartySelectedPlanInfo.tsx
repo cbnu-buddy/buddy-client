@@ -1,9 +1,9 @@
-import { JoinPartySelectedPlanInfo } from '@/app/types/joinPartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 export interface StoreState {
-  joinPartySelectedPlanInfo: JoinPartySelectedPlanInfo;
+  partySelectedPlanInfo: PartySelectedPlanInfo;
 }
 
 const initialState = {
@@ -18,28 +18,26 @@ const initialState = {
   selectedPlan: '',
 };
 
-export const joinPartySelectedPlanInfoStore = create(
+export const PartySelectedPlanInfoStore = create(
   devtools((set) => ({
-    joinPartySelectedPlanInfo: initialState,
-    updateSelectedPlanInfo: (
-      newJoinPartySelectedPlanInfo: JoinPartySelectedPlanInfo
-    ) =>
+    partySelectedPlanInfo: initialState,
+    updateSelectedPlanInfo: (newPartySelectedPlanInfo: PartySelectedPlanInfo) =>
       set((state: StoreState) => ({
-        joinPartySelectedPlanInfo: {
-          ...state.joinPartySelectedPlanInfo,
-          ...newJoinPartySelectedPlanInfo,
+        partySelectedPlanInfo: {
+          ...state.partySelectedPlanInfo,
+          ...newPartySelectedPlanInfo,
         },
       })),
     updateSelectedPlanName: (newSelectedPlanName: string) =>
       set((state: StoreState) => ({
-        joinPartySelectedPlanInfo: {
-          ...state.joinPartySelectedPlanInfo,
+        partySelectedPlanInfo: {
+          ...state.partySelectedPlanInfo,
           selectedPlan: newSelectedPlanName,
         },
       })),
     removeSelectedPlanInfo: () =>
       set(() => ({
-        joinPartySelectedPlanInfo: initialState,
+        partySelectedPlanInfo: initialState,
       })),
   }))
 );
