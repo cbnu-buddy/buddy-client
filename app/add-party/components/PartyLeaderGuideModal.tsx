@@ -7,6 +7,7 @@ import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
 import uncheckedImg from '@/public/images/unchecked.png';
 import checkedImg from '@/public/images/checked.png';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface PartyLeaderGuideModalProps {
   openPartyLeaderGuideModal: string | undefined;
@@ -25,12 +26,13 @@ export default function PartyLeaderGuideModal({
   const [isCheckedPartyLeaderGuide, setIsCheckedPartyLeaderGuide] =
     useState(false);
 
+  const router = useRouter();
+
   return (
     <Modal
       size='lg'
       show={openPartyLeaderGuideModal === 'default'}
       onClose={() => setOpenPartyLeaderGuideModal(undefined)}
-      className='fade-in-fast'
     >
       <Modal.Header className='border-none p-6 flex items-center'>
         <button className='mt-2'>
@@ -83,6 +85,7 @@ export default function PartyLeaderGuideModal({
           disabled={isCheckedPartyLeaderGuide ? false : true}
           onClick={() => {
             setOpenPartyLeaderGuideModal(undefined);
+            router.push(`/add-party/input-account/${1}`);
           }}
           className={`w-full text-white ${
             isCheckedPartyLeaderGuide ? 'bg-[#3a8af9]' : 'bg-[#d3d3d3]'
