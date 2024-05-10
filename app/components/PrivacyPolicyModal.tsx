@@ -16,7 +16,6 @@ export default function PrivacyPolicyModal({
     <Modal
       show={openPrivacyPolicyModal === 'default'}
       onClose={() => setOpenPrivacyPolicyModal(undefined)}
-      className='fade-in-fast'
     >
       <Modal.Header>개인정보처리방침</Modal.Header>
       <Modal.Body className='max-h-[27.5rem]'>
