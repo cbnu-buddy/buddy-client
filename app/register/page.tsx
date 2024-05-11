@@ -6,15 +6,16 @@ import { Label } from 'flowbite-react';
 import Link from 'next/link';
 
 export default function Register() {
+  const [id, setId] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isPwdVisibility, setIsPwdVisibility] = useState(false);
   const [repeatPassword, setRepeatPassword] = useState('');
   const [isRepeatPwdVisibility, setIsRepeatPwdVisibility] = useState(false);
-  useState(false);
   const [username, setUsername] = useState('');
   const [isChckedPrivacyPolicy, setIsChckedPrivacyPolicy] = useState(false);
 
+  const [isIdValidFail, setIsIdValidFail] = useState(false);
   const [isEmailValidFail, setIsEmailValidFail] = useState(false);
   const [isPasswordValidFail, setIsPasswordValidFail] = useState(false);
   const [isRepeatPasswordValidFail, setIsRepeatPasswordValidFail] =
@@ -24,16 +25,6 @@ export default function Register() {
     string | undefined
   >();
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    setIsEmailValidFail(false);
-  };
-
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-    setIsPasswordValidFail(false);
-  };
-
   const handleRepeatPasswordChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -41,13 +32,14 @@ export default function Register() {
     setIsRepeatPasswordValidFail(false);
   };
 
-  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
-    setIsUsernameValidFail(false);
-  };
-
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (!id) {
+      alert('아이디를 입력해 주세요');
+      setIsIdValidFail(true);
+      return;
+    }
 
     if (!email) {
       alert('제목을 입력해 주세요');
@@ -111,28 +103,28 @@ export default function Register() {
           <div className='relative'>
             <div className='mb-1'>
               <Label
-                htmlFor='email'
-                value='이메일'
+                htmlFor='id'
+                value='아이디'
                 className={`text-[#a2a4a9] text-[0.5rem] leading-[1] font-light`}
               />
             </div>
             <input
-              placeholder='abc@naver.com'
+              required
               type='text'
-              value={email}
-              onChange={handleEmailChange}
+              value={id}
+              onChange={(e) => setId(e.target.value)}
               className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
-                isEmailValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
+                isIdValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
-                email && 'pr-[2.5rem]'
+                id && 'pr-[2.5rem]'
               }`}
             />
-            {email && (
+            {id && (
               <button
                 className='absolute top-[2.05rem] right-3 p-1'
                 onClick={(e) => {
                   e.preventDefault();
-                  setEmail('');
+                  setId('');
                 }}
               >
                 <svg
@@ -159,7 +151,7 @@ export default function Register() {
               required
               type={isPwdVisibility ? 'text' : 'password'}
               value={password}
-              onChange={handlePasswordChange}
+              onChange={(e) => setPassword(e.target.value)}
               className={`rounded-[0.425rem] border ${
                 isPasswordValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3`}
@@ -234,6 +226,46 @@ export default function Register() {
           <div className='relative'>
             <div className='mb-1'>
               <Label
+                htmlFor='email'
+                value='이메일'
+                className={`text-[#a2a4a9] text-[0.5rem] leading-[1] font-light`}
+              />
+            </div>
+            <input
+              required
+              placeholder='abc@naver.com'
+              type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
+                isEmailValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
+              } text-sm font-light w-full focus:ring-0 py-3 ${
+                email && 'pr-[2.5rem]'
+              }`}
+            />
+            {email && (
+              <button
+                className='absolute top-[2.05rem] right-3 p-1'
+                onClick={(e) => {
+                  e.preventDefault();
+                  setEmail('');
+                }}
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  height='22'
+                  viewBox='0 -960 960 960'
+                  width='22'
+                  fill='#a2a4a9'
+                >
+                  <path d='M480-437.847 277.076-234.924q-8.307 8.308-20.884 8.5-12.576.193-21.268-8.5-8.693-8.692-8.693-21.076t8.693-21.076L437.847-480 234.924-682.924q-8.308-8.307-8.5-20.884-.193-12.576 8.5-21.268 8.692-8.693 21.076-8.693t21.076 8.693L480-522.153l202.924-202.923q8.307-8.308 20.884-8.5 12.576-.193 21.268 8.5 8.693 8.692 8.693 21.076t-8.693 21.076L522.153-480l202.923 202.924q8.308 8.307 8.5 20.884.193 12.576-8.5 21.268-8.692 8.693-21.076 8.693t-21.076-8.693L480-437.847Z' />
+                </svg>
+              </button>
+            )}
+          </div>
+          <div className='relative'>
+            <div className='mb-1'>
+              <Label
                 htmlFor='username'
                 value='이름'
                 className={`text-[#a2a4a9] text-[0.5rem] leading-[1] font-light`}
@@ -243,7 +275,7 @@ export default function Register() {
               required
               type='text'
               value={username}
-              onChange={handleUsernameChange}
+              onChange={(e) => setUsername(e.target.value)}
               className={`rounded-[0.425rem] border ${
                 isUsernameValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3`}
@@ -297,6 +329,7 @@ export default function Register() {
           <button
             type='submit'
             disabled={
+              id &&
               email &&
               password &&
               repeatPassword &&
@@ -306,6 +339,7 @@ export default function Register() {
                 : true
             }
             className={`mt-6 px-4 py-[0.75rem] rounded-[0.425rem] box-shadow font-medium bg-[#eaeffe] ${
+              id &&
               email &&
               password &&
               repeatPassword &&

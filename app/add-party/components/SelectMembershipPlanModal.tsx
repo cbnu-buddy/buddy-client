@@ -28,7 +28,6 @@ export default function SelectMembershipPlanModal({
       size='lg'
       show={openSelectMembershipPlanModal === 'default'}
       onClose={() => setOpenSelectMembershipPlanModal(undefined)}
-      className='fade-in-fast'
     >
       <Modal.Header className='border-none pb-0' />
       <Modal.Body className='flex flex-col gap-y-3 max-h-[27.5rem] pt-0 spacing-y-28'>

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import magnifierImg from '@/public/images/magnifier.png';
 import phoneCallImg from '@/public/images/phone_call.png';
 import { FaqTabNameStore } from '../store/faq/FaqTabName';
-import button from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect } from 'react';
 
