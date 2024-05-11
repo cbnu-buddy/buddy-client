@@ -85,7 +85,7 @@ export default function PartyLeaderGuideModal({
           disabled={isCheckedPartyLeaderGuide ? false : true}
           onClick={() => {
             setOpenPartyLeaderGuideModal(undefined);
-            router.push(`/add-party/input-account/${1}`);
+            router.push(`/add-party/plan/${1}`);
           }}
           className={`w-full text-white ${
             isCheckedPartyLeaderGuide ? 'bg-[#3a8af9]' : 'bg-[#d3d3d3]'
