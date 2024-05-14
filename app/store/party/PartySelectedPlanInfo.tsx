@@ -21,6 +21,7 @@ const initialState = {
 export const PartySelectedPlanInfoStore = create(
   devtools((set) => ({
     partySelectedPlanInfo: initialState,
+
     updateSelectedPlanInfo: (newPartySelectedPlanInfo: PartySelectedPlanInfo) =>
       set((state: StoreState) => ({
         partySelectedPlanInfo: {
@@ -28,6 +29,7 @@ export const PartySelectedPlanInfoStore = create(
           ...newPartySelectedPlanInfo,
         },
       })),
+
     updateSelectedPlanName: (newSelectedPlanName: string) =>
       set((state: StoreState) => ({
         partySelectedPlanInfo: {
@@ -35,6 +37,7 @@ export const PartySelectedPlanInfoStore = create(
           selectedPlan: newSelectedPlanName,
         },
       })),
+
     removeSelectedPlanInfo: () =>
       set(() => ({
         partySelectedPlanInfo: initialState,
