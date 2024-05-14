@@ -88,7 +88,9 @@ export default function PartyLeaderGuideModal({
             router.push(`/add-party/plan/${1}`);
           }}
           className={`w-full text-white ${
-            isCheckedPartyLeaderGuide ? 'bg-[#3a8af9]' : 'bg-[#d3d3d3]'
+            isCheckedPartyLeaderGuide
+              ? 'bg-[#3a8af9] focus:bg-[#1c6cdb] hover:bg-[#1c6cdb]'
+              : 'bg-[#d3d3d3]'
           }  p-[0.825rem] rounded-[0.45rem] font-semibold box-shadow duration-150 ease-out`}
         >
           다음
