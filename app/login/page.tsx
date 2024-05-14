@@ -14,10 +14,10 @@ import { Label } from 'flowbite-react';
 
 // 로그인 API
 // const login = (userAccountInfo: UserLoginInfoType) => {
-//   const { id, pwd } = userAccountInfo;
+//   const { id, password } = userAccountInfo;
 //   const reqBody = {
 //     no: id,
-//     password: pwd,
+//     password: password,
 //   };
 //   return axiosInstance.post('/auth/login', reqBody);
 // };
@@ -42,12 +42,12 @@ export default function Login() {
   //             alert('Bad Request(400)...');
   //             break;
   //           case 'INVALID_PASSWORD':
-  //             pwdInputRef.current?.focus();
-  //             setPwdInputAnnouceMsg('잘못된 비밀번호입니다.');
-  //             setPwdInputElementStyle(
+  //             passwordInputRef.current?.focus();
+  //             setpasswordInputAnnouceMsg('잘못된 비밀번호입니다.');
+  //             setpasswordInputElementStyle(
   //               STR_WRONG_CASE_INPUT_ELEMENT_STYLE_CLASSNAME
   //             );
-  //             setPwdLabelElementStyle(
+  //             setpasswordLabelElementStyle(
   //               STR_WRONG_CASE_LABEL_ELEMENT_STYLE_CLASSNAME
   //             );
   //             break;
@@ -107,24 +107,24 @@ export default function Login() {
 
   const [userAccountInfo, setUserAccountInfo] = useState({
     email: '',
-    pwd: '',
+    password: '',
   });
-  const [isPwdVisibility, setIsPwdVisibility] = useState(false);
+  const [ispasswordVisibility, setIspasswordVisibility] = useState(false);
   const [idInputAnnounceMsg, setIdInputAnnouceMsg] = useState('');
-  const [pwdInputAnnounceMsg, setPwdInputAnnouceMsg] = useState('');
+  const [passwordInputAnnounceMsg, setpasswordInputAnnouceMsg] = useState('');
   const [openPrivacyPolicyModal, setOpenPrivacyPolicyModal] = useState<
     string | undefined
   >();
 
   const idInputRef = useRef<HTMLInputElement>(null);
-  const pwdInputRef = useRef<HTMLInputElement>(null);
+  const passwordInputRef = useRef<HTMLInputElement>(null);
 
   const router = useRouter();
 
   const handleSignIn = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIdInputAnnouceMsg('');
-    setPwdInputAnnouceMsg('');
+    setpasswordInputAnnouceMsg('');
 
     if (!userAccountInfo.email) {
       idInputRef.current?.focus();
@@ -132,9 +132,9 @@ export default function Login() {
       return;
     }
 
-    if (!userAccountInfo.pwd) {
-      pwdInputRef.current?.focus();
-      setPwdInputAnnouceMsg('비밀번호를 입력하세요.');
+    if (!userAccountInfo.password) {
+      passwordInputRef.current?.focus();
+      setpasswordInputAnnouceMsg('비밀번호를 입력하세요.');
       return;
     }
 
@@ -239,26 +239,26 @@ export default function Login() {
             <input
               required
               placeholder='비밀번호를 입력해 주세요'
-              type={isPwdVisibility ? 'text' : 'password'}
-              value={userAccountInfo.pwd}
+              type={ispasswordVisibility ? 'text' : 'password'}
+              value={userAccountInfo.password}
               onChange={(e) => {
                 setUserAccountInfo({
                   ...userAccountInfo,
-                  pwd: e.target.value,
+                  password: e.target.value,
                 });
               }}
               className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
-                pwdInputAnnounceMsg ? 'border-red-500' : 'border-[#d4d5d7]'
+                passwordInputAnnounceMsg ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
-                userAccountInfo.pwd && 'pr-[2.5rem]'
+                userAccountInfo.password && 'pr-[2.5rem]'
               }`}
             />
-            {userAccountInfo.pwd && (
+            {userAccountInfo.password && (
               <button
                 className='absolute top-[2.05rem] right-3 p-1'
                 onClick={(e) => {
                   e.preventDefault();
-                  setIsPwdVisibility((prev) => !prev);
+                  setIspasswordVisibility((prev) => !prev);
                 }}
               >
                 <svg
@@ -268,7 +268,7 @@ export default function Login() {
                   width='22'
                   fill='#a2a4a9'
                 >
-                  {isPwdVisibility ? (
+                  {ispasswordVisibility ? (
                     <path d='M480.091-336.924q67.985 0 115.485-47.59 47.5-47.591 47.5-115.577 0-67.985-47.59-115.485-47.591-47.5-115.577-47.5-67.985 0-115.485 47.59-47.5 47.591-47.5 115.577 0 67.985 47.59 115.485 47.591 47.5 115.577 47.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.055 171.999q-137.977 0-251.439-76.115Q115.155-372.231 61.54-500q53.615-127.769 167.022-203.884 113.406-76.115 251.383-76.115t251.439 76.115Q844.845-627.769 898.46-500q-53.615 127.769-167.022 203.884-113.406 76.115-251.383 76.115ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z' />
                   ) : (
                     <path d='M630.922-441.078 586-486q9-49.693-28.346-89.346Q520.307-615 466-606l-44.922-44.922q13.538-6.077 27.769-9.115 14.23-3.039 31.153-3.039 68.076 0 115.576 47.5T643.076-500q0 16.923-3.039 31.538-3.038 14.615-9.115 27.384Zm127.231 124.462L714-358q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-46.614-46.614q37.923-15.077 77.461-22.231 39.538-7.154 81.153-7.154 140.615 0 253.614 77.538 113 77.539 164.846 202.461-22.231 53.615-57.423 100.076-35.192 46.461-82.884 83.308Zm32.308 231.383L628.616-245.848q-30.769 11.385-68.192 18.616Q523-220.001 480-220.001q-140.999 0-253.614-77.538Q113.771-375.078 61.54-500q22.154-53 57.231-98.885 35.077-45.884 77.231-79.576l-110.77-112 42.154-42.153 705.228 705.228-42.153 42.153ZM238.155-636.309q-31.692 25.231-61.654 60.655Q146.539-540.231 128-500q50 101 143.5 160.5T480-280q27.308 0 54.386-4.616 27.077-4.615 45.923-9.538l-50.616-51.847q-10.231 4.153-23.693 6.615-13.461 2.462-26 2.462-68.076 0-115.576-47.5T316.924-500q0-12.154 2.462-25.423 2.462-13.27 6.615-24.27l-87.846-86.616ZM541-531Zm-131.768 65.769Z' />
@@ -276,7 +276,7 @@ export default function Login() {
                 </svg>
               </button>
             )}
-            {pwdInputAnnounceMsg && (
+            {passwordInputAnnounceMsg && (
               <div className='flex mt-[0.3rem] mb-1'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -292,7 +292,7 @@ export default function Login() {
                   id='helper-checkbox-text'
                   className='relative pr-2 left-[0.5rem] w-full text-left text-xs font-normal text-[#c84031] dark:text-gray-300'
                 >
-                  {pwdInputAnnounceMsg}
+                  {passwordInputAnnounceMsg}
                 </p>
               </div>
             )}
@@ -306,10 +306,10 @@ export default function Login() {
             type='submit'
             onClick={handleSignIn}
             disabled={
-              userAccountInfo.email && userAccountInfo.pwd ? false : true
+              userAccountInfo.email && userAccountInfo.password ? false : true
             }
-            className={`mt-12 px-4 py-[0.75rem] rounded-[0.425rem] box-shadow font-medium text-white ${
-              userAccountInfo.email && userAccountInfo.pwd
+            className={`mt-12 px-4 py-[0.75rem] rounded-[0.425rem] box-shadow font-medium duration-150 ease-out text-white ${
+              userAccountInfo.email && userAccountInfo.password
                 ? 'bg-[#3a8af9] hover:bg-[#1c6cdb]'
                 : 'bg-[#d3d3d3]'
             }`}
