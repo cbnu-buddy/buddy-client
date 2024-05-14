@@ -47,7 +47,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`w-full z-10 py-3 px-2 pl-3 fixed top-0 border-b border-[#e6e8ea] whitespace-nowrap bg-white`}
+      className={`w-screen z-10 py-3 px-2 pl-3 fixed top-0 border-b border-[#e6e8ea] whitespace-nowrap bg-white`}
     >
       <div className='2lg:w-[60rem] flex items-center justify-between mx-auto'>
         <div className='py-2 2md:py-0'>
@@ -105,7 +105,7 @@ export default function Navbar() {
                     <span className='font-semibold'>홍길동</span>님
                   </Link>
                   <button
-                    className='px-3 py-2 rounded-md hover:bg-[#f3f4f5]'
+                    className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] mr-3'
                     //   onClick={() => logoutMutation.mutate()}
                   >
                     로그아웃
@@ -115,7 +115,7 @@ export default function Navbar() {
                 <>
                   <Link
                     href='/login'
-                    className='px-3 py-2 rounded-md hover:bg-[#f3f4f5]'
+                    className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] mr-3'
                   >
                     로그인
                   </Link>
@@ -128,13 +128,13 @@ export default function Navbar() {
           onClick={(e) => {
             setRightPos('right-0');
           }}
-          className={`block 2md:hidden px-[0.6rem] py-3 ml-auto mr-[0.1rem] rounded-full focus:outline-none text-center`}
+          className={`block 2md:hidden px-[0.6rem] py-3 ml-auto rounded-full focus:outline-none text-center mr-3`}
         >
           <div className='w-[1.1rem] h-[2px] bg-[#262626] mb-[4px]'></div>
           <div className='w-[1.1rem] h-[2px] bg-[#262626] mb-[4px]'></div>
           <div className='w-[1.1rem] h-[2px] bg-[#262626]'></div>
           <div
-            className={`absolute top-0 ${rightPos} h-screen w-full bg-white border opacity-95 transition-all duration-300 cursor-default`}
+            className={`absolute top-0 ${rightPos} h-screen w-full bg-white border opacity-95 duration-300 cursor-default`}
           >
             <div
               onClick={(e) => {

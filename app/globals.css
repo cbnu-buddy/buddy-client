@@ -78,3 +78,25 @@ ol {
   font-size: 1.25rem;
   line-height: 1.5;
 }
+
+/* Custom CSS */
+.calendar {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.075), 0 -1px 15px rgba(0, 0, 0, 0.075);
+}
+
+.rs-slider-handle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.rs-slider-handle::before {
+  width: 1.3rem !important;
+  height: 1.3rem !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2),
+    0 -1px 15px rgba(221, 219, 219, 0.2);
+  margin-bottom: -0.75rem;
+  margin-left: 0rem !important;
+}

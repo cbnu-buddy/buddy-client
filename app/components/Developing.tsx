@@ -15,7 +15,7 @@ export default function Developing() {
 
   return (
     <div className='flex justify-center'>
-      <h1 className='mt-[15rem] font-thin text-[2.25rem] w-[22.5rem]'>
+      <h1 className='my-[15rem] font-thin text-[2.25rem] w-[25rem]'>
         개발 중인 페이지입니다
         <span>{loadingDots}</span>
       </h1>

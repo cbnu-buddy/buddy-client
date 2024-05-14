@@ -1,6 +1,9 @@
 import { PartySelectedPlanInfoStore } from '@/app/store/party/PartySelectedPlanInfo';
 import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
 import { Modal } from 'flowbite-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 interface SelectMembershipPlanModalProps {
   openSelectMembershipPlanModal: string | undefined;
@@ -19,11 +22,17 @@ export default function SelectMembershipPlanModal({
     (state: any) => state.updateSelectedPlanName
   );
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Modal
       size='lg'
       show={openSelectMembershipPlanModal === 'default'}
       onClose={() => setOpenSelectMembershipPlanModal(undefined)}
+      data-aos='fade-zoom'
+      data-aos-duration='300'
     >
       <Modal.Header className='border-none pb-0' />
       <Modal.Body className='flex flex-col gap-y-3 max-h-[27.5rem] pt-0 spacing-y-28'>
@@ -89,8 +98,14 @@ export default function SelectMembershipPlanModal({
       </Modal.Body>
       <Modal.Footer className='border-none'>
         <button
+          disabled={partySelectedPlanInfo.selectedPlan ? false : true}
           onClick={() => setOpenSelectMembershipPlanModal(undefined)}
-          className='w-full text-white bg-[#3a8af9] p-[0.825rem] rounded-[0.45rem] font-semibold focus:bg-[#1c6cdb] hover:bg-[#1c6cdb] box-shadow'
+          className={`w-full text-white
+          ${
+            partySelectedPlanInfo.selectedPlan
+              ? 'bg-[#3a8af9] focus:bg-[#1c6cdb] hover:bg-[#1c6cdb]'
+              : 'bg-[#d3d3d3]'
+          } p-[0.825rem] rounded-[0.45rem] font-semibold box-shadow`}
         >
           다음
         </button>

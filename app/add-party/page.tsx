@@ -97,7 +97,7 @@ export default function AddParty() {
           className='grid grid-cols-6 gap-x-3 gap-y-3 mt-7'
           data-aos='fade-up'
           data-aos-easing='ease-out'
-          data-aos-duration='250'
+          data-aos-duration='375'
         >
           {partySelectedPlanInfos.map(
             (partySelectedPlanInfo: PartySelectedPlanInfo, idx) =>
