@@ -4,17 +4,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
-interface WarningStartPartyTodayProps {
+interface WarningStartPartyTodayModalProps {
   openWarningStartPartyTodayModal: string | undefined;
   setOpenWarningStartPartyTodayModal: React.Dispatch<
     React.SetStateAction<string | undefined>
   >;
 }
 
-export default function WarningStartPartyToday({
+export default function WarningStartPartyTodayModal({
   openWarningStartPartyTodayModal,
   setOpenWarningStartPartyTodayModal,
-}: WarningStartPartyTodayProps) {
+}: WarningStartPartyTodayModalProps) {
   useEffect(() => {
     AOS.init();
   }, []);
