@@ -1,22 +1,29 @@
 import { Modal } from 'flowbite-react';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { AddPartyDetailProps } from '../page';
+import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
 
 interface NotifyAddedPartyModalProps {
   openNotifyAddedPartyModal: string | undefined;
   setOpenNotifyAddedPartyModal: React.Dispatch<
     React.SetStateAction<string | undefined>
   >;
+  resData: AddPartyDetailProps;
 }
 
 export default function NotifyAddedPartyModal({
   openNotifyAddedPartyModal,
   setOpenNotifyAddedPartyModal,
+  resData,
 }: NotifyAddedPartyModalProps) {
   const router = useRouter();
+
+  const resetPartyInfo = AddPartyInfoStore(
+    (state: any) => state.resetPartyInfo
+  );
 
   useEffect(() => {
     AOS.init();
@@ -224,7 +231,9 @@ export default function NotifyAddedPartyModal({
           </defs>
         </svg>
 
-        <p className='text-lg font-extrabold'>넷플릭스 파티가 생성됐습니다! </p>
+        <p className='text-lg font-bold'>
+          {resData?.name} 파티가 생성됐습니다!{' '}
+        </p>
 
         <p className='mt-[-0.5rem] mb-3 h-[1.25rem] text-[0.8rem] text-[#727272] font-medium'>
           로그인 정보는 파티 시작 이후에 확인할 수 있어요
@@ -234,6 +243,7 @@ export default function NotifyAddedPartyModal({
         <button
           onClick={() => {
             setOpenNotifyAddedPartyModal(undefined);
+            resetPartyInfo();
             router.push('/my-party');
           }}
           className='w-full text-white text-[0.8rem] bg-[#3a8af9] hover:bg-[#1c6cdb] duration-150 ease-out p-[0.825rem] rounded-[0.45rem] font-bold box-shadow'
