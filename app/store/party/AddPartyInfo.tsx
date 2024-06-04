@@ -15,7 +15,7 @@ export interface AddPartyInfoState {
 
 const initialPartyInfoState = {
   stepName: 'inputAccount',
-  planName: '넷플릭스 스탠다드',
+  planName: '',
   accountInfo: { id: '', password: '' },
   recruitmentNum: 0,
   startDate: '',
