@@ -2,48 +2,47 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-// import { userInfoStore } from '../store/UserInfo';
-// import axiosInstance from '../utils/axiosInstance';
-// import { useMutation } from '@tanstack/react-query';
-// import { fetchCurrentUserInfo } from '../utils/fetchCurrentUserInfo';
+import axiosInstance from '../utils/axiosInstance';
+import { userInfoStore } from '../store/UserInfo';
+import { useMutation } from '@tanstack/react-query';
+import { fetchCurrentUserInfo } from '../utils/fetchCurrentUserInfo';
+// import ChannelService from '../third-party/ChannelTalk';
 
 // 로그아웃 API
-// const logout = () => {
-//   return axiosInstance.get(`${process.env.NEXT_PUBLIC_AUTH_URL}/logout`);
-// };
+const logout = () => {
+  return axiosInstance.get(`/private/auth/logout`);
+};
 
 export default function Navbar() {
-  //   const logoutMutation = useMutation({
-  //     mutationFn: logout,
-  //     onSettled: () => {
-  //       localStorage.removeItem('access-token');
-  //       localStorage.removeItem('refresh-token');
-  //       localStorage.removeItem('activeAuthorization');
-  //       if (typeof window !== 'undefined') window.location.href = '/login';
-  //       removeUserInfo.mutate();
-  //     },
-  //   });
+  const logoutMutation = useMutation({
+    mutationFn: logout,
+    onSettled: () => {
+      localStorage.removeItem('activeAuthorization');
+      if (typeof window !== 'undefined') window.location.href = '/login';
+      removeUserInfo.mutate();
+    },
+  });
 
-  //   const userInfo = userInfoStore((state: any) => state.userInfo);
-  //   const updateUserInfo = userInfoStore((state: any) => state.updateUserInfo);
-  //   const removeUserInfo = userInfoStore((state: any) => state.removeUserInfo);
+  const userInfo = userInfoStore((state: any) => state.userInfo);
+  const updateUserInfo = userInfoStore((state: any) => state.updateUserInfo);
+  const removeUserInfo = userInfoStore((state: any) => state.removeUserInfo);
 
   const [rightPos, setRightPos] = useState('-right-full');
 
-  //   useEffect(() => {
-  //     const CT = new ChannelService();
-  //     CT.loadScript();
-  //     CT.boot({ pluginKey: process.env.NEXT_PUBLIC_CHANNEL_TALK_PLUGIN_KEY! });
+  useEffect(() => {
+    // const CT = new ChannelService();
+    // CT.loadScript();
+    // CT.boot({ pluginKey: process.env.NEXT_PUBLIC_CHANNEL_TALK_PLUGIN_KEY! });
 
-  //     // (로그인 한) 사용자 정보 조회
-  //     const activeAuthorization = localStorage.getItem('activeAuthorization');
-  //     if (activeAuthorization) fetchCurrentUserInfo(updateUserInfo);
+    // (로그인 한) 사용자 정보 조회
+    const activeAuthorization = localStorage.getItem('activeAuthorization');
+    if (activeAuthorization) fetchCurrentUserInfo(updateUserInfo);
 
-  //     //for unmount
-  //     return () => {
-  //       CT.shutdown();
-  //     };
-  //   }, [updateUserInfo]);
+    //for unmount
+    // return () => {
+    //   CT.shutdown();
+    // };
+  }, [updateUserInfo]);
 
   return (
     <nav
@@ -67,6 +66,14 @@ export default function Navbar() {
         </div>
         <div className='hidden 2md:flex'>
           <div className='flex gap-6 font-medium mx-auto'>
+            {userInfo.isAuth && (
+              <Link
+                href='/my-party'
+                className='px-4 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
+              >
+                나의 파티
+              </Link>
+            )}
             <Link
               href='/add-party'
               className='px-4 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
@@ -79,12 +86,12 @@ export default function Navbar() {
             >
               파티 찾기
             </Link>
-            <Link
+            {/* <Link
               href='/contents'
               className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
             >
               작품 정보
-            </Link>
+            </Link> */}
             <Link
               href='/faq'
               className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
@@ -94,19 +101,23 @@ export default function Navbar() {
           </div>
           <div className='ml-24'>
             <div className='flex ml-auto gap-3'>
-              {/* {userInfo.isAuth ? ( */}
-              {false ? (
+              {userInfo.isAuth ? (
                 <>
                   <Link
-                    href='/mypage/profile'
+                    href='/my-page'
                     className='px-3 py-2 rounded-md hover:bg-[#f3f4f5]'
                   >
-                    {/* <span className='font-semibold'>{userInfo.name}</span>님 */}
-                    <span className='font-semibold'>홍길동</span>님
+                    <span className='font-semibold'>{userInfo.username}</span>님
                   </Link>
                   <button
                     className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] mr-3'
-                    //   onClick={() => logoutMutation.mutate()}
+                    onClick={() => {
+                      localStorage.removeItem('activeAuthorization');
+                      if (typeof window !== 'undefined')
+                        window.location.href = '/login';
+                      removeUserInfo();
+                      logoutMutation.mutate();
+                    }}
                   >
                     로그아웃
                   </button>
@@ -154,25 +165,28 @@ export default function Navbar() {
             </div>
             <ul className='flex flex-col items-center w-full text-base cursor-pointer pt-4'>
               <div className='flex flex-col w-full border-b-[0.75rem] text-sm'>
-                {/* {userInfo.isAuth ? ( */}
-                {false ? (
+                {userInfo.isAuth ? (
                   <>
                     <Link
-                      href='/mypage/profile'
+                      href='/my-page'
                       onClick={(e) => {
                         e.stopPropagation();
                         setRightPos('-right-full');
                       }}
                       className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full'
                     >
-                      {/* <span className='font-semibold'>{userInfo.name}</span>님 */}
-                      <span className='font-semibold'>홍길동</span>님
+                      <span className='font-semibold'>{userInfo.username}</span>
+                      님
                     </Link>
                     <button
                       className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full'
                       onClick={(e) => {
                         e.stopPropagation();
                         setRightPos('-right-full');
+                        localStorage.removeItem('activeAuthorization');
+                        if (typeof window !== 'undefined')
+                          window.location.href = '/login';
+                        removeUserInfo();
                         // logoutMutation.mutate();
                       }}
                     >
@@ -194,6 +208,19 @@ export default function Navbar() {
                   </>
                 )}
               </div>
+
+              {userInfo.isAuth && (
+                <Link
+                  href='/my-party'
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setRightPos('-right-full');
+                  }}
+                  className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full font-medium'
+                >
+                  나의 파티
+                </Link>
+              )}
               <Link
                 href='/add-party'
                 onClick={(e) => {
@@ -214,7 +241,7 @@ export default function Navbar() {
               >
                 파티 찾기
               </Link>
-              <Link
+              {/* <Link
                 href='/contents'
                 onClick={(e) => {
                   e.stopPropagation();
@@ -223,7 +250,7 @@ export default function Navbar() {
                 className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full font-medium'
               >
                 작품 정보
-              </Link>
+              </Link> */}
               <Link
                 href='/faq'
                 onClick={(e) => {
