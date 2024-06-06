@@ -7,12 +7,14 @@ export interface PartySelectedPlanInfo {
   category: string;
   tag: string;
   planDetailInfos: {
+    id: number;
     name: string;
     price: number;
     maxPartyMemberNum: number;
     description: (string | undefined)[];
   }[];
-  selectedPlan: string;
+  selectedPlanName: string;
+  selectedPlanId: number;
   partyLeaderGuides: {
     subtitle: string;
     description: string;
