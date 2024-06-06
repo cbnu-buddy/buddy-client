@@ -3,8 +3,13 @@ import AskInputValidAccountInfoModal from './AskInputValidAccountInfoModal';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyDetailProps } from '../page';
 
-export default function InputAccount() {
+interface InputAccountProps {
+  resData: AddPartyDetailProps;
+}
+
+export default function InputAccount({ resData }: InputAccountProps) {
   const partyInfo = AddPartyInfoStore((state: any) => state.partyInfo);
 
   const [id, setId] = useState(partyInfo.accountInfo.id);
@@ -50,7 +55,7 @@ export default function InputAccount() {
         data-aos-easing='ease-out'
         data-aos-duration='1500'
       >
-        <span className='text-[#1c6cdb]'>넷플릭스 스탠다드</span>
+        <span className='text-[#1c6cdb]'>{resData?.name}</span>
         의<br /> 로그인 정보를 입력해 주세요.
       </p>
       <div className='flex flex-col gap-y-[0.6rem] mt-8'>
@@ -167,17 +172,17 @@ export default function InputAccount() {
         <p className='text-inherit'>- 정확한 로그인 정보를 입력해 주세요.</p>
       </div>
 
-      <a
+      {/* <a
         target='_blank'
         href='https://help.netflix.com/ko/node/24926'
         className='mt-14 flex justify-center text-[0.5rem] leading-[1] font-extralight text-[#656565] underline'
       >
         넷플릭스 스탠다드 바로가기
-      </a>
+      </a> */}
 
       <button
         disabled={id && password && repeatPassword ? false : true}
-        className={`w-full mt-8 h-13 p-4 text-[0.8rem] leading-[1] border-transparent ${
+        className={`w-full mt-20 h-13 p-4 text-[0.8rem] leading-[1] border-transparent ${
           id && password && repeatPassword
             ? 'bg-[#3a8af9] hover:bg-[#1c6cdb]'
             : 'bg-[#d3d3d3]'

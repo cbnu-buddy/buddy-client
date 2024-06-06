@@ -5,9 +5,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyDetailProps } from '../page';
 
-export default function SelectRecruitmentNum() {
-  const maxRecruitmentNum = 3;
+interface SelectRecruitmentNumProps {
+  resData: AddPartyDetailProps;
+}
+
+export default function SelectRecruitmentNum({
+  resData,
+}: SelectRecruitmentNumProps) {
+  const maxRecruitmentNum = resData?.maxMemberNum - 1;
 
   const partyInfo = AddPartyInfoStore((state: any) => state.partyInfo);
   const updateRecruitmentNum = AddPartyInfoStore(

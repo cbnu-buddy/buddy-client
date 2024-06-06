@@ -6,6 +6,7 @@ import phoneCallImg from '@/public/images/phone_call.png';
 import { FaqTabNameStore } from '../store/faq/FaqTabName';
 import { useParams } from 'next/navigation';
 import { useEffect } from 'react';
+import AOS from 'aos';
 
 export default function FaqLayout({ children }: { children: React.ReactNode }) {
   const faqTabName = FaqTabNameStore((state: any) => state.tabName);
@@ -25,11 +26,22 @@ export default function FaqLayout({ children }: { children: React.ReactNode }) {
     else if (faqId >= 43 && faqId <= 50) updateFaqTabName('useBuddy');
   }, [faqId, updateFaqTabName]);
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div>
-      <div className='flex justify-center items-center bg-gradient-to-r from-[#d0d8f4] to-[#c7def3]'>
+      <div className="flex justify-center items-center from-[#d0d8f4] to-[#c7def3] bg-[url('/images/faq_page_background.png')] bg-cover bg-center">
         <div className='relative grid grid-cols-1 gap-y-6 w-[42.5rem] py-[5rem]'>
-          <h1 className='text-2xl font-semibold'>무엇을 도와드릴까요?</h1>
+          <h1
+            className='text-2xl font-semibold text-[#062e6f]'
+            data-aos='fade-zoom-in'
+            data-aos-easing='ease-out'
+            data-aos-duration='900'
+          >
+            무엇을 도와드릴까요?
+          </h1>
           <div className='relative'>
             <input
               type='text'

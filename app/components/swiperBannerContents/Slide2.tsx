@@ -1,6 +1,13 @@
 'use client';
 
+import axiosInstance from '@/app/utils/axiosInstance';
+import { useQuery } from '@tanstack/react-query';
 import { FC, useEffect, useState } from 'react';
+
+// 현재 매칭 대기 중인 모든 파티의 파티원 총 인원수 합산 값 조회 API
+const fetchWaitingMembers = () => {
+  return axiosInstance.get(`/public/party/waiting-members`);
+};
 
 interface Slide2Props {
   handlePrev: () => void;
@@ -9,17 +16,14 @@ interface Slide2Props {
 
 // 한글 날짜 형식으로 변환하는 함수
 const formatDate = (date: Date) => {
-  // 날짜 객체에서 년, 월, 일, 시, 분 추출
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const hour = date.getHours();
   const minute = date.getMinutes();
 
-  // 시간을 오전/오후 형식으로 변경
   const ampm = hour < 12 ? '오전' : '오후';
 
-  // 한글 형식으로 날짜 및 시간 조합
   const formattedDate = `${year}.${month < 10 ? '0' : ''}${month}.${
     day < 10 ? '0' : ''
   }${day} ${ampm} ${hour < 10 ? '0' : ''}${hour}:${
@@ -30,15 +34,16 @@ const formatDate = (date: Date) => {
 };
 
 export const Slide2: FC<Slide2Props> = ({ handlePrev, handleNext }) => {
+  const { isPending, data } = useQuery({
+    queryKey: ['waitingMembers'],
+    queryFn: fetchWaitingMembers,
+  });
+
+  const resData = data?.data.response ?? 0;
+
   const [isVisible, setIsVisible] = useState(true);
-  const [randNum, setRandNum] = useState<number>(0);
 
   const currentTime = new Date();
-
-  useEffect(() => {
-    // 처음 렌더링될 때만 0부터 9까지의 임의의 값을 설정
-    setRandNum(Math.floor(Math.random() * 10));
-  }, []); // 빈 배열을 두어 한 번만 실행되도록 설정
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,6 +52,9 @@ export const Slide2: FC<Slide2Props> = ({ handlePrev, handleNext }) => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const tensPlace = Math.floor(resData / 10);
+  const unitsPlace = resData % 10;
 
   return (
     <div className='flex justify-center w-full h-[32.5rem] bg-[#262626]'>
@@ -110,13 +118,13 @@ export const Slide2: FC<Slide2Props> = ({ handlePrev, handleNext }) => {
         <div className='relative flex items-end gap-[0.55rem]'>
           <div className='relative w-28 h-[9.5rem] flex justify-center items-center bg-black rounded-lg'>
             <span className='strech text-5xl text-[6.5rem] pt-1 pb-5 font-semibold leading-[1.75] text-white'>
-              3
+              {tensPlace}
             </span>
             <hr className='w-full absolute top-[4.75rem] border-[1.5px] border-x-black border-y-black' />
           </div>
           <div className='relative w-28 h-[9.5rem] flex justify-center items-center bg-black rounded-lg'>
             <span className='text-5xl text-[6.5rem] pt-1 pb-5 font-semibold leading-[1.75] text-white'>
-              {randNum}
+              {unitsPlace}
             </span>
             <hr className='w-full absolute top-[4.75rem] border-[1.5px] border-x-black border-y-black' />
             <div className='absolute border-b-red-500 border-b-8' />

@@ -25,6 +25,9 @@ export default function SelectMembershipPlanModal({
   const updateSelectedPlanName = PartySelectedPlanInfoStore(
     (state: any) => state.updateSelectedPlanName
   );
+  const updateSelectedPlanId = PartySelectedPlanInfoStore(
+    (state: any) => state.updateSelectedPlanId
+  );
 
   useEffect(() => {
     AOS.init();
@@ -60,23 +63,26 @@ export default function SelectMembershipPlanModal({
             <button
               key={idx}
               className={`p-4 border-[1.5px] text-left ${
-                partySelectedPlanInfo.selectedPlan === planDetailInfo.name
+                partySelectedPlanInfo.selectedPlanName === planDetailInfo.name
                   ? 'border-[#3a8af9] text-[#3a8af9]'
                   : 'border-[#d4d5d7]'
               }  hover:border-[#3a8af9] text-[#d4d5d7] rounded-lg duration-150`}
               onClick={() => {
+                updateSelectedPlanId(planDetailInfo.id);
                 updateSelectedPlanName(planDetailInfo.name);
               }}
             >
               <p className='flex items-center gap-x-[0.375rem] text-inherit'>
-                {partySelectedPlanInfo.selectedPlan === planDetailInfo.name && (
+                {partySelectedPlanInfo.selectedPlanName ===
+                  planDetailInfo.name && (
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     height='22.5'
                     viewBox='0 -960 960 960'
                     width='22.5'
                     fill={
-                      partySelectedPlanInfo.selectedPlan === planDetailInfo.name
+                      partySelectedPlanInfo.selectedPlanName ===
+                      planDetailInfo.name
                         ? '#3a8af9'
                         : '#d4d5d7'
                     }
@@ -88,7 +94,8 @@ export default function SelectMembershipPlanModal({
 
                 <span
                   className={`text-[0.9rem] ${
-                    partySelectedPlanInfo.selectedPlan === planDetailInfo.name
+                    partySelectedPlanInfo.selectedPlanName ===
+                    planDetailInfo.name
                       ? 'text-[#3a8af9]'
                       : 'text-[#]'
                   } leading-[1.25] font-semibold`}
@@ -97,7 +104,8 @@ export default function SelectMembershipPlanModal({
                 </span>
               </p>
 
-              {partySelectedPlanInfo.selectedPlan === planDetailInfo.name && (
+              {partySelectedPlanInfo.selectedPlanName ===
+                planDetailInfo.name && (
                 <ul className='flex flex-col gap-y-1 text-xs mt-4 font-light ml-1'>
                   {planDetailInfo.description.map(
                     (planDescription: any, idx) => (
@@ -120,14 +128,14 @@ export default function SelectMembershipPlanModal({
       </Modal.Body>
       <Modal.Footer className='border-none'>
         <button
-          disabled={partySelectedPlanInfo.selectedPlan ? false : true}
+          disabled={partySelectedPlanInfo.selectedPlanName ? false : true}
           onClick={() => {
             setOpenSelectMembershipPlanModal(undefined);
             setOpenPartyLeaderGuideModal('default');
           }}
           className={`w-full text-white
           ${
-            partySelectedPlanInfo.selectedPlan
+            partySelectedPlanInfo.selectedPlanName
               ? 'bg-[#3a8af9] focus:bg-[#1c6cdb] hover:bg-[#1c6cdb]'
               : 'bg-[#d3d3d3]'
           } p-[0.825rem] rounded-[0.45rem] font-semibold box-shadow duration-150 ease-out`}

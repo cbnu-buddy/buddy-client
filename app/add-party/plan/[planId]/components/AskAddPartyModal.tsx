@@ -3,6 +3,9 @@ import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import axiosInstance from '@/app/utils/axiosInstance';
+import { useMutation } from '@tanstack/react-query';
+import { AxiosError } from 'axios';
 
 interface AskAddPartyModalProps {
   openAskAddPartyModal: string | undefined;
@@ -12,13 +15,65 @@ interface AskAddPartyModalProps {
   setOpenNotifyAddedPartyModal: React.Dispatch<
     React.SetStateAction<string | undefined>
   >;
+  planId: string;
+  partyInfo: any;
 }
+
+interface PartyInfoType {
+  planId: string;
+  leaderId: string;
+  leaderPwd: string;
+  recLimit: number;
+  startDate: Date;
+  durationMonth: number;
+  endDate: Date;
+}
+
+// 파티 생성하기 API
+const addParty = (partyInfo: PartyInfoType) => {
+  const reqBody = {
+    planId: Number(partyInfo.planId),
+    leaderId: partyInfo.leaderId,
+    leaderPwd: partyInfo.leaderPwd,
+    recLimit: partyInfo.recLimit,
+    startDate: partyInfo.startDate,
+    durationMonth: partyInfo.durationMonth,
+    endDate: partyInfo.endDate,
+  };
+  return axiosInstance.post('/private/party', reqBody);
+};
 
 export default function AskAddPartyModal({
   openAskAddPartyModal,
   setOpenAskAddPartyModal,
   setOpenNotifyAddedPartyModal,
+  planId,
+  partyInfo,
 }: AskAddPartyModalProps) {
+  const addPartyMutation = useMutation({
+    mutationFn: addParty,
+    onMutate: () => {},
+    onError: (error: AxiosError) => {
+      const resData: any = error.response;
+      switch (resData?.status) {
+        case 409:
+          switch (resData?.data.error.status) {
+            // case 'CONFLICT':
+            //   alert('이미 처리된 결제 정보입니다.');
+            //   router.push('/my-page');
+            //   break;
+            default:
+              alert('정의되지 않은 http code입니다.');
+          }
+          break;
+        default:
+          alert('정의되지 않은 http status code입니다');
+      }
+    },
+    onSuccess: (data) => {},
+    onSettled: () => {},
+  });
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -49,6 +104,15 @@ export default function AskAddPartyModal({
         </button>
         <button
           onClick={() => {
+            addPartyMutation.mutate({
+              planId,
+              leaderId: partyInfo.accountInfo.id,
+              leaderPwd: partyInfo.accountInfo.password,
+              recLimit: partyInfo.recruitmentNum,
+              startDate: partyInfo.startDate,
+              durationMonth: partyInfo.durationMonth,
+              endDate: partyInfo.endDate,
+            });
             setOpenAskAddPartyModal(undefined);
             setOpenNotifyAddedPartyModal('default');
           }}

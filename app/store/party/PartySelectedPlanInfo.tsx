@@ -15,7 +15,8 @@ const initialState = {
   discountedPrice: 0,
   tag: '',
   planDetailInfos: [],
-  selectedPlan: '',
+  selectedPlanName: '',
+  selectedPlanId: 0,
 };
 
 export const PartySelectedPlanInfoStore = create(
@@ -34,7 +35,15 @@ export const PartySelectedPlanInfoStore = create(
       set((state: StoreState) => ({
         partySelectedPlanInfo: {
           ...state.partySelectedPlanInfo,
-          selectedPlan: newSelectedPlanName,
+          selectedPlanName: newSelectedPlanName,
+        },
+      })),
+
+    updateSelectedPlanId: (newSelectedPlanId: string) =>
+      set((state: StoreState) => ({
+        partySelectedPlanInfo: {
+          ...state.partySelectedPlanInfo,
+          selectedPlanId: newSelectedPlanId,
         },
       })),
 

@@ -49,7 +49,7 @@ export default function PartyLeaderGuideModal({
       <Modal.Body className='flex flex-col gap-y-3 max-h-[27.5rem] pt-0 spacing-y-28'>
         <h1 className='text-xl font-semibold'>파티장 가이드</h1>
         <span className='w-fit px-2 py-1 text-white bg-[#3a8af9] text-xs font-semibold rounded-[0.3rem]'>
-          {partySelectedPlanInfo.selectedPlan}
+          {partySelectedPlanInfo.selectedPlanName}
         </span>
         {partySelectedPlanInfo.partyLeaderGuides.map(
           (partyLeaderGuides, idx) => (
@@ -85,7 +85,9 @@ export default function PartyLeaderGuideModal({
           disabled={isCheckedPartyLeaderGuide ? false : true}
           onClick={() => {
             setOpenPartyLeaderGuideModal(undefined);
-            router.push(`/add-party/plan/${1}`);
+            router.push(
+              `/add-party/plan/${partySelectedPlanInfo.selectedPlanId}`
+            );
           }}
           className={`w-full text-white ${
             isCheckedPartyLeaderGuide

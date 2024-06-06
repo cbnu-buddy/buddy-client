@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import AskInputValidAccountInfoModal from './AskInputValidAccountInfoModal';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
-import { PartySelectedPlanInfoStore } from '@/app/store/party/PartySelectedPlanInfo';
-import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
 import AskAddPartyModal from './AskAddPartyModal';
 import NotifyAddedPartyModal from './NotifyAddedPartyModal';
+import { AddPartyDetailProps } from '../page';
 
-export default function ConfirmPartyRule() {
-  const partySelectedPlanInfo: PartySelectedPlanInfo =
-    PartySelectedPlanInfoStore((state: any) => state.partySelectedPlanInfo);
+interface ConfirmPartyRuleProps {
+  resData: AddPartyDetailProps;
+  planId: string;
+}
+
+export default function ConfirmPartyRule({
+  resData,
+  planId,
+}: ConfirmPartyRuleProps) {
   const partyInfo = AddPartyInfoStore((state: any) => state.partyInfo);
 
   const [isRulesAgreed, setIsRulesAgreed] = useState<boolean[]>([
@@ -68,12 +72,12 @@ export default function ConfirmPartyRule() {
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
             <span className='text-inherit text-[0.8rem] font-medium'>
-              {partyInfo.planName}의 로그인 정보를 정확하게 입력/관리하겠습니다.
+              {resData?.name}의 로그인 정보를 정확하게 입력/관리하겠습니다.
             </span>
           </div>
 
           {!isRulesAgreed[0] && (
-            <div className='duration-300 ease-out mt-[0.375rem] flex flex-col items-start p-3 text-left text-[0.5rem] text-[#8b8b8b] border border-[#e3e3e3] rounded-lg font-normal'>
+            <div className='duration-300 ease-out mt-[0.375rem] flex flex-col items-start p-3 tAddPartyDetailPropsext-left text-[0.5rem] text-[#8b8b8b] border border-[#e3e3e3] rounded-lg font-normal'>
               <p className='text-inherit leading-[1.25]'>
                 - 아이디 : {partyInfo.accountInfo.id}
               </p>
@@ -188,15 +192,16 @@ export default function ConfirmPartyRule() {
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
             <span className='text-inherit text-[0.8rem] font-medium'>
-              매달 1일에 최대 {(13500).toLocaleString()}
+              매달 1일에 최대 {resData?.monthlyFee.toLocaleString()}
               원의 파티 요금이 적립될 예정입니다.
             </span>
           </div>
           {!isRulesAgreed[3] && (
             <div className='mt-[0.375rem] flex flex-col items-start p-3 text-left text-[0.5rem] text-[#8b8b8b] border border-[#e3e3e3] rounded-lg font-normal'>
               <p className='text-inherit leading-[1.25]'>
-                파티원 {1}명을 모두 모집할 경우, 매달 {(13500).toLocaleString()}
-                원의 파티 요금이 매달 링키드 정산일(1일)에 적립됩니다.
+                파티원 {1}명을 모두 모집할 경우, 매달{' '}
+                {resData?.monthlyFee.toLocaleString()}
+                원의 파티 요금이 매달 버디 정산일(1일)에 적립됩니다.
               </p>
             </div>
           )}
@@ -222,7 +227,7 @@ export default function ConfirmPartyRule() {
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
             <span className='text-inherit text-[0.8rem] font-medium'>
-              파티장 귀책시 최대 11,700원의 위약금이 부과될 수 있습니다.
+              파티장 귀책 시 최대 10,800원의 위약금이 부과될 수 있습니다.
             </span>
           </div>
           {!isRulesAgreed[4] && (
@@ -269,12 +274,15 @@ export default function ConfirmPartyRule() {
           openAskAddPartyModal={openAskAddPartyModal}
           setOpenAskAddPartyModal={setOpenAskAddPartyModal}
           setOpenNotifyAddedPartyModal={setOpenNotifyAddedPartyModal}
+          planId={planId}
+          partyInfo={partyInfo}
         />
       )}
       {openNotifyAddedPartyModal && (
         <NotifyAddedPartyModal
           openNotifyAddedPartyModal={openNotifyAddedPartyModal}
           setOpenNotifyAddedPartyModal={setOpenNotifyAddedPartyModal}
+          resData={resData}
         />
       )}
     </div>

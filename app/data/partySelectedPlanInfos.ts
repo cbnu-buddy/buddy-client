@@ -22,6 +22,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'hot',
     planDetailInfos: [
       {
+        id: 1,
         name: '넷플릭스 스탠다드',
         price: 13500,
         maxPartyMemberNum: 2,
@@ -36,6 +37,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
       {
+        id: 2,
         name: '넷플릭스 프리미엄',
         price: 17000,
         maxPartyMemberNum: 4,
@@ -52,7 +54,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: "'한국' 넷플릭스 계정만 공유할 수 있어요.",
@@ -91,6 +94,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'hot',
     planDetailInfos: [
       {
+        id: 3,
         name: '웨이브 스탠다드',
         price: 10900,
         maxPartyMemberNum: 2,
@@ -106,6 +110,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
       {
+        id: 4,
         name: '웨이브 프리미엄',
         price: 13900,
         maxPartyMemberNum: 4,
@@ -122,7 +127,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -160,6 +166,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'hot',
     planDetailInfos: [
       {
+        id: 5,
         name: '왓챠 프리미엄',
         price: 12900,
         maxPartyMemberNum: 4,
@@ -176,7 +183,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -209,6 +217,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: '',
     planDetailInfos: [
       {
+        id: 6,
         name: '라프텔 프리미엄',
         price: 14900,
         maxPartyMemberNum: 4,
@@ -225,7 +234,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -263,6 +273,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'hot',
     planDetailInfos: [
       {
+        id: 7,
         name: '티빙 스탠다드',
         price: 13500,
         maxPartyMemberNum: 2,
@@ -277,6 +288,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
       {
+        id: 8,
         name: '티빙 프리미엄',
         price: 17000,
         maxPartyMemberNum: 4,
@@ -293,7 +305,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -332,6 +345,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: '',
     planDetailInfos: [
       {
+        id: 9,
         name: '디즈니플러스 스탠다드',
         price: 9900,
         maxPartyMemberNum: 2,
@@ -346,6 +360,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
       {
+        id: 10,
         name: '디즈니플러스 프리미엄',
         price: 17000,
         maxPartyMemberNum: 4,
@@ -362,7 +377,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: "'디즈니플러스의 ID를 버디 메일로 변경해 주세요.",
@@ -395,6 +411,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'hot',
     planDetailInfos: [
       {
+        id: 11,
         name: '유튜브 프리미엄',
         price: 14900,
         maxPartyMemberNum: 10,
@@ -411,7 +428,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -450,6 +468,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'new',
     planDetailInfos: [
       {
+        id: 12,
         name: '쿠팡플레이',
         price: 4900,
         maxPartyMemberNum: 5,
@@ -466,7 +485,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -509,6 +529,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'hot',
     planDetailInfos: [
       {
+        id: 13,
         name: '리디셀렉트',
         price: 4990,
         maxPartyMemberNum: 5,
@@ -525,7 +546,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -564,6 +586,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'event',
     planDetailInfos: [
       {
+        id: 14,
         name: '밀리의 서재',
         price: 9900,
         maxPartyMemberNum: 3,
@@ -580,7 +603,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -619,6 +643,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: '',
     planDetailInfos: [
       {
+        id: 15,
         name: '예스24 스탠다드',
         price: 5500,
         maxPartyMemberNum: 5,
@@ -635,6 +660,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
       {
+        id: 16,
         name: '예스24 프리미엄',
         price: 7700,
         maxPartyMemberNum: 5,
@@ -651,7 +677,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -690,6 +717,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: 'hot',
     planDetailInfos: [
       {
+        id: 17,
         name: '스포티파이 프리미엄',
         price: 16350,
         maxPartyMemberNum: 2,
@@ -705,7 +733,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',
@@ -744,7 +773,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     tag: '',
     planDetailInfos: [
       {
-        name: '애플뮤직 프리미엄',
+        id: 18,
+        name: '애플 뮤직',
         price: 13500,
         maxPartyMemberNum: 6,
         description: [
@@ -760,7 +790,8 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
         ],
       },
     ],
-    selectedPlan: '',
+    selectedPlanName: '',
+    selectedPlanId: 0,
     partyLeaderGuides: [
       {
         subtitle: '공유해도 안전한 비밀번호를 사용해 주세요.',

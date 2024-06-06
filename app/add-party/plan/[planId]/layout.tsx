@@ -3,6 +3,22 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import axiosInstance from '@/app/utils/axiosInstance';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '@/app/loading';
+
+interface DefaultProps {
+  children: React.ReactNode;
+  params: {
+    planId: string;
+  };
+}
+
+// 플랜 정보 조회 API
+const fetchPlanInfo = ({ queryKey }: any) => {
+  const planId = queryKey[1];
+  return axiosInstance.get(`/private/plan/${planId}`);
+};
 
 const LottieDotLoading = dynamic(
   () => import('./components/LottieDotLoading'),
@@ -11,20 +27,27 @@ const LottieDotLoading = dynamic(
   }
 );
 
-export default function AddPartyDetailLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AddPartyDetailLayout(props: DefaultProps) {
+  const planId = props.params.planId;
+
   const partyInfo = AddPartyInfoStore((state: any) => state.partyInfo);
   const updateStepName = AddPartyInfoStore(
     (state: any) => state.updateStepName
   );
 
+  const { isPending, data } = useQuery({
+    queryKey: ['planInfo', planId],
+    queryFn: fetchPlanInfo,
+  });
+
+  const resData = data?.data.response;
+
   // 페이지 접근 시 반드시 로그인 정보를 입력받는 단계에서부터 시작하도록 강제시킴
   useEffect(() => {
     updateStepName('inputAccount');
   }, [updateStepName]);
+
+  if (isPending) return <Loading />;
 
   return (
     <div className='mt-[4.5rem] mb-[7.5rem] flex justify-center gap-x-[7rem]'>
@@ -34,7 +57,7 @@ export default function AddPartyDetailLayout({
           className='flex justify-between bg-[#f5f5f5] p-4 rounded-[0.625rem] text-[#656565]'
         >
           <span className='text-inherit'>공유 서비스</span>
-          <span className='font-medium'>넷플릭스 스탠다드</span>
+          <span className='font-medium'>{resData?.name}</span>
         </button>
         <button
           className='relative flex justify-between bg-[#f5f5f5] p-4 rounded-[0.625rem] text-[#656565]'
@@ -121,7 +144,7 @@ export default function AddPartyDetailLayout({
           )}
         </button>
       </div>
-      {children}
+      {props.children}
     </div>
   );
 }

@@ -3,12 +3,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import 'rsuite/dist/rsuite.css';
 import { Slider } from 'rsuite';
 import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
-import WarningStartPartyToday from './WarningStartPartyToday';
+import WarningStartPartyTodayModal from './WarningStartPartyTodayModal';
+import { AddPartyDetailProps } from '../page';
 
-export default function SelectPartyDuration() {
+interface SelectPartyDurationProps {
+  resData: AddPartyDetailProps;
+}
+
+export default function SelectPartyDuration({
+  resData,
+}: SelectPartyDurationProps) {
   const partyInfo = AddPartyInfoStore((state: any) => state.partyInfo);
   const updateStartDate = AddPartyInfoStore(
     (state: any) => state.updateStartDate
@@ -214,7 +220,7 @@ export default function SelectPartyDuration() {
             </div>
           )}
           {openWarningStartPartyTodayModal && (
-            <WarningStartPartyToday
+            <WarningStartPartyTodayModal
               openWarningStartPartyTodayModal={openWarningStartPartyTodayModal}
               setOpenWarningStartPartyTodayModal={
                 setOpenWarningStartPartyTodayModal
