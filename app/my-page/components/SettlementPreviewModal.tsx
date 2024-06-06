@@ -32,8 +32,6 @@ export default function SettlementPreviewModal({
 
   const resData = data?.data.response;
 
-  console.log(resData);
-
   useEffect(() => {
     AOS.init();
 
