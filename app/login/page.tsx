@@ -5,108 +5,65 @@ import { useRouter } from 'next/navigation';
 import { useMutation } from '@tanstack/react-query';
 import Image from 'next/image';
 import logoImg from '@/public/images/logo.png';
-// import axiosInstance from '../utils/axiosInstance';
-// import { userInfoStore } from '../store/UserInfo';
+import axiosInstance from '../utils/axiosInstance';
+import { userInfoStore } from '../store/UserInfo';
 import { AxiosError } from 'axios';
 import Link from 'next/link';
 import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
 import { Label } from 'flowbite-react';
+import { fetchCurrentUserInfo } from '../utils/fetchCurrentUserInfo';
+
+interface UserLoginInfoType {
+  id: string;
+  password: string;
+}
 
 // 로그인 API
-// const login = (userAccountInfo: UserLoginInfoType) => {
-//   const { id, password } = userAccountInfo;
-//   const reqBody = {
-//     no: id,
-//     password: password,
-//   };
-//   return axiosInstance.post('/auth/login', reqBody);
-// };
-
-// (로그인 한) 사용자 정보 조회 API
-// const fetchCurrentUserInfo = () => {
-//   return axiosInstance.get('/auth/me');
-// };
+const login = (userAccountInfo: UserLoginInfoType) => {
+  const { id, password } = userAccountInfo;
+  const reqBody = {
+    userId: id,
+    pwd: password,
+  };
+  return axiosInstance.post('/public/auth/login', reqBody);
+};
 
 export default function Login() {
-  // const loginMutation = useMutation({
-  //   mutationFn: login,
-  //   onMutate: () => {
-  //     setIsAdjustOpacity(true);
-  //   },
-  //   onError: (error: AxiosError) => {
-  //     const resData: any = error.response?.data;
-  //     switch (resData.status) {
-  //       case 400:
-  //         switch (resData.code) {
-  //           case 'REG_NUMBER_REQUIRED':
-  //             alert('Bad Request(400)...');
-  //             break;
-  //           case 'INVALID_PASSWORD':
-  //             passwordInputRef.current?.focus();
-  //             setpasswordInputAnnouceMsg('잘못된 비밀번호입니다.');
-  //             setpasswordInputElementStyle(
-  //               STR_WRONG_CASE_INPUT_ELEMENT_STYLE_CLASSNAME
-  //             );
-  //             setpasswordLabelElementStyle(
-  //               STR_WRONG_CASE_LABEL_ELEMENT_STYLE_CLASSNAME
-  //             );
-  //             break;
-  //           default:
-  //             alert('정의되지 않은 http code입니다.');
-  //         }
-  //         break;
-  //       case 404:
-  //         idInputRef.current?.focus();
-  //         setIdInputAnnouceMsg('등록되지 않은 사용자입니다.');
-  //         setIdInputElementStyle(STR_WRONG_CASE_INPUT_ELEMENT_STYLE_CLASSNAME);
-  //         setIdLabelElementStyle(STR_WRONG_CASE_LABEL_ELEMENT_STYLE_CLASSNAME);
-  //         break;
-  //       default:
-  //         alert('정의되지 않은 http status code입니다');
-  //     }
-  //   },
-  //   onSuccess: (data) => {
-  //     const resData = data.data.data;
-  //     const { accessToken, refreshToken } = resData;
+  const updateUserInfo = userInfoStore((state: any) => state.updateUserInfo);
 
-  //     localStorage.setItem('access-token', accessToken);
-  //     localStorage.setItem('refresh-token', refreshToken);
-  //     localStorage.setItem('activeAuthorization', 'true');
+  const loginMutation = useMutation({
+    mutationFn: login,
+    onMutate: () => {},
+    onError: (error: AxiosError) => {
+      const resData: any = error.response;
+      switch (resData?.status) {
+        case 400:
+          switch (resData?.data.error.status) {
+            case 'BAD_REQUEST':
+              setpasswordInputAnnouceMsg(
+                '아이디 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해 주세요'
+              );
+              break;
+            default:
+              alert('정의되지 않은 http code입니다.');
+          }
+          break;
+        default:
+          alert('정의되지 않은 http status code입니다');
+      }
+    },
+    onSuccess: (data) => {
+      localStorage.setItem('activeAuthorization', 'true');
 
-  //     // 로그인 후 사용자 정보 조회
-  //     getCurrentUserInfoMutation.mutate();
-
-  //     router.push('/');
-  //   },
-  //   onSettled: () => {
-  //     setIsAdjustOpacity(false);
-  //   },
-  // });
-
-  // const getCurrentUserInfoMutation = useMutation({
-  //   mutationFn: fetchCurrentUserInfo,
-  //   onSuccess: (data) => {
-  //     const resData = data.data.data;
-  //     const { _id, no, name, email, university, department, phone, role } =
-  //       resData;
-  //     updateUserInfo({
-  //       _id,
-  //       no,
-  //       name,
-  //       email,
-  //       university,
-  //       department,
-  //       phone,
-  //       role,
-  //       isAuth: true,
-  //     });
-  //   },
-  // });
-
-  // const updateUserInfo = userInfoStore((state: any) => state.updateUserInfo);
+      // 로그인 후 사용자 정보 조회
+      fetchCurrentUserInfo(updateUserInfo);
+      router.push('/');
+    },
+    onSettled: () => {},
+  });
 
   const [userAccountInfo, setUserAccountInfo] = useState({
-    email: '',
+    id: '',
     password: '',
   });
   const [ispasswordVisibility, setIspasswordVisibility] = useState(false);
@@ -126,7 +83,7 @@ export default function Login() {
     setIdInputAnnouceMsg('');
     setpasswordInputAnnouceMsg('');
 
-    if (!userAccountInfo.email) {
+    if (!userAccountInfo.id) {
       idInputRef.current?.focus();
       setIdInputAnnouceMsg('이메일을 입력하세요.');
       return;
@@ -138,8 +95,7 @@ export default function Login() {
       return;
     }
 
-    // loginMutation.mutate(userAccountInfo);
-    alert('개발 예정');
+    loginMutation.mutate(userAccountInfo);
   };
 
   return (
@@ -163,7 +119,7 @@ export default function Login() {
           <div className='relative'>
             <div className='mb-1'>
               <Label
-                htmlFor='email'
+                htmlFor='id'
                 value='이메일'
                 className={`text-[#a2a4a9] text-[0.5rem] leading-[1] font-light`}
               />
@@ -172,27 +128,27 @@ export default function Login() {
               required
               placeholder='abc@naver.com'
               type='text'
-              value={userAccountInfo.email}
+              value={userAccountInfo.id}
               onChange={(e) =>
                 setUserAccountInfo({
                   ...userAccountInfo,
-                  email: e.target.value,
+                  id: e.target.value,
                 })
               }
               className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
                 idInputAnnounceMsg ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
-                userAccountInfo.email && 'pr-[2.5rem]'
+                userAccountInfo.id && 'pr-[2.5rem]'
               }`}
             />
-            {userAccountInfo.email && (
+            {userAccountInfo.id && (
               <button
                 className='absolute top-[2.05rem] right-3 p-1'
                 onClick={(e) => {
                   e.preventDefault();
                   setUserAccountInfo({
                     ...userAccountInfo,
-                    email: '',
+                    id: '',
                   });
                 }}
               >
@@ -247,9 +203,7 @@ export default function Login() {
                   password: e.target.value,
                 });
               }}
-              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
-                passwordInputAnnounceMsg ? 'border-red-500' : 'border-[#d4d5d7]'
-              } text-sm font-light w-full focus:ring-0 py-3 ${
+              className={`placeholder-[#9ea3ae] rounded-[0.425rem] border border-[#d4d5d7] text-sm font-light w-full focus:ring-0 py-3 ${
                 userAccountInfo.password && 'pr-[2.5rem]'
               }`}
             />
@@ -306,10 +260,10 @@ export default function Login() {
             type='submit'
             onClick={handleSignIn}
             disabled={
-              userAccountInfo.email && userAccountInfo.password ? false : true
+              userAccountInfo.id && userAccountInfo.password ? false : true
             }
             className={`mt-12 px-4 py-[0.75rem] rounded-[0.425rem] box-shadow font-medium duration-150 ease-out text-white ${
-              userAccountInfo.email && userAccountInfo.password
+              userAccountInfo.id && userAccountInfo.password
                 ? 'bg-[#3a8af9] hover:bg-[#1c6cdb]'
                 : 'bg-[#d3d3d3]'
             }`}
