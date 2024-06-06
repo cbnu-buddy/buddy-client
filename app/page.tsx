@@ -9,6 +9,7 @@ import main_1Img from '@/public/images/main_1.png';
 import main_2Img from '@/public/images/main_2.png';
 import main_3Img from '@/public/images/main_3.png';
 import Link from 'next/link';
+import ChannelService from './third-party/ChannelTalk';
 
 export default function Home() {
   const scrollRef: any = useRef(null);
@@ -19,7 +20,16 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const CT = new ChannelService();
+    CT.loadScript();
+    CT.boot({ pluginKey: process.env.NEXT_PUBLIC_CHANNEL_TALK_PLUGIN_KEY! });
+
     AOS.init();
+
+    //for unmount
+    return () => {
+      CT.shutdown();
+    };
   }, []);
 
   return (
