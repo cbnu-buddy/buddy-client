@@ -65,8 +65,6 @@ export default function JoinPartyDetail(props: DefaultProps) {
     AOS.init();
   }, []);
 
-  console.log(resData);
-
   if (isPending) return <Loading />;
 
   return (
