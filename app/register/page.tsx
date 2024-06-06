@@ -4,8 +4,79 @@ import React, { FormEvent, useState } from 'react';
 import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
 import { Label } from 'flowbite-react';
 import Link from 'next/link';
+import axiosInstance from '../utils/axiosInstance';
+import { useMutation } from '@tanstack/react-query';
+import { AxiosError } from 'axios';
+import { useRouter } from 'next/navigation';
+
+interface RegisterInfoType {
+  id: string;
+  password: string;
+  email: string;
+  username: string;
+}
+
+// 회원가입 API
+const register = (registerInfo: RegisterInfoType) => {
+  const { id, password, email, username } = registerInfo;
+  const reqBody = {
+    userId: id,
+    pwd: password,
+    email,
+    username,
+  };
+  return axiosInstance.post('/public/auth/signup', reqBody);
+};
 
 export default function Register() {
+  const router = useRouter();
+
+  const registerMutation = useMutation({
+    mutationFn: register,
+    onMutate: () => {},
+    onError: (error: AxiosError) => {
+      const resData: any = error.response;
+      switch (resData?.status) {
+        case 409:
+          switch (resData?.data.error.status) {
+            case 'CONFLICT':
+              const responseMsg = resData?.data.error.message;
+              if (responseMsg === '이미 존재하는 아이디입니다.') {
+                alert('이미 존재하는 아이디입니다.');
+                setIsIdValidFail(true);
+                break;
+              }
+
+              if (responseMsg === '이미 존재하는 이메일입니다.') {
+                alert('이미 존재하는 이메일입니다.');
+                setIsEmailValidFail(true);
+                isEmailValidFail;
+                break;
+              }
+
+              if (responseMsg === '이미 존재하는 이름입니다.') {
+                alert('이미 존재하는 닉네임입니다.');
+                setIsUsernameValidFail(true);
+                isEmailValidFail;
+                break;
+              }
+
+              break;
+            default:
+              alert('정의되지 않은 http code입니다.');
+          }
+          break;
+        default:
+          alert('정의되지 않은 http status code입니다');
+      }
+    },
+    onSuccess: (data) => {
+      alert('회원가입이 완료되었습니다.');
+      router.push('/login');
+    },
+    onSettled: () => {},
+  });
+
   const [id, setId] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -73,7 +144,7 @@ export default function Register() {
       return;
     }
 
-    alert('개발 예정입니다.');
+    registerMutation.mutate({ id, password, email, username });
   };
 
   return (
@@ -113,7 +184,10 @@ export default function Register() {
               required
               type='text'
               value={id}
-              onChange={(e) => setId(e.target.value)}
+              onChange={(e) => {
+                setId(e.target.value);
+                setIsIdValidFail(false);
+              }}
               className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
                 isIdValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
@@ -152,7 +226,10 @@ export default function Register() {
               required
               type={ispasswordVisibility ? 'text' : 'password'}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setIsPasswordValidFail(false);
+              }}
               className={`rounded-[0.425rem] border ${
                 isPasswordValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3`}
@@ -237,7 +314,10 @@ export default function Register() {
               placeholder='abc@naver.com'
               type='email'
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setIsEmailValidFail(false);
+              }}
               className={`placeholder-[#9ea3ae] rounded-[0.425rem] border ${
                 isEmailValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3 ${
@@ -276,7 +356,10 @@ export default function Register() {
               required
               type='text'
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                setIsUsernameValidFail(false);
+              }}
               className={`rounded-[0.425rem] border ${
                 isUsernameValidFail ? 'border-red-500' : 'border-[#d4d5d7]'
               } text-sm font-light w-full focus:ring-0 py-3`}
