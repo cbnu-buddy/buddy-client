@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
 import { AddPartyDetailProps } from '../page';
+import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
 
 interface InputAccountProps {
   resData: AddPartyDetailProps;
@@ -46,6 +47,17 @@ export default function InputAccount({ resData }: InputAccountProps) {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const getPlanHomePageUrl = () => {
+    for (const plan of partySelectedPlanInfos) {
+      for (const detail of plan.planDetailInfos) {
+        if (detail.id === resData?.planId) {
+          return plan.homePageUrl;
+        }
+      }
+    }
+    return '#';
+  };
 
   return (
     <div className='w-[25rem]'>
@@ -172,13 +184,13 @@ export default function InputAccount({ resData }: InputAccountProps) {
         <p className='text-inherit'>- 정확한 로그인 정보를 입력해 주세요.</p>
       </div>
 
-      {/* <a
+      <a
         target='_blank'
-        href='https://help.netflix.com/ko/node/24926'
+        href={getPlanHomePageUrl()}
         className='mt-14 flex justify-center text-[0.5rem] leading-[1] font-extralight text-[#656565] underline'
       >
-        넷플릭스 스탠다드 바로가기
-      </a> */}
+        {resData?.service.name} 바로가기
+      </a>
 
       <button
         disabled={id && password && repeatPassword ? false : true}

@@ -148,7 +148,7 @@ export default function SelectPartyDuration({
               data-aos='fade-zoom'
               data-aos-easing='ease-out'
               data-aos-duration='250'
-              className='calendar absolute mt-3 w-full py-7 flex flex-col items-center justify-center rounded-lg bg-white'
+              className='window absolute mt-3 w-full py-7 flex flex-col items-center justify-center rounded-lg bg-white'
             >
               <div className='w-[18rem]'>
                 <p className='text-[0.8rem] text-center font-semibold'>
