@@ -43,8 +43,8 @@ export default function MyPage({ children }: { children: React.ReactNode }) {
         orderId: generateTimestampedRandomString(),
         orderName: '버디 포인트',
         customerName: userInfo.username,
-        successUrl: 'http://localhost:3000/my-page/payments/success',
-        failUrl: 'http://localhost:3000/my-page/payments/fail',
+        successUrl: 'http://localhost:3000/payments/success',
+        failUrl: 'http://localhost:3000/payments/fail',
       });
     });
   };

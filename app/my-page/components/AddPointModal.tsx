@@ -24,7 +24,7 @@ export default function AddPointModal({
   const userInfo = userInfoStore((state: any) => state.userInfo);
 
   const [isDropdownMousedown, setIsDropdownMousedown] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null); // Dropdown 요소에 대한 ref 추가
 
@@ -34,7 +34,7 @@ export default function AddPointModal({
       !dropdownRef.current.contains(event.target as Node)
     ) {
       setIsDropdownMousedown(true);
-      setOpenDropdown(false);
+      setIsDropdownOpen(false);
     }
   };
 
@@ -44,7 +44,7 @@ export default function AddPointModal({
     document.addEventListener('mouseup', () => {
       if (setIsDropdownMousedown) setIsDropdownMousedown(false);
     });
-  }, [openDropdown]);
+  }, [isDropdownOpen]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/,/g, ''); // 쉼표 제거
@@ -74,7 +74,7 @@ export default function AddPointModal({
               ref={inputRef}
               className='mt-3 w-full h-[2.25rem] text-right placeholder-gray-400 text-lg border-gray-300 bg-gray-50 font-bold tracking-tight focus:ring-0 focus:border-gray-300'
               onMouseUp={() => {
-                if (!isDropdownMousedown) setOpenDropdown(true);
+                if (!isDropdownMousedown) setIsDropdownOpen(true);
               }}
               onClick={() => {
                 setIsDropdownMousedown(false);
@@ -82,7 +82,7 @@ export default function AddPointModal({
               onChange={handleInputChange}
             />
 
-            {openDropdown && (
+            {isDropdownOpen && (
               <div
                 ref={dropdownRef} // Dropdown 요소에 ref 추가
                 id='fixed'
@@ -94,7 +94,7 @@ export default function AddPointModal({
                     onClick={() => {
                       setRechargePoint('');
                       inputRef.current?.focus();
-                      setOpenDropdown(false);
+                      setIsDropdownOpen(false);
                     }}
                   >
                     직접입력
@@ -102,7 +102,7 @@ export default function AddPointModal({
                   <li
                     onClick={() => {
                       setRechargePoint(5000);
-                      setOpenDropdown(false);
+                      setIsDropdownOpen(false);
                     }}
                     className='block px-4 py-[0.6rem] hover:bg-[#f0f2f9] dark:hover:bg-[#f0f2f9] dark:hover:text-white'
                   >
@@ -111,7 +111,7 @@ export default function AddPointModal({
                   <li
                     onClick={() => {
                       setRechargePoint(10000);
-                      setOpenDropdown(false);
+                      setIsDropdownOpen(false);
                     }}
                     className='block px-4 py-[0.6rem] hover:bg-[#f0f2f9] dark:hover:bg-[#f0f2f9] dark:hover:text-white'
                   >
@@ -120,7 +120,7 @@ export default function AddPointModal({
                   <li
                     onClick={() => {
                       setRechargePoint(30000);
-                      setOpenDropdown(false);
+                      setIsDropdownOpen(false);
                     }}
                     className='block px-4 py-[0.6rem] hover:bg-[#f0f2f9] dark:hover:bg-[#f0f2f9] dark:hover:text-white'
                   >
@@ -129,7 +129,7 @@ export default function AddPointModal({
                   <li
                     onClick={() => {
                       setRechargePoint(50000);
-                      setOpenDropdown(false);
+                      setIsDropdownOpen(false);
                     }}
                     className='block px-4 py-[0.6rem] hover:bg-[#f0f2f9] dark:hover:bg-[#f0f2f9] dark:hover:text-white'
                   >
@@ -138,7 +138,7 @@ export default function AddPointModal({
                   <li
                     onClick={() => {
                       setRechargePoint(100000);
-                      setOpenDropdown(false);
+                      setIsDropdownOpen(false);
                     }}
                     className='block px-4 py-[0.6rem] hover:bg-[#f0f2f9] dark:hover:bg-[#f0f2f9] dark:hover:text-white'
                   >

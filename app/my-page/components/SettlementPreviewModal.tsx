@@ -93,12 +93,12 @@ export default function SettlementPreviewModal({
             </div>
 
             <div className='mt-3 flex flex-col gap-y-2'>
-              {resData?.plans.length === 0 ? (
+              {resData?.parties?.length === 0 ? (
                 <p className='mt-5 text-center text-[#9b9b9b] text-xs font-light'>
                   파티장으로 운영 중인 파티가 없어요.
                 </p>
               ) : (
-                resData?.plans.map((partyInfo: any, idx: number) => (
+                resData?.parties?.map((partyInfo: any, idx: number) => (
                   <div
                     className='ml-3 flex justify-between text-[#656565]'
                     key={idx}
@@ -107,7 +107,7 @@ export default function SettlementPreviewModal({
                       {partyInfo.name}
                     </span>
                     <span className='text-[0.5rem] font-light text-inherit'>
-                      {Number(partyInfo.totalMonthlyFee).toLocaleString()}
+                      {Number(partyInfo.monthlyFee).toLocaleString()}
                     </span>
                   </div>
                 ))
