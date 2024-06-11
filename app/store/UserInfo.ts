@@ -7,6 +7,7 @@ export interface StoreState {
 }
 
 const initialState = {
+  memberId: 0,
   email: '',
   username: '',
   point: 0,
