@@ -6,6 +6,7 @@ export interface PartySelectedPlanInfo {
   name: string;
   category: string;
   tag: string;
+  homePageUrl: string;
   planDetailInfos: {
     id: number;
     name: string;
