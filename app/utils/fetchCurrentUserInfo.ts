@@ -4,8 +4,9 @@ import axiosInstance from './axiosInstance';
 export const fetchCurrentUserInfo = async (updateUserInfo: any) => {
   return axiosInstance.get('/private/member/member-info').then((response) => {
     const resData = response.data.response;
-    const { username, email, point } = resData;
+    const { memberId, username, email, point } = resData;
     updateUserInfo({
+      memberId,
       username,
       email,
       point,
