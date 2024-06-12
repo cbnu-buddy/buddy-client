@@ -25,6 +25,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ModifyLeaderAccountInfoModal from './components/ModifyLeaderAccountInfoModal';
 import ModifyPartyRecruitmentNumModal from './components/ModifyPartyRecruitmentNumModal';
+import DisbandPartyModal from './components/DisbandPartyModa';
 
 // 파티 정보 조회 API
 const fetchPartyDetailInfo = ({ queryKey }: any) => {
@@ -101,6 +102,9 @@ export default function PartyDetail() {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const [copyType, setCopyType] = useState('');
   const [openLeavePartyModal, setOpenLeavePartyModal] = useState<
+    string | undefined
+  >();
+  const [openDisbandPartyModal, setOpenDisbandPartyModal] = useState<
     string | undefined
   >();
   const [
@@ -201,7 +205,7 @@ export default function PartyDetail() {
 
   return (
     <div className='flex justify-center bg-[#f4f4f9] text-center'>
-      <div className='w-[42.5rem] mt-[2rem] mb-[7.5rem]'>
+      <div className='w-[43rem] mt-[2rem] mb-[7.5rem]'>
         <Link href='/my-party'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -247,15 +251,28 @@ export default function PartyDetail() {
               ref={dropdownRef}
               className='window absolute top-[3.25rem] right-5 w-[8rem] bg-white p-[0.4rem] rounded-[0.625rem]'
             >
-              <button
-                onClick={() => {
-                  setIsDropdownOpen(false);
-                  setOpenLeavePartyModal('default');
-                }}
-                className='w-full text-start p-[0.4rem] text-[0.5rem] text-[#4a4a4a] hover:bg-[#f6f6f6] rounded-md'
-              >
-                파티 탈퇴하기
-              </button>
+              {userInfo.memberId === resData?.party.partyLeaderMemberId ? (
+                <button
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    setOpenDisbandPartyModal('default');
+                  }}
+                  className='w-full text-start p-[0.4rem] text-[0.5rem] text-[#4a4a4a] hover:bg-[#f6f6f6] rounded-md'
+                >
+                  파티 해산하기
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    setOpenLeavePartyModal('default');
+                  }}
+                  className='w-full text-start p-[0.4rem] text-[0.5rem] text-[#4a4a4a] hover:bg-[#f6f6f6] rounded-md'
+                >
+                  파티 탈퇴하기
+                </button>
+              )}
+
               {/* <button
                     onClick={() => {
                       setIsDropdownOpen(false);
@@ -266,6 +283,11 @@ export default function PartyDetail() {
                   </button> */}
             </div>
           )}
+          <DisbandPartyModal
+            openDisbandPartyModal={openDisbandPartyModal}
+            setOpenDisbandPartyModal={setOpenDisbandPartyModal}
+            partyId={partyId}
+          />
           <LeavePartyModal
             openLeavePartyModal={openLeavePartyModal}
             setOpenLeavePartyModal={setOpenLeavePartyModal}
@@ -430,15 +452,35 @@ export default function PartyDetail() {
                 />
               </div>
 
-              {isWithinPartyDuration || isSameDayAsStartDate ? (
-                !isClickedShowLeaderAccountInfo && (
-                  <button
-                    onClick={() => setIsClickedShowLeaderAccountInfo(true)}
-                    className='w-full bg-[#eaeffe] p-4 rounded-lg'
-                  >
+              {userInfo.memberId !== resData?.party.partyLeaderMemberId ? (
+                isWithinPartyDuration || isSameDayAsStartDate ? (
+                  !isClickedShowLeaderAccountInfo && (
+                    <button
+                      onClick={() => setIsClickedShowLeaderAccountInfo(true)}
+                      className='w-full bg-[#eaeffe] p-4 rounded-lg'
+                    >
+                      <div className='w-full flex justify-center items-center gap-x-1'>
+                        <p className='text-xs text-[#1c6cdb] font-semibold'>
+                          아이디, 비밀번호 확인하기
+                        </p>
+
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          height='20px'
+                          viewBox='0 -960 960 960'
+                          width='20px'
+                          fill='#1c6cdb'
+                        >
+                          <path d='M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h360v-80q0-50-35-85t-85-35q-42 0-73.5 25.5T364-751q-4 14-16.5 22.5T320-720q-17 0-28.5-11t-8.5-26q14-69 69-116t128-47q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM240-160v-400 400Z' />
+                        </svg>
+                      </div>
+                    </button>
+                  )
+                ) : (
+                  <div className='w-full bg-[#f6f6f6] p-4 rounded-lg'>
                     <div className='w-full flex justify-center items-center gap-x-1'>
-                      <p className='text-xs text-[#1c6cdb] font-semibold'>
-                        아이디, 비밀번호 확인하기
+                      <p className='text-xs text-[#9d9d9d] font-semibold'>
+                        파티 시작일에 확인할 수 있어요.
                       </p>
 
                       <svg
@@ -446,31 +488,15 @@ export default function PartyDetail() {
                         height='20px'
                         viewBox='0 -960 960 960'
                         width='20px'
-                        fill='#1c6cdb'
+                        fill='#9d9d9d'
                       >
-                        <path d='M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h360v-80q0-50-35-85t-85-35q-42 0-73.5 25.5T364-751q-4 14-16.5 22.5T320-720q-17 0-28.5-11t-8.5-26q14-69 69-116t128-47q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM240-160v-400 400Z' />
+                        <path d='M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z' />
                       </svg>
                     </div>
-                  </button>
+                  </div>
                 )
               ) : (
-                <button className='w-full bg-[#f6f6f6] p-4 rounded-lg'>
-                  <div className='w-full flex justify-center items-center gap-x-1'>
-                    <p className='text-xs text-[#9d9d9d] font-semibold'>
-                      파티 시작일에 확인할 수 있어요.
-                    </p>
-
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      height='20px'
-                      viewBox='0 -960 960 960'
-                      width='20px'
-                      fill='#9d9d9d'
-                    >
-                      <path d='M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z' />
-                    </svg>
-                  </div>
-                </button>
+                <></>
               )}
 
               {isOpenCopyCompleteToast && (
@@ -478,7 +504,7 @@ export default function PartyDetail() {
                   data-aos='fade-right'
                   data-aos-easing='ease-out'
                   data-aos-duration='375'
-                  className={`w-[15rem] fixed bottom-12 left-12 bg-[#222222] py-3 ${toastClassName}`}
+                  className={`w-[15rem] fixed bottom-14 left-14 bg-[#222222] py-3 ${toastClassName}`}
                 >
                   <div className='inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-green-500 dark:bg-green-800 dark:text-green-200'>
                     <svg
