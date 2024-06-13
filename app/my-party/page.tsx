@@ -115,6 +115,8 @@ export default function MyParty() {
     return `${timestamp}${randomNum}`;
   }
 
+  console.log(resData);
+
   return (
     <div className='flex justify-center bg-[#f4f4f9] text-center'>
       <div className='flex justify-between gap-x-4 w-[50rem] mt-14 mb-[7.5rem]'>
@@ -182,7 +184,7 @@ export default function MyParty() {
                   return (
                     <button
                       key={index}
-                      className='w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-y-2 bg-white rounded-xl hover:scale-105 hover:shadow-md duration-300 ease-out'
+                      className='relative w-[10rem] h-[10rem] flex flex-col justify-center items-center gap-y-2 bg-white rounded-xl hover:scale-105 hover:shadow-md duration-300 ease-out'
                       onClick={() =>
                         router.push(`/my-party/${partyInfo.party.partyId}`)
                       }
@@ -195,6 +197,68 @@ export default function MyParty() {
                         quality={100}
                         className='border-4 p-[0.375rem] rounded-full'
                       />
+
+                      {userInfo.memberId ===
+                        partyInfo.party.partyLeaderMemberId && (
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          id='img-flag-crown'
+                          width='40.007'
+                          height='48'
+                          viewBox='0 0 40.007 48'
+                          fill='#fff'
+                          className='absolute top-[-0.275rem] right-2'
+                        >
+                          <path
+                            id='패스_2189'
+                            fill='#074aa8'
+                            d='M0 0l5 8V0z'
+                            transform='translate(8) rotate(90)'
+                          />
+                          <path
+                            id='빼기_37'
+                            fill='#3a8af9'
+                            d='M32 48l-16-8.777L0 48V0h25a7.008 7.008 0 0 1 7 7v41z'
+                            transform='translate(8.009 0)'
+                          />
+                          <g id='ic-crown-24' transform='translate(12 8)'>
+                            <g id='레이어_3' transform='translate(0)'>
+                              <path
+                                id='사각형_3695'
+                                fill='none'
+                                d='M0 0H24V24H0z'
+                                transform='translate(0)'
+                              />
+                            </g>
+                            <g id='레이어_1' transform='translate(2.467 3)'>
+                              <path
+                                id='패스_4033'
+                                d='M16.412 21H7.671a2.393 2.393 0 0 1-2.235-1.689l-1.989-7.006a1.349 1.349 0 0 1 .435-1.6 1.35 1.35 0 0 1 1.651.145l3.134 2.281L10.7 8.992a1.5 1.5 0 0 1 1.339-.928 1.5 1.5 0 0 1 1.338.928l2.036 4.139 3.137-2.281a1.292 1.292 0 0 1 2.086 1.455l-1.989 7.006A2.393 2.393 0 0 1 16.412 21zM5.891 13.584l1.47 5.181a.431.431 0 0 0 .31.235h8.741a.431.431 0 0 0 .311-.235l1.471-5.181-1.753 1.275a1.814 1.814 0 0 1-2.736-.676L12.041 10.8l-1.663 3.381a1.814 1.814 0 0 1-2.736.676z'
+                                className='cls-4'
+                                transform='translate(-2.5 -3)'
+                              />
+                              <path
+                                id='패스_4034'
+                                d='M13.5 4.5A1.5 1.5 0 1 1 12 3a1.5 1.5 0 0 1 1.5 1.5z'
+                                className='cls-4'
+                                transform='translate(-2.5 -3)'
+                              />
+                              <path
+                                id='패스_4035'
+                                d='M5.5 7.037A1.5 1.5 0 1 1 4 5.536a1.5 1.5 0 0 1 1.5 1.501z'
+                                className='cls-4'
+                                transform='translate(-2.5 -3)'
+                              />
+                              <path
+                                id='패스_4036'
+                                d='M21.5 7.037a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z'
+                                className='cls-4'
+                                transform='translate(-2.5 -3)'
+                              />
+                            </g>
+                          </g>
+                        </svg>
+                      )}
 
                       <div className='flex flex-col items-center'>
                         <p className='font-semibold'>{partyInfo.plan.name}</p>
