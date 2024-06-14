@@ -115,8 +115,6 @@ export default function MyParty() {
     return `${timestamp}${randomNum}`;
   }
 
-  console.log(resData);
-
   return (
     <div className='flex justify-center bg-[#f4f4f9] text-center'>
       <div className='flex justify-between gap-x-4 w-[50rem] mt-14 mb-[7.5rem]'>
@@ -343,14 +341,14 @@ export default function MyParty() {
               <div className='text-sm font-bold'>
                 <div className='flex items-center gap-x-1'>
                   <span>나의 버디 포인트</span>
-                  <Image
+                  {/* <Image
                     src={questionMarkImg}
                     alt='questionMarkImg'
                     width={22.5}
                     height={0}
                     quality={100}
                     className='rounded-full'
-                  />
+                  /> */}
                 </div>
               </div>
 
