@@ -109,9 +109,9 @@ export default function AskAddPartyModal({
               leaderId: partyInfo.accountInfo.id,
               leaderPwd: partyInfo.accountInfo.password,
               recLimit: partyInfo.recruitmentNum,
-              startDate: partyInfo.startDate,
+              startDate: new Date(partyInfo.startDate),
               durationMonth: partyInfo.durationMonth,
-              endDate: partyInfo.endDate,
+              endDate: new Date(partyInfo.endDate),
             });
             setOpenAskAddPartyModal(undefined);
             setOpenNotifyAddedPartyModal('default');
