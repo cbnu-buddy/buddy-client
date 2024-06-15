@@ -201,8 +201,6 @@ export default function PartyDetail() {
 
   if (isPending || !userInfo) return <Loading />;
 
-  console.log(userInfo.memberId, resData?.party.partyLeaderMemberId);
-
   return (
     <div className='flex justify-center bg-[#f4f4f9] text-center'>
       <div className='w-[43rem] mt-[2rem] mb-[7.5rem]'>
@@ -694,28 +692,29 @@ export default function PartyDetail() {
                   </div>
                 ))}
 
-                {Array(
-                  resData?.party.recLimit + 1 - resData.party.members.length
-                )
-                  .fill(null)
-                  .map((_, index) => (
-                    <div
-                      key={`empty-${index}`}
-                      className='flex flex-col items-center gap-y-2'
-                    >
-                      <Image
-                        src={emptyUserProfileImg}
-                        alt='empty user image'
-                        width={62.5}
-                        height={0}
-                        quality={100}
-                        className=''
-                      />
-                      <p className='w-[2rem] flex text-xs text-[#9d9d9d] font-medium'>
-                        모집중
-                      </p>
-                    </div>
-                  ))}
+                {Array.from({
+                  length: Math.max(
+                    0,
+                    resData?.party.recLimit + 1 - resData.party.members.length
+                  ),
+                }).map((_, index) => (
+                  <div
+                    key={`empty-${index}`}
+                    className='flex flex-col items-center gap-y-2'
+                  >
+                    <Image
+                      src={emptyUserProfileImg}
+                      alt='empty user image'
+                      width={62.5}
+                      height={0}
+                      quality={100}
+                      className=''
+                    />
+                    <p className='w-[2rem] flex text-xs text-[#9d9d9d] font-medium'>
+                      모집중
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
