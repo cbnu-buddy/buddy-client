@@ -20,6 +20,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '넷플릭스',
     category: 'media',
     tag: 'hot',
+    homePageUrl: 'https://www.netflix.com/',
     planDetailInfos: [
       {
         id: 1,
@@ -92,6 +93,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '웨이브',
     category: 'media',
     tag: 'hot',
+    homePageUrl: 'https://www.wavve.com',
     planDetailInfos: [
       {
         id: 3,
@@ -164,6 +166,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '왓챠',
     category: 'media',
     tag: 'hot',
+    homePageUrl: 'https://watcha.com',
     planDetailInfos: [
       {
         id: 5,
@@ -215,6 +218,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '라프텔',
     category: 'media',
     tag: '',
+    homePageUrl: 'https://laftel.net/',
     planDetailInfos: [
       {
         id: 6,
@@ -271,6 +275,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '티빙',
     category: 'media',
     tag: 'hot',
+    homePageUrl: 'https://www.tving.com/',
     planDetailInfos: [
       {
         id: 7,
@@ -343,6 +348,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '디즈니+',
     category: 'media',
     tag: '',
+    homePageUrl: 'https://www.disneyplus.com',
     planDetailInfos: [
       {
         id: 9,
@@ -409,6 +415,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '유튜브 프리미엄',
     category: 'media',
     tag: 'hot',
+    homePageUrl: 'https://www.youtube.com',
     planDetailInfos: [
       {
         id: 11,
@@ -466,6 +473,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '쿠팡플레이',
     category: 'media',
     tag: 'new',
+    homePageUrl: 'https://www.coupangplay.com',
     planDetailInfos: [
       {
         id: 12,
@@ -527,6 +535,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '리디북스',
     category: 'book',
     tag: 'hot',
+    homePageUrl: 'https://ridibooks.com',
     planDetailInfos: [
       {
         id: 13,
@@ -584,6 +593,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '밀리의 서재',
     category: 'book',
     tag: 'event',
+    homePageUrl: 'https://www.millie.co.kr',
     planDetailInfos: [
       {
         id: 14,
@@ -641,6 +651,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '예스24 크레마클럽',
     category: 'book',
     tag: '',
+    homePageUrl: 'http://www.yes24.com',
     planDetailInfos: [
       {
         id: 15,
@@ -715,6 +726,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '스포티파이',
     category: 'music',
     tag: 'hot',
+    homePageUrl: 'https://www.spotify.com',
     planDetailInfos: [
       {
         id: 17,
@@ -771,6 +783,7 @@ export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
     name: '애플 뮤직',
     category: 'music',
     tag: '',
+    homePageUrl: 'https://music.apple.com',
     planDetailInfos: [
       {
         id: 18,

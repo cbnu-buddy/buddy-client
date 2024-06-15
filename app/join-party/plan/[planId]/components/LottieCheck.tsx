@@ -2,14 +2,14 @@
 
 import React from 'react';
 import Lottie from 'react-lottie-player';
-import dotCheckLottieJson from '@/public/json/check.json';
+import checkLottieJson from '@/public/json/check.json';
 
 export default function LottieCheck() {
   return (
     <Lottie
       loop={false}
       speed={0.5}
-      animationData={dotCheckLottieJson}
+      animationData={checkLottieJson}
       play
       className=''
     />

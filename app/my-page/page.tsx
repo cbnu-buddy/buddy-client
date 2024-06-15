@@ -1,6 +1,6 @@
 'use client';
 
-import defaultProfileImg from '@/public/images/default_profile_img.png';
+import defaultUserProfileImg from '@/public/images/default_user_profile_gray_img.png';
 import Image from 'next/image';
 import { userInfoStore } from '../store/UserInfo';
 import { useRouter } from 'next/navigation';
@@ -15,9 +15,9 @@ export default function MyPage() {
       <div className='w-full flex flex-col gap-y-4'>
         <div className='w-full flex flex-col items-center gap-y-[0.375rem] bg-white px-5 pt-6 pb-7 rounded-[0.6rem]'>
           <Image
-            src={defaultProfileImg}
+            src={defaultUserProfileImg}
             alt='default_Image'
-            width={77.5}
+            width={75}
             height={0}
             quality={100}
             className='rounded-full'

@@ -120,7 +120,7 @@ export default function Login() {
             <div className='mb-1'>
               <Label
                 htmlFor='id'
-                value='이메일'
+                value='아이디'
                 className={`text-[#a2a4a9] text-[0.5rem] leading-[1] font-light`}
               />
             </div>
@@ -252,9 +252,9 @@ export default function Login() {
             )}
           </div>
 
-          <p className='text-[0.8rem] leading-[1rem] text-blue-500 mt-2'>
+          {/* <p className='text-[0.8rem] leading-[1rem] text-blue-500 mt-2'>
             비밀번호를 잊으셨나요?
-          </p>
+          </p> */}
 
           <button
             type='submit'

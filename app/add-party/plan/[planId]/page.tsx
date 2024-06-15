@@ -13,6 +13,7 @@ export interface AddPartyDetailProps {
   service: {
     name: string;
   };
+  planId: number;
   name: string;
   monthlyFee: number;
   maxMemberNum: number;

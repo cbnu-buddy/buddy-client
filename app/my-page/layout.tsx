@@ -43,8 +43,8 @@ export default function MyPage({ children }: { children: React.ReactNode }) {
         orderId: generateTimestampedRandomString(),
         orderName: '버디 포인트',
         customerName: userInfo.username,
-        successUrl: 'http://localhost:3000/my-page/payments/success',
-        failUrl: 'http://localhost:3000/my-page/payments/fail',
+        successUrl: 'http://localhost:3000/payments/success',
+        failUrl: 'http://localhost:3000/payments/fail',
       });
     });
   };
@@ -272,14 +272,14 @@ export default function MyPage({ children }: { children: React.ReactNode }) {
                 <div className='text-sm font-bold'>
                   <div className='flex items-center gap-x-1'>
                     <span>나의 버디 포인트</span>
-                    <Image
+                    {/* <Image
                       src={questionMarkImg}
                       alt='questionMarkImg'
                       width={22.5}
                       height={0}
                       quality={100}
                       className='rounded-full'
-                    />
+                    /> */}
                   </div>
                 </div>
 

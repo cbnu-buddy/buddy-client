@@ -9,7 +9,7 @@ import eventImg from '@/public/images/event.png';
 import newImg from '@/public/images/new.png';
 import SelectMembershipPlanModal from './components/SelectMembershipPlanModal';
 import { PartySelectedPlanInfoStore } from '../store/party/PartySelectedPlanInfo';
-import { partySelectedPlanInfos } from '../data/partySelectedPlanInfos';
+import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
 import { PartySelectedPlanInfo } from '../types/PartySelectedPlanInfo';
 
 export default function JoinParty() {

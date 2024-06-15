@@ -71,7 +71,7 @@ export default function ConfirmPartyRule({
             >
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
-            <span className='text-inherit text-[0.8rem] font-medium'>
+            <span className='text-inherit text-left text-[0.8rem] leading-[1.25] font-medium'>
               {resData?.name}의 로그인 정보를 정확하게 입력/관리하겠습니다.
             </span>
           </div>
@@ -115,7 +115,7 @@ export default function ConfirmPartyRule({
             >
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
-            <span className='text-inherit text-[0.8rem] font-medium'>
+            <span className='text-inherit text-left text-[0.8rem] leading-[1.25] font-medium'>
               성인 인증을 완료했으며, 공유해도 안전한 로그인 정보입니다.
             </span>
           </div>
@@ -152,7 +152,7 @@ export default function ConfirmPartyRule({
             >
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
-            <span className='text-inherit text-[0.8rem] font-medium'>
+            <span className='text-inherit text-left text-[0.8rem] leading-[1.25] font-medium'>
               파티 기간은{' '}
               {partyInfo.startDate.split('-').join('.') +
                 '~' +
@@ -191,7 +191,7 @@ export default function ConfirmPartyRule({
             >
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
-            <span className='text-inherit text-[0.8rem] font-medium'>
+            <span className='text-inherit text-left text-[0.8rem] leading-[1.25] font-medium'>
               매달 1일에 최대 {resData?.monthlyFee.toLocaleString()}
               원의 파티 요금이 적립될 예정입니다.
             </span>
@@ -226,7 +226,7 @@ export default function ConfirmPartyRule({
             >
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
-            <span className='text-inherit text-[0.8rem] font-medium'>
+            <span className='text-inherit text-left text-[0.8rem] leading-[1.25] font-medium'>
               파티장 귀책 시 최대 10,800원의 위약금이 부과될 수 있습니다.
             </span>
           </div>
