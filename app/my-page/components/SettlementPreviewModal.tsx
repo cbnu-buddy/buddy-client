@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '@/app/utils/axiosInstance';
-import { useQuery } from '@tanstack/react-query';
+import { useQueries } from '@tanstack/react-query';
 
 interface SettlementPreviewModalProps {
   openSettlementPreviewModal: string | undefined;
@@ -14,9 +14,14 @@ interface SettlementPreviewModalProps {
   >;
 }
 
-// 다음 달 정산 정보 미리보기 API
-const fetchNextMonthPaymentInfo = () => {
+// 사용자 다음 달 정산 정보 미리보기 API
+const fetchNextMonthMemberPaymentInfo = () => {
   return axiosInstance.get(`/private/member/payments-preview`);
+};
+
+// 파티장 다음 달 정산 정보 미리보기 API
+const fetchNextMonthLeaderPaymentInfo = () => {
+  return axiosInstance.get(`/private/member/leader/payments-preview`);
 };
 
 export default function SettlementPreviewModal({
@@ -25,12 +30,23 @@ export default function SettlementPreviewModal({
 }: SettlementPreviewModalProps) {
   const [nextMonthFirstDay, setNextMonthFirstDay] = useState('');
 
-  const { isLoading, data } = useQuery({
-    queryKey: ['nextMonthPaymentInfo'],
-    queryFn: fetchNextMonthPaymentInfo,
+  const results = useQueries({
+    queries: [
+      {
+        queryKey: ['nextMonthMemberPaymentInfo'],
+        queryFn: fetchNextMonthMemberPaymentInfo,
+      },
+      {
+        queryKey: ['nextMonthLeaderPaymentInfo'],
+        queryFn: fetchNextMonthLeaderPaymentInfo,
+      },
+    ],
   });
 
-  const resData = data?.data.response;
+  const nextMonthMemberPaymentInfo = results[0].data?.data.response;
+  const nextMonthLeaderPaymentInfo = results[1].data?.data.response;
+
+  console.log(nextMonthLeaderPaymentInfo);
 
   useEffect(() => {
     AOS.init();
@@ -85,32 +101,79 @@ export default function SettlementPreviewModal({
           <div className='mt-5'>
             <div className='flex justify-between'>
               <span className='text-[0.8rem] font-semibold'>
-                파티 요금 결제
+                가입한 파티 요금 결제
               </span>
               <span className='text-[0.8rem] font-semibold'>
-                <span>{Number(resData?.totalAmount).toLocaleString()}</span> P
+                <span>
+                  {Number(
+                    nextMonthMemberPaymentInfo?.totalAmount
+                  ).toLocaleString()}
+                </span>{' '}
+                P
               </span>
             </div>
 
             <div className='mt-3 flex flex-col gap-y-2'>
-              {resData?.parties?.length === 0 ? (
+              {nextMonthLeaderPaymentInfo?.parties?.length === 0 ? (
+                <p className='mt-5 text-center text-[#9b9b9b] text-xs font-light'>
+                  파티원으로 가입 중인 파티가 없어요.
+                </p>
+              ) : (
+                nextMonthMemberPaymentInfo?.parties?.map(
+                  (partyInfo: any, idx: number) => (
+                    <div
+                      className='ml-3 flex justify-between text-[#656565]'
+                      key={idx}
+                    >
+                      <span className='text-[0.5rem] font-light text-inherit'>
+                        {partyInfo.name}
+                      </span>
+                      <span className='text-[0.5rem] font-light text-inherit'>
+                        {Number(partyInfo.monthlyFee).toLocaleString()}
+                      </span>
+                    </div>
+                  )
+                )
+              )}
+            </div>
+          </div>
+
+          <div className='mt-12'>
+            <div className='flex justify-between'>
+              <span className='text-[0.8rem] font-semibold'>
+                파티장 요금 정산
+              </span>
+              <span className='text-[0.8rem] font-semibold'>
+                <span>
+                  {Number(
+                    nextMonthLeaderPaymentInfo?.totalAmount
+                  ).toLocaleString()}
+                </span>{' '}
+                P
+              </span>
+            </div>
+
+            <div className='mt-3 flex flex-col gap-y-2'>
+              {nextMonthLeaderPaymentInfo?.plans?.length === 0 ? (
                 <p className='mt-5 text-center text-[#9b9b9b] text-xs font-light'>
                   파티장으로 운영 중인 파티가 없어요.
                 </p>
               ) : (
-                resData?.parties?.map((partyInfo: any, idx: number) => (
-                  <div
-                    className='ml-3 flex justify-between text-[#656565]'
-                    key={idx}
-                  >
-                    <span className='text-[0.5rem] font-light text-inherit'>
-                      {partyInfo.name}
-                    </span>
-                    <span className='text-[0.5rem] font-light text-inherit'>
-                      {Number(partyInfo.monthlyFee).toLocaleString()}
-                    </span>
-                  </div>
-                ))
+                nextMonthLeaderPaymentInfo?.plans?.map(
+                  (partyInfo: any, idx: number) => (
+                    <div
+                      className='ml-3 flex justify-between text-[#656565]'
+                      key={idx}
+                    >
+                      <span className='text-[0.5rem] font-light text-inherit'>
+                        {partyInfo.name}
+                      </span>
+                      <span className='text-[0.5rem] font-light text-inherit'>
+                        {Number(partyInfo.totalMonthlyFee).toLocaleString()}
+                      </span>
+                    </div>
+                  )
+                )
               )}
             </div>
           </div>
