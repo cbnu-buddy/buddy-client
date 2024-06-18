@@ -126,7 +126,7 @@ export default function Login() {
             </div>
             <input
               required
-              placeholder='abc@naver.com'
+              placeholder='아이디를 입력해 주세요'
               type='text'
               value={userAccountInfo.id}
               onChange={(e) =>
