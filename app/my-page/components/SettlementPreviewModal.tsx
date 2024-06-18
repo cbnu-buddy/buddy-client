@@ -114,7 +114,7 @@ export default function SettlementPreviewModal({
             </div>
 
             <div className='mt-3 flex flex-col gap-y-2'>
-              {nextMonthLeaderPaymentInfo?.parties?.length === 0 ? (
+              {nextMonthMemberPaymentInfo?.parties?.length === 0 ? (
                 <p className='mt-5 text-center text-[#9b9b9b] text-xs font-light'>
                   파티원으로 가입 중인 파티가 없어요.
                 </p>
