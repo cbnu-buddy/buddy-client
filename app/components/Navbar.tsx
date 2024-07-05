@@ -86,12 +86,12 @@ export default function Navbar() {
             >
               파티 찾기
             </Link>
-            {/* <Link
-              href='/contents'
+            <Link
+              href='/community'
               className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
             >
-              작품 정보
-            </Link> */}
+              커뮤니티
+            </Link>
             <Link
               href='/faq'
               className='px-3 py-2 rounded-md hover:bg-[#f3f4f5] focus:bg-[#f3f4f5]'
@@ -241,16 +241,16 @@ export default function Navbar() {
               >
                 파티 찾기
               </Link>
-              {/* <Link
-                href='/contents'
+              <Link
+                href='/community'
                 onClick={(e) => {
                   e.stopPropagation();
                   setRightPos('-right-full');
                 }}
                 className='hover:bg-gray-200 focus:bg-grey-200 py-4 px-6 w-full font-medium'
               >
-                작품 정보
-              </Link> */}
+                커뮤니티
+              </Link>
               <Link
                 href='/faq'
                 onClick={(e) => {
