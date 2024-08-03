@@ -11,7 +11,7 @@ import SelectMembershipPlanModal from './components/SelectMembershipPlanModal';
 import { PartySelectedPlanInfoStore } from '../store/party/PartySelectedPlanInfo';
 import PartyLeaderGuideModal from './components/PartyLeaderGuideModal';
 import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
-import { PartySelectedPlanInfo } from '../types/PartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '../types/partySelectedPlanInfo';
 
 export default function AddParty() {
   const [categoryTabName, setCategoryTabName] = useState('all');
