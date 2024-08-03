@@ -319,7 +319,7 @@ export default function MyPage({ children }: { children: React.ReactNode }) {
 
                 <div className='flex flex-col gap-y-3 w-full mt-2'>
                   <button
-                    className='px-2 py-[0.625rem] text-xs text-[#5880f8] font-normal bg-[#eaeffe] rounded-lg hover:bg-[#e0e5f4]'
+                    className='px-2 py-[0.625rem] text-xs text-[#5880f8] font-medium bg-[#eaeffe] rounded-lg hover:bg-[#e0e5f4]'
                     onClick={() => {
                       alert('개발 예정입니다 💻');
                     }}
