@@ -11,6 +11,10 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.075), 0 -1px 15px rgba(0, 0, 0, 0.075);
 }
 
+.darker-window {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.075), 0 -1px 15px rgba(0, 0, 0, 0.5);
+}
+
 .ch-shadow-root-wrapper {
   display: none !important;
 }
@@ -33,6 +37,22 @@
 
 .toast-invisible {
   animation: fadeOutLeft 1.5s forwards;
+}
+
+@keyframes rotateX {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+.rotate-x-animation {
+  animation: rotateX 4s infinite;
 }
 
 :root,

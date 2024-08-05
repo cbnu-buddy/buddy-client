@@ -1,6 +1,6 @@
 import { Modal } from 'flowbite-react';
 import { PartySelectedPlanInfoStore } from '@/app/store/party/PartySelectedPlanInfo';
-import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '@/app/types/partySelectedPlan';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';

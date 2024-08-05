@@ -11,7 +11,7 @@ import miliImg from '@/public/images/mili.png';
 import yes24Img from '@/public/images/yes24.png';
 import spotifyImg from '@/public/images/spotify.png';
 import appleMusicImg from '@/public/images/apple_music.png';
-import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '@/app/types/partySelectedPlan';
 
 export const partySelectedPlanInfos: PartySelectedPlanInfo[] = [
   {

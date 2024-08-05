@@ -10,7 +10,7 @@ import newImg from '@/public/images/new.png';
 import SelectMembershipPlanModal from './components/SelectMembershipPlanModal';
 import { PartySelectedPlanInfoStore } from '../store/party/PartySelectedPlanInfo';
 import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
-import { PartySelectedPlanInfo } from '../types/PartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '../types/partySelectedPlan';
 
 export default function JoinParty() {
   const [categoryTabName, setCategoryTabName] = useState('all');

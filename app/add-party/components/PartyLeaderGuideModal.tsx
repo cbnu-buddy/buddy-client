@@ -3,7 +3,7 @@
 import { Modal } from 'flowbite-react';
 import React, { useState } from 'react';
 import { PartySelectedPlanInfoStore } from '@/app/store/party/PartySelectedPlanInfo';
-import { PartySelectedPlanInfo } from '@/app/types/PartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '@/app/types/partySelectedPlan';
 import uncheckedImg from '@/public/images/unchecked.png';
 import checkedImg from '@/public/images/checked.png';
 import Image from 'next/image';
