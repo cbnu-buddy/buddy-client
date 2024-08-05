@@ -1,24 +1,14 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
-
 export default function Developing() {
-  const [loadingDots, setLoadingDots] = useState('');
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoadingDots((prev) => (prev.length < 3 ? prev + '.' : ''));
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className='flex justify-center'>
-      <h1 className='my-[15rem] font-thin text-[2.25rem] w-[25rem]'>
-        개발 중인 페이지입니다
-        <span>{loadingDots}</span>
-      </h1>
+    <div className='flex justify-center items-center'>
+      <div className='flex flex-col items-center gap-y-6 mt-[8rem] mb-[11rem] font-thin text-[2rem]'>
+        <img
+          src='https://static.toss.im/3d/u1F680-crop-apng.png'
+          width='60%'
+          height='60%'
+        />
+        <p>개발 중인 페이지입니다</p>
+      </div>
     </div>
   );
 }
