@@ -1,4 +1,4 @@
-import { PartySelectedPlanInfo } from '@/app/types/partySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '@/app/types/partySelectedPlan';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
