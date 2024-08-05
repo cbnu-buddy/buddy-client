@@ -18,7 +18,7 @@ export default function PostListItem(props: TagPostListItemProps) {
 
   return (
     <Link
-      href={`/community/${postInfo.postId}`}
+      href={`/community/post/${postInfo.postId}`}
       className='flex justify-between h-[5.5rem] px-[0.9rem] bg-[#f9fafb] rounded-md hover:scale-105 hover:bg-[#f2f4f6] duration-200'
     >
       <div className='w-full flex justify-between'>
