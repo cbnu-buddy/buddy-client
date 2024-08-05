@@ -148,7 +148,7 @@ export default function Register() {
   };
 
   return (
-    <div className='h-[42.5rem] mt-10 px-5 2lg:px-0 overflow-x-auto'>
+    <div className='h-[42.5rem] mt-10 px-5 2lg:px-0'>
       <div className='relative flex flex-col w-[20rem] mx-auto'>
         <Link href='/login' className='absolute left-[-7.5rem]'>
           <svg
