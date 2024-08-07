@@ -16,7 +16,7 @@ import warningGrayImg from '@/public/images/warning_icon_gray.png';
 
 const fetchMyPartyInfo = ({ queryKey }: any) => {
   const planId = queryKey[1];
-  return axiosInstance.get(`/private/party/my-party`);
+  return axiosInstance.get(`/private/party/my`);
 };
 
 const getIconImg = (planId: number) => {
