@@ -24,6 +24,17 @@
   left: 0rem;
 }
 
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeOutLeft {
   0% {
     opacity: 1;
@@ -35,7 +46,11 @@
   }
 }
 
-.toast-invisible {
+.toast-fade-in {
+  animation: fadeInRight 0.375s;
+}
+
+.toast-fade-out {
   animation: fadeOutLeft 1.5s forwards;
 }
 
@@ -53,6 +68,58 @@
 
 .rotate-x-animation {
   animation: rotateX 4s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.bottom-drawer-slide-up {
+  animation: slideUp 0.375s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.bottom-drawer-slide-down {
+  animation: slideDown 0.375s;
 }
 
 :root,
