@@ -281,10 +281,8 @@ export default function Search() {
       {isSuccessSearchResult && tagQuery && (
         <div>
           <h2 className='font-bold text-lg text-[#333d4b]'>검색된 태그</h2>
-          <button
-            onClick={() => {
-              router.push(`/community/feed?tag=${'테스트'}`);
-            }}
+          <Link
+            href={`/community/feed?tag=${'테스트'}`}
             className='w-full flex justify-between items-center mt-3 bg-[#f9fafb] p-4 rounded-md'
           >
             <div className='flex items-center gap-x-3'>
@@ -321,7 +319,7 @@ export default function Search() {
                 구독하기
               </span>
             </button>
-          </button>
+          </Link>
         </div>
       )}
 
