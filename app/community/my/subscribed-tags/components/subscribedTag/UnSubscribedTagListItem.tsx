@@ -8,6 +8,13 @@ interface UnSubscribedTagListItemProps {
     tagId: number;
     tag: string;
   };
+  setSelectedTagInfo: React.Dispatch<
+    React.SetStateAction<{
+      tagId: number;
+      tag: string;
+      isReceiveNotification: boolean;
+    }>
+  >;
   setIsOpenSubscribeCompleteToast: React.Dispatch<
     React.SetStateAction<boolean>
   >;
@@ -23,6 +30,7 @@ export default function UnSubscribedTagListItem(
     setResData,
     mySubscribedTagInfo,
     selectedTagInfo,
+    setSelectedTagInfo,
     setIsOpenSubscribeCompleteToast,
     setIsOpenUnSubscribeCompleteToast,
   } = props;
@@ -71,9 +79,11 @@ export default function UnSubscribedTagListItem(
             setIsOpenSubscribeCompleteToast(true);
           }, 50);
 
+          setSelectedTagInfo(mySubscribedTagInfo);
+
           setResData((prevData) =>
             prevData.map((item) =>
-              item.tagId === selectedTagInfo.tagId
+              item.tagId === mySubscribedTagInfo.tagId
                 ? {
                     ...item,
                     isSubscribed: true,

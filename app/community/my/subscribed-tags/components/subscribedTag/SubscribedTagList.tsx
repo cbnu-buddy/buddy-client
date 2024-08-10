@@ -86,6 +86,7 @@ export default function SubscribedTagList(props: SubscribedTagListProps) {
             setResData={setResData}
             mySubscribedTagInfo={mySubscribedTagInfo}
             selectedTagInfo={selectedTagInfo}
+            setSelectedTagInfo={setSelectedTagInfo}
             setIsOpenSubscribeCompleteToast={setIsOpenSubscribeCompleteToast}
             setIsOpenUnSubscribeCompleteToast={
               setIsOpenUnSubscribeCompleteToast
