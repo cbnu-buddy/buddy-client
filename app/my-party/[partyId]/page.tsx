@@ -21,8 +21,6 @@ import questionMarkImg from '@/public/images/question_mark.png';
 import { userInfoStore } from '@/app/store/UserInfo';
 import { Toast } from 'flowbite-react';
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import ModifyLeaderAccountInfoModal from './components/ModifyLeaderAccountInfoModal';
 import ModifyPartyRecruitmentNumModal from './components/ModifyPartyRecruitmentNumModal';
 import DisbandPartyModal from './components/DisbandPartyModa';
@@ -115,8 +113,8 @@ export default function PartyDetail() {
     openModifyPartyRecruitmentNumModal,
     setOpenModifyPartyRecruitmentNumModal,
   ] = useState<string | undefined>();
+  const [isToastClosing, setIsToastClosing] = useState(false);
   const [isOpenCopyCompleteToast, setIsOpenCopyCompleteToast] = useState(false);
-  const [toastClassName, setToastClassName] = useState('');
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -127,10 +125,6 @@ export default function PartyDetail() {
       setIsDropdownOpen(false);
     }
   };
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   useEffect(() => {
     if (resData?.party.partyLeaderMemberId === userInfo.memberId)
@@ -153,13 +147,13 @@ export default function PartyDetail() {
   useEffect(() => {
     if (isOpenCopyCompleteToast) {
       const fadeOutTimer = setTimeout(() => {
-        setToastClassName('toast-invisible');
-      }, 2000); // 2초 후에 toast-invisible 클래스 추가
+        setIsToastClosing(true);
+      }, 3000); // 3초 후에 toast-fade-out 클래스 추가
 
       const closeTimer = setTimeout(() => {
         setIsOpenCopyCompleteToast(false);
-        setToastClassName('');
-      }, 3500); // 3.5초 후에 토스트 닫기
+        setIsToastClosing(false);
+      }, 4500); // 4.5초 후에 토스트 닫기
 
       return () => {
         clearTimeout(fadeOutTimer);
@@ -192,7 +186,11 @@ export default function PartyDetail() {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        setIsOpenCopyCompleteToast(true);
+        setIsOpenCopyCompleteToast(false);
+
+        setTimeout(() => {
+          setIsOpenCopyCompleteToast(true);
+        }, 50);
       })
       .catch(() => {
         alert('복사에 실패했습니다.');
@@ -499,10 +497,9 @@ export default function PartyDetail() {
 
               {isOpenCopyCompleteToast && (
                 <Toast
-                  data-aos='fade-right'
-                  data-aos-easing='ease-out'
-                  data-aos-duration='375'
-                  className={`w-[15rem] fixed bottom-14 left-14 bg-[#222222] py-3 ${toastClassName}`}
+                  className={`w-[15rem] fixed bottom-14 left-14 bg-[#222222] py-3 ${
+                    isToastClosing ? 'toast-fade-out' : 'toast-fade-in'
+                  }`}
                 >
                   <div className='inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-green-500 dark:bg-green-800 dark:text-green-200'>
                     <svg
