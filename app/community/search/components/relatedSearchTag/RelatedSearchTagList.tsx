@@ -8,6 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 import { TagInfo } from '@/app/types/tag';
 import HotTagListItem from './RelatedSearchTagListItem';
 import EmptyHotTagListItem from './EmptyRelatedSearchTagListItem';
+import { tagInfos } from '@/app/data/mock/tagInfos';
 
 export default function RelatedSearchTagList() {
   const params = useSearchParams();
@@ -22,72 +23,7 @@ export default function RelatedSearchTagList() {
 
   const router = useRouter();
 
-  const resData = [
-    {
-      tagId: 5,
-      tag: '런닝맨 런닝맨 런닝맨 런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-  ];
+  const resData = tagInfos;
 
   const handleExpand = () => {
     setVisibleCount(resData.length);
