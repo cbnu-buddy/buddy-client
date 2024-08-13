@@ -1,11 +1,14 @@
+import { TagInfo } from './tag';
+
 export interface PostInfo {
   postId: number;
   title: string;
   content: string;
+  modifiedAt: string;
   createdAt: string;
   postImagePathUrls: string[];
   author: Author;
-  tag: string[];
+  tags: TagInfo[];
   views: number;
   services: Service[];
   comments: Comment[];
@@ -26,6 +29,7 @@ interface Service {
 }
 
 interface Comment {
+  commentId: number;
   comment: string;
   likeCount: number;
   replies: Reply[];
@@ -34,6 +38,7 @@ interface Comment {
 }
 
 interface Reply {
+  replyId: number;
   reply: string;
   likeCount: number;
   createdAt: string;
