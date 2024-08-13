@@ -4,8 +4,8 @@ export interface PostInfo {
   postId: number;
   title: string;
   content: string;
-  modifiedAt: string;
   createdAt: string;
+  modifiedAt: string;
   postImagePathUrls: string[];
   author: Author;
   tags: TagInfo[];
