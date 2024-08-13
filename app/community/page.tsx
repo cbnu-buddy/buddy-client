@@ -167,7 +167,7 @@ export default function Community() {
 
         <div className='mt-2 w-[9rem] sticky top-[4.75rem] h-fit flex flex-col gap-y-5'>
           <Link
-            href='/community'
+            href='/community/post/new'
             className='flex justify-center items-center gap-x-[0.325rem] bg-[#3a8af9] px-3 py-[0.625rem] text-white text-center rounded-lg font-medium hover:bg-[#1b64da]'
           >
             글 작성하기
