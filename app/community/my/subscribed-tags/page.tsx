@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import SubscribedTagList from './components/subscribedTag/SubscribedTagList';
 import { useEffect, useRef, useState } from 'react';
 import { Toast } from 'flowbite-react';
@@ -136,7 +135,7 @@ export default function MySubscribedTags() {
             <path d='m112.769-480 308.616 308.615q8.846 8.846 8.731 21.154-.116 12.308-8.962 21.154T400-120.231q-12.308 0-21.154-8.846L73.154-434.538Q63.46-444.231 59-456.154 54.538-468.077 54.538-480T59-503.846q4.461-11.923 14.154-21.616l305.692-305.692q8.846-8.846 21.269-8.731 12.424.116 21.27 8.962t8.846 21.154q0 12.308-8.846 21.154L112.769-480Z' />
           </svg>
         </button>
-        <h1 className='mx-auto font-semibold text-base text-[#333d4b]'>
+        <h1 className='mx-auto font-semibold text-lg text-[#333d4b]'>
           구독한 태그
         </h1>
       </div>
