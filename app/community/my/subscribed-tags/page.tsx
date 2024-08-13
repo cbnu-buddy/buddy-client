@@ -5,60 +5,10 @@ import SubscribedTagList from './components/subscribedTag/SubscribedTagList';
 import { useEffect, useRef, useState } from 'react';
 import { Toast } from 'flowbite-react';
 import { useRouter } from 'next/navigation';
+import { mySubScribedTagInfos } from '@/app/data/mock/tagInfos';
 
 export default function MySubscribedTags() {
-  const resLawData = [
-    {
-      tagId: 1,
-      tag: '런닝맨 런닝맨 런닝맨 런닝맨',
-      isReceiveNotification: true,
-    },
-    {
-      tagId: 2,
-      tag: '런닝맨2',
-      isReceiveNotification: true,
-    },
-    {
-      tagId: 3,
-      tag: '런닝맨3',
-      isReceiveNotification: true,
-    },
-    {
-      tagId: 4,
-      tag: '런닝맨4',
-      isReceiveNotification: false,
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨5',
-      isReceiveNotification: false,
-    },
-    {
-      tagId: 6,
-      tag: '런닝맨6',
-      isReceiveNotification: false,
-    },
-    {
-      tagId: 7,
-      tag: '런닝맨7',
-      isReceiveNotification: true,
-    },
-    {
-      tagId: 8,
-      tag: '런닝맨8',
-      isReceiveNotification: true,
-    },
-    {
-      tagId: 9,
-      tag: '런닝맨9',
-      isReceiveNotification: true,
-    },
-    {
-      tagId: 10,
-      tag: '런닝맨10',
-      isReceiveNotification: true,
-    },
-  ];
+  const resLawData = mySubScribedTagInfos;
 
   const [resData, setResData] = useState(
     resLawData.map((item) => ({
@@ -91,7 +41,6 @@ export default function MySubscribedTags() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      event.preventDefault();
       if (
         drawerRef.current &&
         !drawerRef.current.contains(event.target as Node)
@@ -221,7 +170,7 @@ export default function MySubscribedTags() {
               <path d='m382-354 339-339q12-12 28-12t28 12q12 12 12 28.5T777-636L410-268q-12 12-28 12t-28-12L182-440q-12-12-11.5-28.5T183-497q12-12 28.5-12t28.5 12l142 143Z' />
             </svg>
           </div>
-          <div className='ml-3 text-[0.825rem] font-medium text-white'>
+          <div className='ml-1 text-[0.825rem] font-medium text-white'>
             {isOpenSubscribeCompleteToast ? (
               <>&quot;{selectedTagInfo.tag}&quot; 구독이 완료되었습니다</>
             ) : (

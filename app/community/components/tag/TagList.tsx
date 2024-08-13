@@ -10,6 +10,7 @@ import NoneTagListItem from './NoneTagListItem';
 import TagListItem from './TagListItem';
 import { PostInfo } from '@/app/types/post';
 import { TagInfo } from '@/app/types/tag';
+import { tagInfos } from '@/app/data/mock/tagInfos';
 
 interface TagPostListProps {
   searchQuery: string;
@@ -44,40 +45,7 @@ export default function TagList(props: TagPostListProps) {
   const router = useRouter();
 
   // const resData = data?.data;
-  const resData = [
-    {
-      tagId: 0,
-      tag: '태그 전체',
-    },
-    {
-      tagId: 1,
-      tag: '애니메이션',
-    },
-    {
-      tagId: 2,
-      tag: '영화',
-    },
-    {
-      tagId: 3,
-      tag: '드라마',
-    },
-    {
-      tagId: 4,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '유퀴즈',
-    },
-    {
-      tagId: 6,
-      tag: '음악',
-    },
-    {
-      tagId: 7,
-      tag: '할인',
-    },
-  ];
+  const resData = tagInfos;
 
   // if (isPending) return <Loading />;
 

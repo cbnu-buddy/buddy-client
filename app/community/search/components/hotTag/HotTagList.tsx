@@ -8,6 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 import { TagInfo } from '@/app/types/tag';
 import HotTagListItem from './HotTagListItem';
 import EmptyHotTagListItem from './EmptyHotTagListItem';
+import { tagInfos } from '@/app/data/mock/tagInfos';
 
 // 시험 목록 반환 API (10개 게시글 단위로)
 // const fetchExams = async ({ queryKey }: any) => {
@@ -32,48 +33,7 @@ export default function HotTagList() {
   const router = useRouter();
 
   // const resData = data?.data;
-  const resData = [
-    {
-      tagId: 5,
-      tag: '런닝맨 런닝맨 런닝맨 런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-    {
-      tagId: 5,
-      tag: '런닝맨',
-    },
-  ];
+  const resData = tagInfos;
 
   // if (isPending) return <Loading />;
 
