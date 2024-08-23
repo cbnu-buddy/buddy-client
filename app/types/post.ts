@@ -1,3 +1,4 @@
+import { CommentInfo } from './comment';
 import { TagInfo } from './tag';
 
 export interface PostInfo {
@@ -10,37 +11,18 @@ export interface PostInfo {
   author: Author;
   tags: TagInfo[];
   views: number;
-  services: Service[];
-  comments: Comment[];
+  services: {
+    serviceId: number;
+    planIds: number[];
+    name: string;
+    url: string;
+  }[];
+  comments: CommentInfo[];
   likeCount: number;
 }
 
-interface Author {
+export interface Author {
   memberId: number;
   username: string;
   profileImagePathUrl: string;
-}
-
-interface Service {
-  serviceId: number;
-  planIds: number[];
-  name: string;
-  url: string;
-}
-
-interface Comment {
-  commentId: number;
-  comment: string;
-  likeCount: number;
-  replies: Reply[];
-  createdAt: string;
-  writer: Author;
-}
-
-interface Reply {
-  replyId: number;
-  reply: string;
-  likeCount: number;
-  createdAt: string;
-  writer: Author;
 }
