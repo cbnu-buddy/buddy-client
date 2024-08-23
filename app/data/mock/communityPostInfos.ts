@@ -11,7 +11,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -56,7 +57,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -67,7 +69,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -75,7 +78,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -91,7 +95,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -99,7 +104,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -119,7 +125,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -164,7 +171,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -175,7 +183,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -183,7 +192,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -199,7 +209,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -207,7 +218,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -227,7 +239,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -272,7 +285,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -283,7 +297,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -291,7 +306,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -307,7 +323,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -315,7 +332,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -335,7 +353,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -380,7 +399,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -391,7 +411,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -399,7 +420,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -415,7 +437,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -423,7 +446,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -443,7 +467,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -488,7 +513,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -499,7 +525,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -507,7 +534,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -523,7 +551,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -531,7 +560,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -551,7 +581,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -596,7 +627,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -607,7 +639,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -615,7 +648,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -631,7 +665,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -639,7 +674,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -659,7 +695,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -704,7 +741,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -715,7 +753,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -723,7 +762,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -739,7 +779,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -747,7 +788,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -767,7 +809,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -812,7 +855,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -823,7 +867,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -831,7 +876,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -847,7 +893,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -855,7 +902,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -875,7 +923,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -920,7 +969,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -931,7 +981,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -939,7 +990,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -955,7 +1007,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -963,7 +1016,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
@@ -983,7 +1037,8 @@ export const communityPostInfos: PostInfo[] = [
     author: {
       memberId: 2,
       username: '홍길동',
-      profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+      profileImagePathUrl:
+        'https://avatars.githubusercontent.com/u/119295431?v=4',
     },
     tags: [
       {
@@ -1028,7 +1083,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
           {
@@ -1039,7 +1095,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 3,
               username: '아무개',
-              profileImagePathUrl: 'http://abc.com/upload/5.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -1047,7 +1104,8 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 2,
           username: '홍길동',
-          profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
       {
@@ -1063,7 +1121,8 @@ export const communityPostInfos: PostInfo[] = [
             writer: {
               memberId: 2,
               username: '홍길동',
-              profileImagePathUrl: 'http://abc.com/upload/3.jpg',
+              profileImagePathUrl:
+                'https://avatars.githubusercontent.com/u/119295431?v=4',
             },
           },
         ],
@@ -1071,10 +1130,122 @@ export const communityPostInfos: PostInfo[] = [
         writer: {
           memberId: 25,
           username: '아인슈타인',
-          profileImagePathUrl: 'http://abc.com/upload/65.jpg',
+          profileImagePathUrl:
+            'https://avatars.githubusercontent.com/u/119295431?v=4',
         },
       },
     ],
     likeCount: 2,
   },
 ];
+
+export const communityPostInfo: PostInfo = {
+  postId: 1,
+  title: '여행 가기전 보기 좋은 방송 프로그램',
+  content: '어쩌구 저쩌구~~~~~~~~~~',
+  modifiedAt: '2024-08-19T00:00:00',
+  createdAt: '2024-08-19T00:00:00',
+  postImagePathUrls: [],
+  author: {
+    memberId: 2,
+    username: '홍길동',
+    profileImagePathUrl:
+      'https://avatars.githubusercontent.com/u/119295431?v=4',
+  },
+  tags: [
+    {
+      tagId: 1,
+      tag: '애니메이션',
+    },
+    {
+      tagId: 2,
+      tag: '원피스',
+    },
+    {
+      tagId: 1,
+      tag: '에그헤드',
+    },
+  ],
+  views: 67,
+  services: [
+    {
+      serviceId: 1,
+      planIds: [1, 2],
+      name: '넷플릭스',
+      url: 'https://www.netflix.com/',
+    },
+    {
+      serviceId: 4,
+      planIds: [6],
+      name: '라프텔',
+      url: 'https://www.laftel.net',
+    },
+  ],
+  comments: [
+    {
+      commentId: 1,
+      comment: '오! 정보 감사합니당😎😎',
+      likeCount: 1,
+      replies: [
+        {
+          replyId: 1,
+          reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+          likeCount: 0,
+          createdAt: '2024-07-02T01:00:00',
+          writer: {
+            memberId: 2,
+            username: '홍길동',
+            profileImagePathUrl:
+              'https://avatars.githubusercontent.com/u/119295431?v=4',
+          },
+        },
+        {
+          replyId: 2,
+          reply: 'ㄹㅇ..',
+          likeCount: 0,
+          createdAt: '2024-07-02T01:00:00',
+          writer: {
+            memberId: 3,
+            username: '아무개',
+            profileImagePathUrl:
+              'https://avatars.githubusercontent.com/u/119295431?v=4',
+          },
+        },
+      ],
+      createdAt: '2024-07-02T01:00:00',
+      writer: {
+        memberId: 2,
+        username: '홍길동',
+        profileImagePathUrl:
+          'https://avatars.githubusercontent.com/u/119295431?v=4',
+      },
+    },
+    {
+      commentId: 2,
+      comment: '좋은 정보 감사합니다 :p',
+      likeCount: 1,
+      replies: [
+        {
+          replyId: 3,
+          reply: '넵 좋은 하루 되세요~~',
+          likeCount: 0,
+          createdAt: '2024-07-02T01:00:00',
+          writer: {
+            memberId: 2,
+            username: '홍길동',
+            profileImagePathUrl:
+              'https://avatars.githubusercontent.com/u/119295431?v=4',
+          },
+        },
+      ],
+      createdAt: '2024-07-02T01:00:00',
+      writer: {
+        memberId: 25,
+        username: '아인슈타인',
+        profileImagePathUrl:
+          'https://avatars.githubusercontent.com/u/119295431?v=4',
+      },
+    },
+  ],
+  likeCount: 2,
+};
