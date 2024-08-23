@@ -72,7 +72,7 @@ export default function MyPage({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className='w-full bg-[#f4f4f9]'>
+    <div className='w-full bg-[#f4f4f9] h-screen'>
       <div className='w-[60rem] mx-auto pt-12 pb-16'>
         <div className='flex justify-between'>
           <div className='w-[14rem] flex flex-col gap-y-4'>

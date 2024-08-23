@@ -116,7 +116,7 @@ export default function MyParty() {
   }
 
   return (
-    <div className='flex justify-center bg-[#f4f4f9] text-center'>
+    <div className='flex justify-center bg-[#f4f4f9] text-center h-screen'>
       <div className='flex justify-between gap-x-4 w-[50rem] mt-14 mb-[7.5rem]'>
         <div className='w-full'>
           <p className='text-[#333d4b] text-[1.375rem] font-semibold text-left'>
