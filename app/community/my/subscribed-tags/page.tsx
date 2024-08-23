@@ -181,7 +181,7 @@ export default function MySubscribedTags() {
 
       {(isOpenBottomDrawer || isBottomDrawerClosing) && (
         <div
-          className={`z-10 fixed top-0 left-0 flex justify-center place-items-end w-full h-full bg-[#111827] bg-opacity-50 ${
+          className={`z-10 fixed top-0 left-0 flex justify-center place-items-end w-screen h-full bg-[#111827] bg-opacity-50 ${
             isBottomDrawerClosing ? 'fade-out' : 'fade-in'
           } `}
         >
