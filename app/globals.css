@@ -122,6 +122,125 @@
   animation: slideDown 0.375s;
 }
 
+.comment-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #9c9c9c transparent;
+}
+
+/* uiw markdown(Preview) CSS */
+.code-highlight {
+  padding-bottom: 1.75rem !important;
+}
+
+.markdown-preview {
+  font-size: 0.825rem !important;
+  margin: 0.25rem 0 0.75rem;
+  background-color: transparent !important;
+}
+
+.markdown-preview figure {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
+
+.markdown-preview img {
+  border-radius: 0.75rem;
+}
+
+.markdown-preview tr:nth-child(odd) {
+  background-color: white !important;
+}
+
+.markdown-preview tr:nth-child(even) {
+  background-color: #f7f9fc !important;
+}
+
+.markdown-preview td {
+  border-color: #d4d6da !important;
+}
+.markdown-preview p {
+  margin-bottom: 0 !important;
+}
+
+.markdown-preview strong,
+.markdown-preview s,
+.markdown-preview u,
+.markdown-preview i {
+  color: inherit;
+}
+
+.markdown-preview .text-huge {
+  font-size: 1.8em;
+}
+
+.markdown-preview .text-big {
+  font-size: 1.4em;
+}
+
+.markdown-preview .text-small {
+  font-size: 0.85em;
+}
+
+.markdown-preview .text-tiny {
+  font-size: 0.7em;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  margin-top: 0.25rem !important;
+}
+
+.markdown-preview ul {
+  list-style-type: disc;
+}
+
+.markdown-preview ol {
+  list-style-type: disc;
+}
+
+.markdown-preview blockquote {
+  font-style: normal !important;
+  padding: 1rem 1.75rem !important;
+  border-left: 0.25rem solid #2fc27b !important;
+  background-color: #fafcfe;
+}
+
+.markdown-preview .copied {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 2.05rem;
+  height: 2.15rem;
+  visibility: visible !important;
+  margin-top: 0.5rem;
+  margin-right: 0.25rem;
+  background-color: #f6f8fa !important;
+  border: 1px solid #d6d8db !important;
+  border-radius: 7px !important;
+  box-shadow: 0px 1px 1px 0px rgb(227, 229, 232) !important;
+}
+
+.markdown-preview .octicon-copy {
+  scale: 1.5;
+  margin-bottom: 0.05rem;
+  fill: rgb(102, 109, 117) !important;
+}
+
+.markdown-preview .octicon-check {
+  scale: 1.5;
+  margin-bottom: 0.05rem;
+  fill: rgb(60, 124, 58) !important;
+}
+
+.markdown-preview .copied:hover {
+  background-color: rgb(243, 244, 246) !important;
+}
+
+.markdown-preview .copied.active {
+  border: 1px solid rgb(60, 124, 58) !important;
+}
+
 :root,
 .rs-theme-light {
   --rs-gray-0: #fff;
