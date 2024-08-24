@@ -3,5 +3,6 @@ export interface UserInfo {
   username: string;
   email: string;
   point: number;
+  profileImagePathUrl: string;
   isAuth: boolean;
 }

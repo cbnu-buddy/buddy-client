@@ -23,7 +23,7 @@ import { Toast } from 'flowbite-react';
 
 import ModifyLeaderAccountInfoModal from './components/ModifyLeaderAccountInfoModal';
 import ModifyPartyRecruitmentNumModal from './components/ModifyPartyRecruitmentNumModal';
-import DisbandPartyModal from './components/DisbandPartyModa';
+import DisbandPartyModal from './components/DisbandPartyModal';
 
 // 파티 정보 조회 API
 const fetchPartyDetailInfo = ({ queryKey }: any) => {

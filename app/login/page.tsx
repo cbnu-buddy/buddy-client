@@ -99,7 +99,7 @@ export default function Login() {
   };
 
   return (
-    <div className='mt-16 h-[37.5rem]'>
+    <div className='mt-[4.25rem]'>
       <div className='w-[22.5rem] mx-auto'>
         <Image
           src={logoImg}

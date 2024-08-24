@@ -32,7 +32,7 @@ export default function AddParty() {
 
   return (
     <div className='flex justify-center bg-[#f4f4f9] text-center'>
-      <div className='w-[55rem] mt-10 mb-[7.5rem]'>
+      <div className='w-[55rem] mt-10 mb-[3rem]'>
         <h1 className='text-[1.375rem] leading-[2] font-semibold'>
           어떤 파티를 만드시겠어요?
         </h1>
