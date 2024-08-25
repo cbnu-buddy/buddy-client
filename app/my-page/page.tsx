@@ -2,7 +2,7 @@
 
 import defaultUserProfileImg from '@/public/images/default_user_profile_gray_img.png';
 import Image from 'next/image';
-import { userInfoStore } from '../store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 import { useRouter } from 'next/navigation';
 
 export default function MyPage() {

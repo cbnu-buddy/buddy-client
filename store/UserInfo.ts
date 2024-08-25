@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import { UserInfo } from '../types/user';
+import { UserInfo } from '@/types/user';
 
-export interface StoreState {
+interface UserInfoStoreState {
   userInfo: UserInfo;
 }
 
@@ -18,7 +18,7 @@ export const userInfoStore = create(
   devtools((set) => ({
     userInfo: initialState,
     updateUserInfo: (newUserInfo: UserInfo) =>
-      set((state: StoreState) => ({
+      set((state: UserInfoStoreState) => ({
         userInfo: { ...state.userInfo, ...newUserInfo },
       })),
     removeUserInfo: () =>

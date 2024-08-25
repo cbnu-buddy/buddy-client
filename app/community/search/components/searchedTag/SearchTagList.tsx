@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef, createRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { TagInfo } from '@/app/types/tag';
+import { TagInfo } from '@/types/tag';
 import SearchTagListItem from './SearchTagListItem';
 import EmptySearchTagListItem from './EmptySearchTagListItem';
 

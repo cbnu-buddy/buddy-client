@@ -1,12 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import axiosInstance from '@/utils/axiosInstance';
 import { useEffect, useState } from 'react';
-import axiosInstance from '../utils/axiosInstance';
-import { userInfoStore } from '../store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 import { useMutation } from '@tanstack/react-query';
-import { fetchCurrentUserInfo } from '../utils/fetchCurrentUserInfo';
-// import ChannelService from '../third-party/ChannelTalk';
+import { fetchCurrentUserInfo } from '@/utils/fetchCurrentUserInfo';
 
 // 로그아웃 API
 const logout = () => {

@@ -2,9 +2,9 @@
 
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
-import { commentInfo } from '@/app/data/mock/commentInfos';
+import { commentInfo } from '@/data/mock/commentInfos';
 import Image from 'next/image';
-import { formatDateAndTimeAgo } from '@/app/utils/formatDate';
+import { formatDateAndTimeAgo } from '@/utils/formatDate';
 import ReplyList from './components/ReplyList';
 
 export default function CommunityPostComment() {

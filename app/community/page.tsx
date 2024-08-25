@@ -1,17 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import HotPostList from './components/hotPost/HotPostList';
 import communityIconGif from '@/public/images/community_icon.gif';
 import Image from 'next/image';
 import HotTagList from './components/hotTag/HotTagList';
 import TagPostList from './components/tagPost/TagPostList';
-import { userInfoStore } from '../store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 import PostList from './components/entirePost/PostList';
 import TagList from './components/tag/TagList';
 import SwiperBanner from './components/SwiperBanner';
-import { TagInfo } from '../types/tag';
+import { TagInfo } from '../../types/tag';
 
 export default function Community() {
   const userInfo = userInfoStore((state: any) => state.userInfo);
@@ -121,8 +121,8 @@ export default function Community() {
                       className='group-hover:rotate-180 duration-500'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M16 6C15.128 6 14.4211 6.70692 14.4211 7.57895V9.3411C13.6991 9.51168 13.0215 9.79655 12.4083 10.1754L10.8007 8.56773C10.1841 7.95111 9.18437 7.95111 8.56775 8.56773C7.95114 9.18435 7.95114 10.1841 8.56775 10.8007L10.1754 12.4083C9.79655 13.0214 9.51168 13.6991 9.34109 14.4211H7.57895C6.70692 14.4211 6 15.128 6 16C6 16.872 6.70692 17.5789 7.57895 17.5789L9.34108 17.579C9.50476 18.2717 9.77365 18.9236 10.1298 19.5169L8.56775 21.0789C7.95114 21.6955 7.95114 22.6953 8.56775 23.3119C9.18437 23.9285 10.1841 23.9285 10.8007 23.3119L12.3343 21.7783C12.9668 22.1803 13.67 22.4814 14.4211 22.6589V24.4211C14.4211 25.2931 15.128 26 16 26C16.8721 26 17.579 25.2931 17.579 24.4211V22.6589C18.3009 22.4883 18.9786 22.2034 19.5917 21.8246L21.079 23.3119C21.6956 23.9285 22.6953 23.9285 23.312 23.3119C23.9286 22.6953 23.9286 21.6955 23.312 21.0789L21.8247 19.5916C22.2035 18.9785 22.4883 18.3009 22.6589 17.5789L24.4211 17.579C25.2931 17.579 26 16.872 26 16C26 15.128 25.2931 14.4211 24.4211 14.4211H22.6589C22.4814 13.67 22.1802 12.9668 21.7783 12.3344L23.312 10.8007C23.9286 10.1841 23.9286 9.18435 23.312 8.56773C22.6953 7.95111 21.6956 7.95112 21.079 8.56773L19.5169 10.1298C18.9236 9.7737 18.2717 9.5048 17.579 9.34112V7.57895C17.579 6.70692 16.8721 6 16 6ZM12.3158 16C12.3158 13.9653 13.9653 12.3158 16 12.3158C18.0347 12.3158 19.6842 13.9653 19.6842 16C19.6842 18.0347 18.0347 19.6842 16 19.6842C13.9653 19.6842 12.3158 18.0347 12.3158 16Z'
                         fill='#98A4B7'
                       ></path>
@@ -135,7 +135,9 @@ export default function Community() {
                   setSelectedTagInfo={setSelectedTagInfo}
                 />
               </div>
+
               <TagPostList searchQuery={searchQuery} />
+
               <Link
                 href={`/community/${
                   selectedTagInfo.tagId === 0

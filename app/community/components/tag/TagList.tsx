@@ -2,15 +2,15 @@
 
 import React, { useEffect, useState } from 'react';
 import Loading from '@/app/loading';
-import axiosInstance from '@/app/utils/axiosInstance';
-import useDebounce from '@/app/hooks/useDebounce';
+import axiosInstance from '@/utils/axiosInstance';
+import useDebounce from '@/utils/hooks/useDebounce';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import NoneTagListItem from './NoneTagListItem';
 import TagListItem from './TagListItem';
-import { PostInfo } from '@/app/types/post';
-import { TagInfo } from '@/app/types/tag';
-import { tagInfos } from '@/app/data/mock/tagInfos';
+import { PostInfo } from '@/types/post';
+import { TagInfo } from '@/types/tag';
+import { tagInfos } from '@/data/mock/tagInfos';
 
 interface TagPostListProps {
   searchQuery: string;

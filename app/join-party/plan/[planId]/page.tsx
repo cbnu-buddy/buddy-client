@@ -1,15 +1,15 @@
 'use client';
 
-import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
+import { partySelectedPlanInfos } from '@/data/partySelectedPlanInfos';
 import Loading from '@/app/loading';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import warningGrayImg from '@/public/images/warning_icon_gray.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { formatDate } from '@/app/utils/formatDate';
+import { formatDate } from '@/utils/formatDate';
 import JoinPartyModal from './components/JoinPartyModal';
 import SuccessJoinPartyModal from './components/SuccessJoinPartyModal';
 

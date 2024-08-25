@@ -4,7 +4,7 @@ import { Modal } from 'flowbite-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useQueries } from '@tanstack/react-query';
 
 interface SettlementPreviewModalProps {
@@ -45,8 +45,6 @@ export default function SettlementPreviewModal({
 
   const nextMonthMemberPaymentInfo = results[0].data?.data.response;
   const nextMonthLeaderPaymentInfo = results[1].data?.data.response;
-
-  console.log(nextMonthLeaderPaymentInfo);
 
   useEffect(() => {
     AOS.init();

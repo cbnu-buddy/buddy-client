@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Slider } from 'rsuite';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyInfoStore } from '@/store/party/AddPartyInfo';
 import WarningStartPartyTodayModal from './WarningStartPartyTodayModal';
 import { AddPartyDetailProps } from '../page';
 

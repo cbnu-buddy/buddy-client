@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useQueries } from '@tanstack/react-query';
 import PaymentAndTransferingReceiptModal from './components/PaymentAndTransferingReceiptModal';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyInfoStore } from '@/store/party/AddPartyInfo';
 import AskAddPartyModal from './AskAddPartyModal';
 import NotifyAddedPartyModal from './NotifyAddedPartyModal';
 import { AddPartyDetailProps } from '../page';

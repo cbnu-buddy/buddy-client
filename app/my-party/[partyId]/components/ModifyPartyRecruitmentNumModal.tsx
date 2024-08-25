@@ -2,12 +2,12 @@ import { Modal } from 'flowbite-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useMutation } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import Image from 'next/image';
 import LottieCrown from './LottieCrown';
-import { userInfoStore } from '@/app/store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 import leaderUserdefaultProfileImg from '@/public/images/default_user_profile_blue_img.png';
 import defaultUserProfileImg from '@/public/images/default_user_profile_green_img.png';
 

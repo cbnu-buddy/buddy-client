@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import testImg from '@/public/images/test.jpg';
-import { TagInfo } from '@/app/types/tag';
+import { TagInfo } from '@/types/tag';
 import Link from 'next/link';
 
 interface HotTagListItemProps {

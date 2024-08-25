@@ -1,7 +1,7 @@
 'use client';
 
-import { communityPostInfo } from '@/app/data/mock/communityPostInfos';
-import { PostInfo } from '@/app/types/post';
+import { communityPostInfo } from '@/data/mock/communityPostInfos';
+import { PostInfo } from '@/types/post';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
@@ -9,10 +9,10 @@ import dynamic from 'next/dynamic';
 import { Toast } from 'flowbite-react';
 import ConfirmDeleteCommunityPostModal from './components/ConfirmDeleteCommunityPostModal';
 import Loading from '@/app/loading';
-import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
+import { partySelectedPlanInfos } from '@/data/partySelectedPlanInfos';
 import Link from 'next/link';
 import CommentList from './components/comment/CommentList';
-import { formatDateAndTimeAgo } from '@/app/utils/formatDate';
+import { formatDateAndTimeAgo } from '@/utils/formatDate';
 
 interface DefaultProps {
   params: {

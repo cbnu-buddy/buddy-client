@@ -2,10 +2,10 @@
 
 import React, { useEffect } from 'react';
 import Loading from '@/app/loading';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
-import { MySubscribedTagInfo } from '@/app/types/tag';
+import { MySubscribedTagInfo } from '@/types/tag';
 import SubscribedTagListItem from './SubscribedTagListItem';
 import EmptySubscribedTagListItem from './EmptySubscribedTagListItem';
 import UnSubscribedTagListItem from './UnSubscribedTagListItem';

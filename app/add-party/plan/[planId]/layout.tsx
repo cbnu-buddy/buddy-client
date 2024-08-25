@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
-import axiosInstance from '@/app/utils/axiosInstance';
+import { AddPartyInfoStore } from '@/store/party/AddPartyInfo';
+import axiosInstance from '@/utils/axiosInstance';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '@/app/loading';
 

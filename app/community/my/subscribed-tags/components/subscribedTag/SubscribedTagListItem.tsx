@@ -1,4 +1,4 @@
-import { MySubscribedTagInfo } from '@/app/types/tag';
+import { MySubscribedTagInfo } from '@/types/tag';
 import Link from 'next/link';
 
 interface SubscribedTagListItemProps {

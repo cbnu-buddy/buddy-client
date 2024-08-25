@@ -2,13 +2,13 @@
 
 import React, { useEffect } from 'react';
 import Loading from '@/app/loading';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
-import { TagInfo } from '@/app/types/tag';
+import { TagInfo } from '@/types/tag';
 import HotTagListItem from './HotTagListItem';
 import EmptyHotTagListItem from './EmptyHotTagListItem';
-import { tagInfos } from '@/app/data/mock/tagInfos';
+import { tagInfos } from '@/data/mock/tagInfos';
 
 // 시험 목록 반환 API (10개 게시글 단위로)
 // const fetchExams = async ({ queryKey }: any) => {

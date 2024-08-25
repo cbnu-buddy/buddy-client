@@ -1,8 +1,8 @@
 'use client';
 
-import { userInfoStore } from '@/app/store/UserInfo';
-import axiosInstance from '@/app/utils/axiosInstance';
-import { fetchCurrentUserInfo } from '@/app/utils/fetchCurrentUserInfo';
+import { userInfoStore } from '@/store/UserInfo';
+import axiosInstance from '@/utils/axiosInstance';
+import { fetchCurrentUserInfo } from '@/utils/fetchCurrentUserInfo';
 import { useMutation } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import React, { useState } from 'react';

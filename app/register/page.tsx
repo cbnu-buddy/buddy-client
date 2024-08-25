@@ -4,7 +4,7 @@ import React, { FormEvent, useState } from 'react';
 import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
 import { Label } from 'flowbite-react';
 import Link from 'next/link';
-import axiosInstance from '../utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useMutation } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import { useRouter } from 'next/navigation';

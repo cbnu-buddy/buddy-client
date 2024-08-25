@@ -1,9 +1,9 @@
-import { CommentInfo } from '@/app/types/comment';
+import { CommentInfo } from '@/types/comment';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import ReplyList from './reply/ReplyList';
-import { formatDateAndTimeAgo } from '@/app/utils/formatDate';
+import { formatDateAndTimeAgo } from '@/utils/formatDate';
 
 interface CommentListItemProps {
   commentInfo: CommentInfo;

@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Loading from '@/app/loading';
-import useDebounce from '@/app/hooks/useDebounce';
+import useDebounce from '@/utils/hooks/useDebounce';
 import { useRouter, useSearchParams } from 'next/navigation';
 import EmptyRelatedSearchPostListItem from './EmptyRelatedSearchPostListItem';
 import RelatedSearchPostListItem from './RelatedSearchPostListItem';
-import { PostInfo } from '@/app/types/post';
-import { communityPostInfos } from '@/app/data/mock/communityPostInfos';
+import { PostInfo } from '@/types/post';
+import { communityPostInfos } from '@/data/mock/communityPostInfos';
 
 interface RelatedSearchPostListProps {
   searchQuery: string;

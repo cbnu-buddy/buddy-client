@@ -2,7 +2,7 @@ import { Modal } from 'flowbite-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { formatDateTime } from '@/app/utils/formatDate';
+import { formatDateTime } from '@/utils/formatDate';
 
 interface PaymentAndTransferingInfoType {
   category: string;

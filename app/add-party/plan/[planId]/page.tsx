@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyInfoStore } from '@/store/party/AddPartyInfo';
 import InputAccount from './components/InputAccount';
 import SelectRecruitmentNum from './components/SelectRecruitmentNum';
 import SelectPartyDuration from './components/SelectPartyDuration';
 import ConfirmPartyRule from './components/ConfirmPartyRule';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useQuery } from '@tanstack/react-query';
 
 export interface AddPartyDetailProps {

@@ -1,9 +1,9 @@
 'use client';
 
-import { userInfoStore } from '@/app/store/UserInfo';
-import axiosInstance from '@/app/utils/axiosInstance';
-import { fetchCurrentUserInfo } from '@/app/utils/fetchCurrentUserInfo';
-import tossPaymentAxiosInstance from '@/app/utils/tossPaymentAxiosInstance';
+import { userInfoStore } from '@/store/UserInfo';
+import axiosInstance from '@/utils/axiosInstance';
+import { fetchCurrentUserInfo } from '@/utils/fetchCurrentUserInfo';
+import tossPaymentAxiosInstance from '@/utils/tossPaymentAxiosInstance';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
 import Image from 'next/image';

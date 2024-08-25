@@ -4,7 +4,7 @@ import SubscribedTagList from './components/subscribedTag/SubscribedTagList';
 import { useEffect, useRef, useState } from 'react';
 import { Toast } from 'flowbite-react';
 import { useRouter } from 'next/navigation';
-import { mySubScribedTagInfos } from '@/app/data/mock/tagInfos';
+import { mySubScribedTagInfos } from '@/data/mock/tagInfos';
 
 export default function MySubscribedTags() {
   const resLawData = mySubScribedTagInfos;
