@@ -46,8 +46,6 @@ export default function SettlementPreviewModal({
   const nextMonthMemberPaymentInfo = results[0].data?.data.response;
   const nextMonthLeaderPaymentInfo = results[1].data?.data.response;
 
-  console.log(nextMonthLeaderPaymentInfo);
-
   useEffect(() => {
     AOS.init();
 
