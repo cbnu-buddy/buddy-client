@@ -2,8 +2,8 @@ import { PartySelectedPlanInfo } from '@/app/types/partySelectedPlan';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-export interface StoreState {
-  partySelectedPlanInfo: PartySelectedPlanInfo;
+interface PartySelectedPlanInfoStoreState {
+  partySelectedPlanInfo: PartySelectedPlanInfoStoreState;
 }
 
 const initialState = {
@@ -24,7 +24,7 @@ export const PartySelectedPlanInfoStore = create(
     partySelectedPlanInfo: initialState,
 
     updateSelectedPlanInfo: (newPartySelectedPlanInfo: PartySelectedPlanInfo) =>
-      set((state: StoreState) => ({
+      set((state: PartySelectedPlanInfoStoreState) => ({
         partySelectedPlanInfo: {
           ...state.partySelectedPlanInfo,
           ...newPartySelectedPlanInfo,
@@ -32,7 +32,7 @@ export const PartySelectedPlanInfoStore = create(
       })),
 
     updateSelectedPlanName: (newSelectedPlanName: string) =>
-      set((state: StoreState) => ({
+      set((state: PartySelectedPlanInfoStoreState) => ({
         partySelectedPlanInfo: {
           ...state.partySelectedPlanInfo,
           selectedPlanName: newSelectedPlanName,
@@ -40,7 +40,7 @@ export const PartySelectedPlanInfoStore = create(
       })),
 
     updateSelectedPlanId: (newSelectedPlanId: string) =>
-      set((state: StoreState) => ({
+      set((state: PartySelectedPlanInfoStoreState) => ({
         partySelectedPlanInfo: {
           ...state.partySelectedPlanInfo,
           selectedPlanId: newSelectedPlanId,
