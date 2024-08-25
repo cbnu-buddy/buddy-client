@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReplyInfo } from '@/app/types/reply';
+import { ReplyInfo } from '@/types/reply';
 import ReplyListItem from './ReplyListItem';
 
 interface ReplyListProps {

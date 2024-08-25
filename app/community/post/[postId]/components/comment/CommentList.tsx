@@ -1,8 +1,8 @@
 import React from 'react';
 import EmptyCommentListItem from './EmptyCommentListItem';
-import { CommentInfo } from '@/app/types/comment';
+import { CommentInfo } from '@/types/comment';
 import CommentListItem from './CommentListItem';
-import { commentInfos } from '@/app/data/mock/commentInfos';
+import { commentInfos } from '@/data/mock/commentInfos';
 
 interface CommentListProps {
   postId: string;

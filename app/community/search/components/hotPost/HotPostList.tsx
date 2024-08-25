@@ -2,14 +2,14 @@
 
 import React, { useEffect } from 'react';
 import Loading from '@/app/loading';
-import axiosInstance from '@/app/utils/axiosInstance';
-import useDebounce from '@/app/hooks/useDebounce';
+import axiosInstance from '@/utils/axiosInstance';
+import useDebounce from '@/utils/hooks/useDebounce';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import NoneHotPostListItem from './NoneHotPostListItem';
 import HotPostListItem from './HotPostListItem';
-import { PostInfo } from '@/app/types/post';
-import { communityPostInfos } from '@/app/data/mock/communityPostInfos';
+import { PostInfo } from '@/types/post';
+import { communityPostInfos } from '@/data/mock/communityPostInfos';
 
 interface HotPostListProps {
   searchQuery: string;

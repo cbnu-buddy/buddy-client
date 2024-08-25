@@ -10,15 +10,15 @@ import emptyUserProfileImg from '@/public/images/default_user_profile_gray_img.p
 import leaderUserdefaultProfileImg from '@/public/images/default_user_profile_blue_img.png';
 import defaultUserProfileImg from '@/public/images/default_user_profile_green_img.png';
 import { usePathname } from 'next/navigation';
-import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
+import { partySelectedPlanInfos } from '@/data/partySelectedPlanInfos';
 import LeavePartyModal from './components/LeavePartyModal';
 import Link from 'next/link';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useQuery } from '@tanstack/react-query';
-import { formatDate } from '@/app/utils/formatDate';
+import { formatDate } from '@/utils/formatDate';
 import Loading from '@/app/loading';
 import questionMarkImg from '@/public/images/question_mark.png';
-import { userInfoStore } from '@/app/store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 import { Toast } from 'flowbite-react';
 
 import ModifyLeaderAccountInfoModal from './components/ModifyLeaderAccountInfoModal';

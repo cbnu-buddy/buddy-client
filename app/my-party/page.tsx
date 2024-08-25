@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-import axiosInstance from '../utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import SettlementPreviewModal from './components/SettlementPreviewModal';
 import { loadTossPayments } from '@tosspayments/payment-sdk';
-import { userInfoStore } from '../store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 import { useQuery } from '@tanstack/react-query';
-import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
+import { partySelectedPlanInfos } from '@/data/partySelectedPlanInfos';
 import questionMarkImg from '@/public/images/question_mark.png';
 import AddPointModal from './components/AddPointModal';
 import { useRouter } from 'next/navigation';

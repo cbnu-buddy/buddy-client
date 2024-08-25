@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import {
   ToastInfoStore,
   ToastInfoStoreState,
-} from '../store/components/ToastInfo';
+} from '@/store/components/ToastInfo';
 
 export default function Toast() {
   const { isOpenToast, toastMessage }: ToastInfoStoreState = ToastInfoStore(

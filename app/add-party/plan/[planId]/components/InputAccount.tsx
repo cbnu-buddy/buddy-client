@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import AskInputValidAccountInfoModal from './AskInputValidAccountInfoModal';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyInfoStore } from '@/store/party/AddPartyInfo';
 import { AddPartyDetailProps } from '../page';
-import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
+import { partySelectedPlanInfos } from '@/data/partySelectedPlanInfos';
 
 interface InputAccountProps {
   resData: AddPartyDetailProps;

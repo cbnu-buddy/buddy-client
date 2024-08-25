@@ -1,9 +1,9 @@
-import { PostInfo } from '@/app/types/post';
+import { PostInfo } from '@/types/post';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import test2Img from '@/public/images/test2.jpg';
 import Link from 'next/link';
-import { formatDate } from '@/app/utils/formatDate';
+import { formatDate } from '@/utils/formatDate';
 
 interface FeedPostListItemProps {
   postInfo: PostInfo;

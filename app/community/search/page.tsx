@@ -8,9 +8,9 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import RelatedSearchTagList from './components/relatedSearchTag/RelatedSearchTagList';
 import SwiperBanner from './components/SwiperBanner';
 import SearchTagList from './components/searchedTag/SearchTagList';
-import useDebounce from '@/app/hooks/useDebounce';
+import useDebounce from '@/utils/hooks/useDebounce';
 import RelatedSearchPostList from './components/relatedSearchPost/RelatedSearchPostList';
-import { tagInfos, tagSubscribedInfo } from '@/app/data/mock/tagInfos';
+import { tagInfos, tagSubscribedInfo } from '@/data/mock/tagInfos';
 import { Toast } from 'flowbite-react';
 
 export default function Search() {

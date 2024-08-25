@@ -9,7 +9,7 @@ import main_1Img from '@/public/images/main_1.png';
 import main_2Img from '@/public/images/main_2.png';
 import main_3Img from '@/public/images/main_3.png';
 import Link from 'next/link';
-import ChannelService from './third-party/ChannelTalk';
+import ChannelService from '@/third-party/ChannelTalk';
 import Footer from './components/Footer';
 
 export default function Home() {

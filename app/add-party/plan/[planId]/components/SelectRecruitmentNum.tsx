@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyInfoStore } from '@/store/party/AddPartyInfo';
 import { AddPartyDetailProps } from '../page';
 
 interface SelectRecruitmentNumProps {

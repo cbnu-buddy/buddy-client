@@ -1,4 +1,4 @@
-import { CommentInfo } from '@/app/types/comment';
+import { CommentInfo } from '@/types/comment';
 
 export const commentInfos: CommentInfo[] = [
   {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { TagInfo } from '@/app/types/tag';
+import { TagInfo } from '@/types/tag';
 
 interface HotTagListItemProps {
   tagInfo: TagInfo;

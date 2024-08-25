@@ -2,11 +2,11 @@ import { Label, Modal } from 'flowbite-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { AxiosError } from 'axios';
 import { useMutation } from '@tanstack/react-query';
-import { fetchCurrentUserInfo } from '@/app/utils/fetchCurrentUserInfo';
-import { userInfoStore } from '@/app/store/UserInfo';
+import { fetchCurrentUserInfo } from '@/utils/fetchCurrentUserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 
 interface ModifyPasswordModalProps {
   openModifyPasswordModal: string | undefined;

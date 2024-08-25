@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
-import useFCM from './hooks/useFCM';
+import useFCM from '@/utils/hooks/useFCM';
 
 export default function Providers({ children }: React.PropsWithChildren) {
   const { messages, fcmToken } = useFCM();

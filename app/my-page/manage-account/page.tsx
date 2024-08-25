@@ -1,7 +1,7 @@
 'use client';
 
-import { userInfoStore } from '@/app/store/UserInfo';
-import { fetchCurrentUserInfo } from '@/app/utils/fetchCurrentUserInfo';
+import { userInfoStore } from '@/store/UserInfo';
+import { fetchCurrentUserInfo } from '@/utils/fetchCurrentUserInfo';
 import React, { useState } from 'react';
 import ModifyEmailModal from './components/ModifyEmailModal';
 import ModifyUsernameModal from './components/ModifyUsernameModal';

@@ -2,7 +2,7 @@ import { Modal } from 'flowbite-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { formatDate } from '@/app/utils/formatDate';
+import { formatDate } from '@/utils/formatDate';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import admin from 'firebase-admin';
 import crypto from 'crypto';
-import { connectDB } from '@/app/config/dbConnection';
+import { connectDB } from '@/config/dbConnection';
 
 const firebaseConfig = require('@/constants/fcm/firebase-admin-sdk.json');
 
@@ -27,7 +27,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const connection = await connectDB; // Promise<Connection>을 await하여 Connection 객체를 얻음
+    const connection = await connectDB;
 
     // tagIds에 해당하는 태그 이름을 가져오기
     const tagNamesQuery = `

@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 import FeedPostList from './components/feedPost/FeedPostList';
 import Link from 'next/link';
-import { tagSubscribedInfo } from '@/app/data/mock/tagInfos';
+import { tagSubscribedInfo } from '@/data/mock/tagInfos';
 
 export default function Feed() {
   const [resData, setResData] = useState(tagSubscribedInfo);

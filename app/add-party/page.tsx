@@ -8,10 +8,10 @@ import hotImg from '@/public/images/hot.png';
 import eventImg from '@/public/images/event.png';
 import newImg from '@/public/images/new.png';
 import SelectMembershipPlanModal from './components/SelectMembershipPlanModal';
-import { PartySelectedPlanInfoStore } from '../store/party/PartySelectedPlanInfo';
+import { PartySelectedPlanInfoStore } from '@/store/party/PartySelectedPlanInfo';
 import PartyLeaderGuideModal from './components/PartyLeaderGuideModal';
-import { partySelectedPlanInfos } from '@/app/data/partySelectedPlanInfos';
-import { PartySelectedPlanInfo } from '../types/partySelectedPlan';
+import { partySelectedPlanInfos } from '@/data/partySelectedPlanInfos';
+import { PartySelectedPlanInfo } from '../../types/partySelectedPlan';
 
 export default function AddParty() {
   const [categoryTabName, setCategoryTabName] = useState('all');

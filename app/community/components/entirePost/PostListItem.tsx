@@ -1,9 +1,9 @@
-import { PostInfo } from '@/app/types/post';
+import { PostInfo } from '@/types/post';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import testImg from '@/public/images/test.jpg';
 import Link from 'next/link';
-import { timeAgo } from '@/app/utils/formatDate';
+import { timeAgo } from '@/utils/formatDate';
 
 interface TagPostListItemProps {
   postInfo: PostInfo;

@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Loading from '@/app/loading';
-import axiosInstance from '@/app/utils/axiosInstance';
+import axiosInstance from '@/utils/axiosInstance';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
-import { TagInfo } from '@/app/types/tag';
+import { TagInfo } from '@/types/tag';
 import HotTagListItem from './RelatedSearchTagListItem';
 import EmptyHotTagListItem from './EmptyRelatedSearchTagListItem';
-import { tagInfos } from '@/app/data/mock/tagInfos';
+import { tagInfos } from '@/data/mock/tagInfos';
 
 export default function RelatedSearchTagList() {
   const params = useSearchParams();

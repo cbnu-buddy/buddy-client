@@ -7,12 +7,11 @@ import communityIconGif from '@/public/images/community_icon.gif';
 import Image from 'next/image';
 import HotTagList from './components/hotTag/HotTagList';
 import TagPostList from './components/tagPost/TagPostList';
-import { userInfoStore } from '../store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 import PostList from './components/entirePost/PostList';
 import TagList from './components/tag/TagList';
 import SwiperBanner from './components/SwiperBanner';
-import { TagInfo } from '../types/tag';
-import useFCM from '@/utils/hooks/useFCM';
+import { TagInfo } from '../../types/tag';
 
 export default function Community() {
   const userInfo = userInfoStore((state: any) => state.userInfo);

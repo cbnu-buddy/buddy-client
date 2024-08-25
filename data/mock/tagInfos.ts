@@ -1,4 +1,4 @@
-import { MySubscribedTagInfo, TagInfo } from '@/app/types/tag';
+import { MySubscribedTagInfo, TagInfo } from '@/types/tag';
 
 export const tagInfos: TagInfo[] = [
   {

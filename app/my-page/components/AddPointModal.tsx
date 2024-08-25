@@ -2,7 +2,7 @@ import { Modal } from 'flowbite-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState, useRef } from 'react';
-import { userInfoStore } from '@/app/store/UserInfo';
+import { userInfoStore } from '@/store/UserInfo';
 
 interface AddPointModalProps {
   openAddPointModal: string | undefined;

@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { AddPartyDetailProps } from '../page';
-import { AddPartyInfoStore } from '@/app/store/party/AddPartyInfo';
+import { AddPartyInfoStore } from '@/store/party/AddPartyInfo';
 
 interface NotifyAddedPartyModalProps {
   openNotifyAddedPartyModal: string | undefined;

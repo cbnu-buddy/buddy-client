@@ -1,5 +1,5 @@
-import { ReplyInfo } from '@/app/types/reply';
-import { formatDateAndTimeAgo } from '@/app/utils/formatDate';
+import { ReplyInfo } from '@/types/reply';
+import { formatDateAndTimeAgo } from '@/utils/formatDate';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';

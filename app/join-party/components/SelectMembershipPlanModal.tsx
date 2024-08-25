@@ -1,5 +1,5 @@
-import { PartySelectedPlanInfoStore } from '@/app/store/party/PartySelectedPlanInfo';
-import { PartySelectedPlanInfo } from '@/app/types/partySelectedPlan';
+import { PartySelectedPlanInfoStore } from '@/store/party/PartySelectedPlanInfo';
+import { PartySelectedPlanInfo } from '@/types/partySelectedPlan';
 import { Modal } from 'flowbite-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
