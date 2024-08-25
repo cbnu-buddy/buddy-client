@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-export interface AddPartyInfoState {
+interface AddPartyInfoState {
   partyInfo: {
     stepName: string;
     planName: string;
@@ -32,14 +32,6 @@ export const AddPartyInfoStore = create(
         partyInfo: {
           ...state.partyInfo,
           stepName: newStepName,
-        },
-      })),
-
-    updatePlanName: (newPlanName: string) =>
-      set((state: AddPartyInfoState) => ({
-        partyInfo: {
-          ...state.partyInfo,
-          planName: newPlanName,
         },
       })),
 
