@@ -29,8 +29,7 @@ export default function FeedPostListItem(props: FeedPostListItemProps) {
                 <Image
                   src='https://avatars.githubusercontent.com/u/119295431?v=4'
                   alt='profileImage'
-                  layout='fill'
-                  objectFit='cover'
+                  fill
                   quality={100}
                   className='rounded-full'
                 />
@@ -55,8 +54,7 @@ export default function FeedPostListItem(props: FeedPostListItemProps) {
                 <Image
                   src={test2Img}
                   alt='main_1Image'
-                  layout='fill'
-                  objectFit='cover'
+                  fill
                   quality={100}
                   className='rounded-md'
                 />

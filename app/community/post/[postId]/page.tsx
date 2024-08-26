@@ -274,8 +274,7 @@ export default function CommunityPost(props: DefaultProps) {
                     <Image
                       src={resData.author.profileImagePathUrl}
                       alt='profileImage'
-                      layout='fill'
-                      objectFit='cover'
+                      fill
                       quality={100}
                       className='rounded-full'
                     />
