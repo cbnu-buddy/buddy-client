@@ -123,8 +123,7 @@ export default function CommunityPostComment() {
                 <Image
                   src={commentInfo.writer.profileImagePathUrl}
                   alt='profileImage'
-                  layout='fill'
-                  objectFit='cover'
+                  fill
                   quality={100}
                   className='rounded-full'
                 />

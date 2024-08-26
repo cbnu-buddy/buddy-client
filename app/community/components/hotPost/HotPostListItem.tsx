@@ -30,8 +30,8 @@ export default function HotPostListItem(props: HotPostListItemProps) {
             <Image
               src={testImg}
               alt='main_1Image'
-              layout='fill' // 부모 요소에 맞추기 위해 fill 사용
-              objectFit='cover' // 이미지 비율 유지하며 부모 요소에 맞춤
+              fill
+              // 이미지 비율 유지하며 부모 요소에 맞춤
               quality={100}
               className='rounded-md'
             />

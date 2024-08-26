@@ -28,8 +28,7 @@ export default function PostListItem(props: TagPostListItemProps) {
               <Image
                 src='https://avatars.githubusercontent.com/u/119295431?v=4'
                 alt='profileImage'
-                layout='fill'
-                objectFit='cover'
+                fill
                 quality={100}
                 className='rounded-full'
               />
@@ -49,8 +48,7 @@ export default function PostListItem(props: TagPostListItemProps) {
             <Image
               src={testImg}
               alt='main_1Image'
-              layout='fill'
-              objectFit='cover'
+              fill
               quality={100}
               className='rounded-[0.275rem]'
             />

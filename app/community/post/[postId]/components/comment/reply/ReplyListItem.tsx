@@ -24,8 +24,7 @@ export default function ReplyListItem(props: ReplyListItemProps) {
               <Image
                 src={replyInfo.writer.profileImagePathUrl}
                 alt='profileImage'
-                layout='fill'
-                objectFit='cover'
+                fill
                 quality={100}
                 className='rounded-full'
               />
