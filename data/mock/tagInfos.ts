@@ -172,3 +172,46 @@ export const tagSubscribedInfo: MySubscribedTagInfo = {
   isReceiveNotification: true,
   isSubscribed: false,
 };
+
+export const relatedSearchTagInfos: TagInfo[] = [
+  {
+    tagId: 1,
+    tag: '애니메이션',
+  },
+  {
+    tagId: 2,
+    tag: '애니메이션2',
+  },
+  {
+    tagId: 3,
+    tag: '애니메이션3',
+  },
+  {
+    tagId: 4,
+    tag: '애니메이션4',
+  },
+  {
+    tagId: 5,
+    tag: '애니메이션5',
+  },
+  {
+    tagId: 6,
+    tag: '애니메이션6',
+  },
+  {
+    tagId: 7,
+    tag: '애니메이션7',
+  },
+  {
+    tagId: 8,
+    tag: '애니메이션8',
+  },
+  {
+    tagId: 9,
+    tag: '애니메이션9',
+  },
+  {
+    tagId: 10,
+    tag: '애니메이션10',
+  },
+];
