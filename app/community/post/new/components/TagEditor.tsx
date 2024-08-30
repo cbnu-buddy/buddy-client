@@ -219,7 +219,7 @@ export default function TagEditor() {
             setSelectedTagIndex(index);
           }}
           onKeyDown={(e) => handleTagKeyDown(e, index)}
-          className={`min-h-6 h-auto leading-none text-start outline-none px-[0.2rem] bg-[#eee] rounded-[0.125rem] border border-[#eee] hover:border-[#aaaaaa] active:bg-[#656565] active:text-white active:border-[#656565] ${
+          className={`min-h-6 h-auto leading-none text-start outline-none px-[0.2rem] bg-[#eee] rounded-[0.125rem] border border-[#eee] hover:border-[#aaaaaa] focus:bg-[#656565] focus:text-white focus:border-[#656565] ${
             selectedTagIndex === index &&
             'bg-[#656565] text-white border-[#656565]'
           }`}
