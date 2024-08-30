@@ -211,7 +211,9 @@ export default function TagEditor() {
       {tagList.map((tag, index) => (
         <button
           key={index}
-          ref={(el) => (tagButtonRefs.current[index] = el)} // 각 버튼의 ref를 저장
+          ref={(el) => {
+            tagButtonRefs.current[index] = el; // 각 버튼의 ref를 저장
+          }}
           onClick={(e) => {
             e.stopPropagation();
             setSelectedTagIndex(index);
