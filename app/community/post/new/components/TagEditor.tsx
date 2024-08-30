@@ -4,11 +4,17 @@ import { relatedSearchTagInfos } from '@/data/mock/tagInfos';
 import useDebounce from '@/utils/hooks/useDebounce';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-export default function TagEditor() {
+interface TagEditorProps {
+  tagList: string[];
+  setTagList: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export default function TagEditor(props: TagEditorProps) {
+  const { tagList, setTagList } = props;
+
   const resData = relatedSearchTagInfos;
 
   const [tagName, setTagName] = useState('');
-  const [tagList, setTagList] = useState<string[]>([]);
   const [selectedTagIndex, setSelectedTagIndex] = useState<number | null>(null);
   const [isOpenSearchedResultList, setIsOpenSearchedResultList] =
     useState(false);
