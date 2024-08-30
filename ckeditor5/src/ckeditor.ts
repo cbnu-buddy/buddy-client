@@ -89,60 +89,6 @@ class Editor extends ClassicEditor {
     Underline,
     Undo,
   ];
-
-  public static override defaultConfig: EditorConfig = {
-    toolbar: {
-      items: [
-        'heading',
-        '|',
-        'fontFamily',
-        'fontSize',
-        'fontColor',
-        'fontBackgroundColor',
-        '|',
-        'bold',
-        'italic',
-        'underline',
-        'strikethrough',
-        '|',
-        'alignment',
-        '|',
-        'numberedList',
-        'bulletedList',
-        '|',
-        'outdent',
-        'indent',
-        '|',
-        'link',
-        'blockQuote',
-        'imageUpload',
-        'insertTable',
-        'mediaEmbed',
-        '|',
-        'undo',
-        'redo',
-      ],
-    },
-    language: 'ko',
-    image: {
-      toolbar: [
-        'imageTextAlternative',
-        'toggleImageCaption',
-        'imageStyle:inline',
-        'imageStyle:block',
-        'imageStyle:side',
-      ],
-    },
-    table: {
-      contentToolbar: [
-        'tableColumn',
-        'tableRow',
-        'mergeTableCells',
-        'tableCellProperties',
-        'tableProperties',
-      ],
-    },
-  };
 }
 
 export default Editor;
