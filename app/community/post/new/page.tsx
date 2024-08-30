@@ -96,7 +96,7 @@ export default function CreateCommunityPost() {
   };
 
   return (
-    <div className='mt-6 px-5 2lg:px-0'>
+    <div className='mt-6 mb-4 px-5 2lg:px-0'>
       <div className='flex flex-col w-[50rem] mx-auto'>
         <p className='text-2xl font-semibold'>글 쓰기</p>
         <div className='flex flex-col relative z-0 w-1/2 group mt-5 mb-8'>
