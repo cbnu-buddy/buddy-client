@@ -18,6 +18,7 @@ export default function TagEditor(props: TagEditorProps) {
   const [selectedTagIndex, setSelectedTagIndex] = useState<number | null>(null);
   const [isOpenSearchedResultList, setIsOpenSearchedResultList] =
     useState(false);
+  const [isComposing, setIsComposing] = useState(false); // IME 입력 상태를 확인하기 위한 상태
 
   const inputRef = useRef<HTMLInputElement>(null);
   const tagButtonRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -26,6 +27,8 @@ export default function TagEditor(props: TagEditorProps) {
   const debouncedSearchQuery = useDebounce(tagName, 400);
 
   const handleTagInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (isComposing) return; // IME 입력 중에는 실행하지 않음
+
     if ((e.key === 'Enter' || e.key === ' ') && tagName.trim()) {
       e.preventDefault();
 
@@ -75,6 +78,14 @@ export default function TagEditor(props: TagEditorProps) {
         }
       }, 0);
     }
+  };
+
+  const handleCompositionStart = () => {
+    setIsComposing(true);
+  };
+
+  const handleCompositionEnd = () => {
+    setIsComposing(false);
   };
 
   const handleTagKeyDown = (
@@ -241,6 +252,8 @@ export default function TagEditor(props: TagEditorProps) {
           ref={inputRef}
           onChange={(e) => setTagName(e.target.value)}
           onKeyDown={handleTagInputKeyDown}
+          onCompositionStart={handleCompositionStart} // 한글 입력 시작
+          onCompositionEnd={handleCompositionEnd} // 한글 입력 종료
           className={`flex justify-center items-center border-none px-0 py-0 ${
             tagName && "before:content-['#']"
           } placeholder:text-[#88909a] font-light text-[0.825rem] focus:ring-0 text-[#1a1f27]`}
