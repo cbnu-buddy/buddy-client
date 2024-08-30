@@ -417,7 +417,7 @@ export default function CommunityPost(props: DefaultProps) {
                       partySelectedPlanInfos[0].planDetailInfos.length - 1
                     ].id
                   }`}
-                  className='w-fit flex flex-col items-center bg-[#f2f4f6] px-4 pb-3 rounded-lg hover:bg-[#dbe0e5]'
+                  className='w-[5.75rem] text-center flex flex-col items-center bg-[#f2f4f6] px-4 pb-3 rounded-lg hover:bg-[#dbe0e5]'
                 >
                   <Image
                     src={partySelectedPlanInfos[0].iconImg}
@@ -439,7 +439,7 @@ export default function CommunityPost(props: DefaultProps) {
                       partySelectedPlanInfos[1].planDetailInfos.length - 1
                     ].id
                   }`}
-                  className='w-fit flex flex-col items-center bg-[#f2f4f6] px-4 pb-3 rounded-lg hover:bg-[#dbe0e5]'
+                  className='w-[5.75rem] text-center flex flex-col items-center bg-[#f2f4f6] px-4 pb-3 rounded-lg hover:bg-[#dbe0e5]'
                 >
                   <Image
                     src={partySelectedPlanInfos[1].iconImg}
@@ -461,7 +461,7 @@ export default function CommunityPost(props: DefaultProps) {
                       partySelectedPlanInfos[2].planDetailInfos.length - 1
                     ].id
                   }`}
-                  className='w-fit flex flex-col items-center bg-[#f2f4f6] px-4 pb-3 rounded-lg hover:bg-[#dbe0e5]'
+                  className='w-[5.75rem] text-center flex flex-col items-center bg-[#f2f4f6] px-4 pb-3 rounded-lg hover:bg-[#dbe0e5]'
                 >
                   <Image
                     src={partySelectedPlanInfos[2].iconImg}

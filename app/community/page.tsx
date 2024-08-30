@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import HotPostList from './components/hotPost/HotPostList';
 import communityIconGif from '@/public/images/community_icon.gif';
 import Image from 'next/image';
