@@ -11,12 +11,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { PostInfo } from '@/types/post';
 import { TagInfo } from '@/types/tag';
-import CustomCKEditor from '@/app/components/CustomCKEditor';
 
-// const CustomCKEditor = dynamic(
-//   () => import('@/app/components/CustomCKEditor'),
-//   { ssr: false, loading: () => <Loading /> }
-// );
+const CustomCKEditor = dynamic(
+  () => import('@/app/components/CustomCKEditor'),
+  { ssr: false, loading: () => <Loading /> }
+);
 
 export default function EditCommunityPost() {
   const resData: PostInfo = {
