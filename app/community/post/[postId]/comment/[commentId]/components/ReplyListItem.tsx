@@ -57,7 +57,7 @@ export default function ReplyListItem(props: ReplyListItemProps) {
         </div>
 
         <p className='mt-[0.175rem] text-xs text-[#333d4b]'>
-          {replyInfo.reply}
+          {replyInfo.replyContent}
         </p>
 
         <button
