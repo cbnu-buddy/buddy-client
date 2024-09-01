@@ -113,7 +113,7 @@ export default function EditCommunityPost() {
       );
       setSelectedServices(serviceIds);
     }
-  }, [postInfo]);
+  }, []);
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -144,8 +144,6 @@ export default function EditCommunityPost() {
 
     router.push(`/community/post/${1}`);
   };
-
-  if (!content) return <Loading />;
 
   return (
     <div className='mt-6 mb-4 px-5 2lg:px-0'>
@@ -189,6 +187,7 @@ export default function EditCommunityPost() {
 
         <div className='w-full mx-auto overflow-auto'>
           <CustomCKEditor
+            key={content ? content : 'editor'}
             initEditorContent={content}
             onEditorChange={setContent}
           />
