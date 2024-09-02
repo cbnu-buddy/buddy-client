@@ -3,12 +3,12 @@ import { CommentInfo } from '@/types/comment';
 export const commentInfos: CommentInfo[] = [
   {
     commentId: 2,
-    comment: '좋은 정보 감사합니다 :p',
+    commentContent: '좋은 정보 감사합니다 :p',
     likeCount: 1,
     replies: [
       {
         replyId: 3,
-        reply: '넵 좋은 하루 되세요~~',
+        replyContent: '넵 좋은 하루 되세요~~',
         likeCount: 0,
         createdAt: '2024-08-19T01:00:00',
         writer: {
@@ -20,7 +20,7 @@ export const commentInfos: CommentInfo[] = [
       },
       {
         replyId: 3,
-        reply: '이건 테스트 답글입니다.',
+        replyContent: '이건 테스트 답글입니다.',
         likeCount: 0,
         createdAt: '2024-07-02T01:00:00',
         writer: {
@@ -41,12 +41,12 @@ export const commentInfos: CommentInfo[] = [
   },
   {
     commentId: 2,
-    comment: '잘 봤어요 😎',
+    commentContent: '잘 봤어요 😎',
     likeCount: 1,
     replies: [
       {
         replyId: 3,
-        reply: '넵 좋은 하루 되세요~~',
+        replyContent: '넵 좋은 하루 되세요~~',
         likeCount: 0,
         createdAt: '2024-07-02T01:00:00',
         writer: {
@@ -67,7 +67,7 @@ export const commentInfos: CommentInfo[] = [
   },
   {
     commentId: 2,
-    comment: '굿굿 :)',
+    commentContent: '굿굿 :)',
     likeCount: 1,
     replies: [],
     createdAt: '2024-07-02T01:00:00',
@@ -80,7 +80,7 @@ export const commentInfos: CommentInfo[] = [
   },
   {
     commentId: 2,
-    comment: '굿굿2 :)',
+    commentContent: '굿굿2 :)',
     likeCount: 1,
     replies: [],
     createdAt: '2024-07-02T01:00:00',
@@ -95,12 +95,12 @@ export const commentInfos: CommentInfo[] = [
 
 export const commentInfo: CommentInfo = {
   commentId: 2,
-  comment: '좋은 정보 감사합니다 :p',
+  commentContent: '좋은 정보 감사합니다 :p',
   likeCount: 1,
   replies: [
     {
       replyId: 3,
-      reply: '넵 좋은 하루 되세요~~',
+      replyContent: '넵 좋은 하루 되세요~~',
       likeCount: 0,
       createdAt: '2024-08-19T01:00:00',
       writer: {
@@ -112,7 +112,7 @@ export const commentInfo: CommentInfo = {
     },
     {
       replyId: 3,
-      reply: '이건 테스트 답글입니다.',
+      replyContent: '이건 테스트 답글입니다.',
       likeCount: 0,
       createdAt: '2024-07-02T01:00:00',
       writer: {

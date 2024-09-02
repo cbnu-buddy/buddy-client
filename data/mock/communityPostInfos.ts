@@ -46,12 +46,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -63,7 +63,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -84,12 +84,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -160,12 +160,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -177,7 +177,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -198,12 +198,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -274,12 +274,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -291,7 +291,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -312,12 +312,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -388,12 +388,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -405,7 +405,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -426,12 +426,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -502,12 +502,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -519,7 +519,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -540,12 +540,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -616,12 +616,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -633,7 +633,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -654,12 +654,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -730,12 +730,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -747,7 +747,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -768,12 +768,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -844,12 +844,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -861,7 +861,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -882,12 +882,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -958,12 +958,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -975,7 +975,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -996,12 +996,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -1072,12 +1072,12 @@ export const communityPostInfos: PostInfo[] = [
     comments: [
       {
         commentId: 1,
-        comment: '오! 정보 감사합니당😎😎',
+        commentContent: '오! 정보 감사합니당😎😎',
         likeCount: 1,
         replies: [
           {
             replyId: 1,
-            reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+            replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -1089,7 +1089,7 @@ export const communityPostInfos: PostInfo[] = [
           },
           {
             replyId: 2,
-            reply: 'ㄹㅇ..',
+            replyContent: 'ㄹㅇ..',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -1110,12 +1110,12 @@ export const communityPostInfos: PostInfo[] = [
       },
       {
         commentId: 2,
-        comment: '좋은 정보 감사합니다 :p',
+        commentContent: '좋은 정보 감사합니다 :p',
         likeCount: 1,
         replies: [
           {
             replyId: 3,
-            reply: '넵 좋은 하루 되세요~~',
+            replyContent: '넵 좋은 하루 되세요~~',
             likeCount: 0,
             createdAt: '2024-07-02T01:00:00',
             writer: {
@@ -1184,12 +1184,12 @@ export const communityPostInfo: PostInfo = {
   comments: [
     {
       commentId: 1,
-      comment: '오! 정보 감사합니당😎😎',
+      commentContent: '오! 정보 감사합니당😎😎',
       likeCount: 1,
       replies: [
         {
           replyId: 1,
-          reply: '도움이 되셨다니 기쁘네요ㅎㅎ',
+          replyContent: '도움이 되셨다니 기쁘네요ㅎㅎ',
           likeCount: 0,
           createdAt: '2024-07-02T01:00:00',
           writer: {
@@ -1201,7 +1201,7 @@ export const communityPostInfo: PostInfo = {
         },
         {
           replyId: 2,
-          reply: 'ㄹㅇ..',
+          replyContent: 'ㄹㅇ..',
           likeCount: 0,
           createdAt: '2024-07-02T01:00:00',
           writer: {
@@ -1222,12 +1222,12 @@ export const communityPostInfo: PostInfo = {
     },
     {
       commentId: 2,
-      comment: '좋은 정보 감사합니다 :p',
+      commentContent: '좋은 정보 감사합니다 :p',
       likeCount: 1,
       replies: [
         {
           replyId: 3,
-          reply: '넵 좋은 하루 되세요~~',
+          replyContent: '넵 좋은 하루 되세요~~',
           likeCount: 0,
           createdAt: '2024-07-02T01:00:00',
           writer: {

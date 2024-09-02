@@ -67,14 +67,14 @@ export default function CreateCommunityPost() {
     setIsTitleValidFail(false);
   };
 
-  const handleCancelContestRegister = () => {
+  const handleCancelRegisterPost = () => {
     const userResponse = confirm('게시글 작성을 취소하시겠습니까?');
     if (!userResponse) return;
 
     router.back();
   };
 
-  const handleRegisterContest = () => {
+  const handleRegisterPost = () => {
     if (!title) {
       alert('제목을 입력해 주세요');
       window.scrollTo(0, 0);
@@ -218,13 +218,13 @@ export default function CreateCommunityPost() {
 
           <div className='mt-14 pb-2 flex justify-end gap-3'>
             <button
-              onClick={handleCancelContestRegister}
+              onClick={handleCancelRegisterPost}
               className='px-4 py-[0.5rem] rounded-[6px] font-light'
             >
               취소
             </button>
             <button
-              onClick={handleRegisterContest}
+              onClick={handleRegisterPost}
               className='text-[#f9fafb] bg-[#3a8af9] px-4 py-[0.5rem] rounded-[6px] focus:bg-[#1c6cdb] hover:bg-[#1c6cdb]'
             >
               등록

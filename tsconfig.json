@@ -27,9 +27,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "third-party/firebase-messaging-sw.ㅓㄴ",
-    "utils/upload/uploadService.js",
-    "utils/upload/uploadService.js",
-    "app/components/CustomCKEditor.jsx"
+    "utils/upload/uploadService.ts",
+    "utils/upload/uploadService.ts",
+    "app/components/CustomCKEditor.jsx",
+    "utils/upload/uploadAdapter.ts"
   ],
   "exclude": ["node_modules"]
 }

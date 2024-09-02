@@ -6,7 +6,7 @@ export interface PostInfo {
   title: string;
   content: string;
   createdAt: string;
-  modifiedAt: string;
+  modifiedAt: string | null;
   postImagePathUrls: string[];
   author: Author;
   tags: TagInfo[];

@@ -3,7 +3,7 @@ import { Author } from './post';
 
 export interface CommentInfo {
   commentId: number;
-  comment: string;
+  commentContent: string;
   likeCount: number;
   replies: ReplyInfo[]; // Reply 배열
   createdAt: string; // ISO 날짜 형식

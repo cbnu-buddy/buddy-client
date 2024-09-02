@@ -156,7 +156,7 @@ export default function CommunityPostComment() {
           </div>
 
           <p className='mt-[0.175rem] text-xs text-[#333d4b]'>
-            {commentInfo.comment}
+            {commentInfo.commentContent}
           </p>
 
           <div className='flex items-center gap-x-2'>
