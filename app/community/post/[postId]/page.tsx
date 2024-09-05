@@ -301,6 +301,7 @@ export default function CommunityPost(props: DefaultProps) {
               <div className='h-[2.5rem] flex items-center gap-x-2'>
                 {resData.tags.map((tagInfo, index) => (
                   <Link
+                    key={index}
                     href={`/community/search?tag=${tagInfo.tag}`}
                     className='flex items-center min-h-6 h-auto leading-none text-xs text-start outline-none px-[0.2rem] bg-[#eee] rounded-[0.125rem] border border-[#eee] focus:bg-[#656565] focus:text-white hover:bg-[#656565] hover:text-white hover:border-[#656565]'
                   >
