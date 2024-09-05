@@ -298,7 +298,21 @@ export default function CommunityPost(props: DefaultProps) {
                 source={`<p>이건 버디 커뮤니티 게시글 본문 <strong>테스트 내용</strong>입니다.</p><p>&nbsp;</p><figure class=\"image\"><img src=\"https://swjudgeapi.cbnu.ac.kr/uploads/c24e87aa-a99d-479e-a134-c7f4554291cf.png\"></figure><p>&nbsp;</p><p>게시글 하단 내용도 포함</p>`}
               />
 
-              <div className='flex justify-between items-center'>
+              <div className='h-[2.5rem] flex items-center gap-x-2'>
+                {resData.tags.map((tagInfo, index) => (
+                  <Link
+                    href={`/community/search?tag=${tagInfo.tag}`}
+                    className='flex items-center min-h-6 h-auto leading-none text-xs text-start outline-none px-[0.2rem] bg-[#eee] rounded-[0.125rem] border border-[#eee] focus:bg-[#656565] focus:text-white hover:bg-[#656565] hover:text-white hover:border-[#656565]'
+                  >
+                    #
+                    <span className='ml-[0.1rem] text-inherit break-all'>
+                      {tagInfo.tag}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className='mt-2 flex justify-between items-center'>
                 <div className='mt-1 flex gap-x-2 h-8'>
                   <div className='flex items-center gap-x-[0.15rem] bg-[#f2f4f6] text-[#4e5968] rounded-full px-3'>
                     <svg
