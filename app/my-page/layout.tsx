@@ -185,6 +185,30 @@ export default function MyPage({ children }: { children: React.ReactNode }) {
                 </button> */}
               </div>
 
+              <div className='w-full flex flex-col gap-y-1 items-start'>
+                <p className='flex items-center text-[0.825rem] font-bold p-2 rounded-lg'>
+                  커뮤니티 관리
+                </p>
+                <button
+                  className={`w-full flex items-center text-xs font-normal p-2 rounded-lg hover:bg-[#f6f6f6] ${
+                    pathTabName === 'community-history' &&
+                    'fill-[#1c6cdb] text-[#1c6cdb]'
+                  }`}
+                  onClick={() => router.push('/my-page/community-history')}
+                >
+                  내가 쓴 게시글
+                </button>
+                {/* <button
+                  className={`w-full flex items-center text-xs font-normal p-2 rounded-lg hover:bg-[#f6f6f6] ${
+                    pathTabName === 'modify-pin' &&
+                    'fill-[#1c6cdb] text-[#1c6cdb]'
+                  }`}
+                  onClick={() => router.push('/my-page/modify-pin')}
+                >
+                  PIN 재설정
+                </button> */}
+              </div>
+
               <div className='flex flex-col gap-y-1 items-start'>
                 <p className='flex items-center text-[0.825rem] font-bold p-2 rounded-lg'>
                   정산 관리
