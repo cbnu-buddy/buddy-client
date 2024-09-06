@@ -144,7 +144,7 @@ export default function Navbar() {
           <div className='w-[1.1rem] h-[2px] bg-[#262626] mb-[4px]'></div>
           <div className='w-[1.1rem] h-[2px] bg-[#262626]'></div>
           <div
-            className={`absolute top-0 ${rightPos} h-screen w-full bg-white border opacity-95 duration-300 cursor-default`}
+            className={`absolute top-0 ${rightPos} w-full bg-white border opacity-95 duration-300 cursor-default`}
           >
             <div
               onClick={(e) => {
